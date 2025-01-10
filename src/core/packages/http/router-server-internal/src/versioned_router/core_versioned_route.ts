@@ -39,13 +39,14 @@ import {
   readVersion,
   removeQueryVersion,
 } from './route_version_utils';
-import { getVersionHeader, injectVersionHeader } from '../util';
+import { getVersionHeader, injectResponseHeaders, injectVersionHeader } from '../util';
 import { validRouteSecurity } from '../security_route_config_validator';
 
 import { resolvers } from './handler_resolvers';
 import { prepareVersionedRouteValidation, unwrapVersionedResponseBodyValidation } from './util';
 import type { RequestLike } from './route_version_utils';
 import { Router } from '../router';
+import { getWarningHeaderMessageFromRouteDeprecation } from '../get_warning_header_message';
 
 interface InternalVersionedRouteConfig<M extends RouteMethod> extends VersionedRouteConfig<M> {
   isDev: boolean;
@@ -241,7 +242,20 @@ export class CoreVersionedRoute implements VersionedRoute {
 
     this.router.emitPostValidate(req, postValidateMetadata);
 
-    const response = await handler.fn(ctx, req, res);
+    let response = await handler.fn(ctx, req, res);
+
+    if (handler.options.options?.deprecated && !response.options.headers?.warning) {
+      response = injectResponseHeaders(
+        {
+          warning: getWarningHeaderMessageFromRouteDeprecation(
+            handler.options.options.deprecated,
+            // TODO: put the actual version here
+            '9.0.0'
+          ),
+        },
+        response
+      );
+    }
 
     if (this.isDev && validation?.response?.[response.status]?.body) {
       const { [response.status]: responseValidation, unsafe } = validation.response;

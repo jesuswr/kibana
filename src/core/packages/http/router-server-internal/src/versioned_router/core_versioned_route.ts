@@ -50,6 +50,7 @@ import { getWarningHeaderMessageFromRouteDeprecation } from '../get_warning_head
 
 interface InternalVersionedRouteConfig<M extends RouteMethod> extends VersionedRouteConfig<M> {
   isDev: boolean;
+  kibanaVersion: string;
   useVersionResolutionStrategyForInternalPaths: Map<string, boolean>;
   defaultHandlerResolutionStrategy: HandlerResolutionStrategy;
 }
@@ -95,6 +96,7 @@ export class CoreVersionedRoute implements VersionedRoute {
   private useDefaultStrategyForPath: boolean;
   private isPublic: boolean;
   private isDev: boolean;
+  private kibanaVersion: string;
   private enableQueryVersion: boolean;
   private defaultSecurityConfig: RouteSecurity | undefined;
   private defaultHandlerResolutionStrategy: HandlerResolutionStrategy;
@@ -106,12 +108,14 @@ export class CoreVersionedRoute implements VersionedRoute {
   ) {
     const {
       isDev,
+      kibanaVersion,
       useVersionResolutionStrategyForInternalPaths,
       defaultHandlerResolutionStrategy,
       ...options
     } = internalOptions;
     this.isPublic = options.access === 'public';
     this.isDev = isDev;
+    this.kibanaVersion = kibanaVersion;
     this.defaultHandlerResolutionStrategy = defaultHandlerResolutionStrategy;
     this.useDefaultStrategyForPath =
       this.isPublic || useVersionResolutionStrategyForInternalPaths.has(path);
@@ -250,8 +254,7 @@ export class CoreVersionedRoute implements VersionedRoute {
         {
           warning: getWarningHeaderMessageFromRouteDeprecation(
             handler.options.options.deprecated,
-            // TODO: put the actual version here
-            '9.32.0'
+            this.kibanaVersion
           ),
         },
         response

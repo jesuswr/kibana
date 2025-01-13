@@ -140,6 +140,8 @@ export interface RouterOptions {
   /** Whether we are running in development */
   isDev?: boolean;
 
+  kibanaVersion?: string;
+
   /** Plugin for which this router was registered */
   pluginId?: symbol;
 
@@ -398,6 +400,7 @@ export class Router<Context extends RequestHandlerContextBase = RequestHandlerCo
       this.versionedRouter = CoreVersionedRouter.from({
         router: this,
         isDev: this.options.isDev,
+        kibanaVersion: this.options.kibanaVersion,
         ...this.options.versionedRouterOptions,
       });
     }

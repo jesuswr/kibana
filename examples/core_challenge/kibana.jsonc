@@ -1,0 +1,16 @@
+{
+    "type": "plugin",
+    "id": "@kbn/core-challenge",
+    "owner": "@elastic/kibana-core",
+    "description": "A challenge to practice core tasks.",
+    "plugin": {
+        "id": "coreChallenge",
+        "server": true,
+        "browser": true,
+        "requiredPlugins": [
+            "developerExamples"
+        ]
+    },
+    "visibility": "private",
+    "group": "platform"
+}

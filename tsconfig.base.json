@@ -308,6 +308,8 @@
       "@kbn/core-capabilities-server-internal/*": ["src/core/packages/capabilities/server-internal/*"],
       "@kbn/core-capabilities-server-mocks": ["src/core/packages/capabilities/server-mocks"],
       "@kbn/core-capabilities-server-mocks/*": ["src/core/packages/capabilities/server-mocks/*"],
+      "@kbn/core-challenge": ["examples/core_challenge"],
+      "@kbn/core-challenge/*": ["examples/core_challenge/*"],
       "@kbn/core-chrome-browser": ["src/core/packages/chrome/browser"],
       "@kbn/core-chrome-browser/*": ["src/core/packages/chrome/browser/*"],
       "@kbn/core-chrome-browser-internal": ["src/core/packages/chrome/browser-internal"],

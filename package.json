@@ -284,6 +284,7 @@
     "@kbn/core-capabilities-common": "link:src/core/packages/capabilities/common",
     "@kbn/core-capabilities-server": "link:src/core/packages/capabilities/server",
     "@kbn/core-capabilities-server-internal": "link:src/core/packages/capabilities/server-internal",
+    "@kbn/core-challenge": "link:examples/core_challenge",
     "@kbn/core-chrome-browser": "link:src/core/packages/chrome/browser",
     "@kbn/core-chrome-browser-internal": "link:src/core/packages/chrome/browser-internal",
     "@kbn/core-chrome-layout": "link:src/core/packages/chrome/layout/core-chrome-layout",

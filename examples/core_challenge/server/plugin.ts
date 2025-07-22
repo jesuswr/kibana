@@ -8,21 +8,14 @@
  */
 
 import type { Plugin, PluginInitializerContext, CoreSetup, CoreStart } from '@kbn/core/server';
+import { registerRoutes } from './src/routes';
 
 export class CoreChallengeServerPlugin implements Plugin {
   constructor(initializerContext: PluginInitializerContext) {}
 
   public setup(core: CoreSetup) {
     // called when plugin is setting up during Kibana's startup sequence
-    const router = core.http.createRouter();
-    router.get(
-      {
-        path: '/api/todos',
-        validate: false,
-        security: { authz: { enabled: false, reason: 'testing' } },
-      },
-      (context, req, res) => res.ok({ body: { response: 'ok' } })
-    );
+    registerRoutes(core.http.createRouter());
   }
 
   public start(core: CoreStart) {

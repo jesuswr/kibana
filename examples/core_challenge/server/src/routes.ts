@@ -27,7 +27,11 @@ function registerGetTodosRoute(router: IRouter) {
       validate: false,
       security: { authz: { enabled: false, reason: 'testing' } },
     },
-    (context, req, res) => res.ok({ body: { response: todoList } })
+    async (context, req, res) => {
+      const core = await context.core;
+      const result = await core.savedObjects.client.find({ type: todoElementSavedObjectTypeName });
+      return res.ok({ body: { result: result.saved_objects } });
+    }
   );
 }
 
@@ -42,13 +46,15 @@ function registerGetTodoByIdRoute(router: IRouter) {
       },
       security: { authz: { enabled: false, reason: 'testing' } },
     },
-    (context, req, res) => {
+    async (context, req, res) => {
       const { id } = req.params;
-      const index = todoList.findIndex((todo) => todo.id === id);
-      if (index === -1) {
-        return res.notFound();
+      const core = await context.core;
+      // need to figure out how to filter by id here
+      const result = await core.savedObjects.client.find({ type: todoElementSavedObjectTypeName });
+      if (result.saved_objects) {
+        return res.ok({ body: { result: result.saved_objects } });
       } else {
-        return res.ok({ body: { result: todoList[index] } });
+        return res.notFound();
       }
     }
   );
@@ -89,14 +95,20 @@ function registerPutTodoRoute(router: IRouter) {
       },
       security: { authz: { enabled: false, reason: 'testing' } },
     },
-    (context, req, res) => {
+    async (context, req, res) => {
       const { id } = req.params;
-      const index = todoList.findIndex((todo) => todo.id === id);
-      if (index === -1) {
-        return res.notFound();
-      }
-      todoList[index] = { id, ...req.body };
-      return res.ok({ body: { result: todoList[index] } });
+      const core = await context.core;
+      const todoElement = {
+        ...req.body,
+      };
+      // to think: should we handle specially updates to description? since it's optional.
+      // if no description is in the body, do we keep the previous one or delete it?
+      const result = await core.savedObjects.client.update(
+        todoElementSavedObjectTypeName,
+        id,
+        todoElement
+      );
+      return res.ok({ body: { result } });
     }
   );
 }

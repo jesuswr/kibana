@@ -10,18 +10,13 @@
 import { schema } from '@kbn/config-schema';
 import { IRouter } from '@kbn/core/server';
 import { v4 as uuidv4 } from 'uuid';
+import { TodoElement, todoElementSchema } from './types';
 
 export function registerRoutes(router: IRouter) {
   registerGetTodosRoute(router);
   registerGetTodoByIdRoute(router);
   registerPostTodoRoute(router);
   registerPutTodoRoute(router);
-}
-
-interface TodoElement {
-  id: string;
-  title: string;
-  description?: string;
 }
 
 const todoList: TodoElement[] = [];
@@ -65,10 +60,7 @@ function registerPostTodoRoute(router: IRouter) {
     {
       path: '/api/todos',
       validate: {
-        body: schema.object({
-          title: schema.string({ minLength: 1 }),
-          description: schema.maybe(schema.string()),
-        }),
+        body: todoElementSchema,
       },
       security: { authz: { enabled: false, reason: 'testing' } },
     },
@@ -91,10 +83,7 @@ function registerPutTodoRoute(router: IRouter) {
         params: schema.object({
           id: schema.string(),
         }),
-        body: schema.object({
-          title: schema.string({ minLength: 1 }),
-          description: schema.maybe(schema.string()),
-        }),
+        body: todoElementSchema,
       },
       security: { authz: { enabled: false, reason: 'testing' } },
     },

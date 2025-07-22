@@ -9,6 +9,7 @@
 
 import type { Plugin, PluginInitializerContext, CoreSetup, CoreStart } from '@kbn/core/server';
 import { registerRoutes } from './src/routes';
+import { todoElementSavedObjectType } from './src/types';
 
 export class CoreChallengeServerPlugin implements Plugin {
   constructor(initializerContext: PluginInitializerContext) {}
@@ -16,6 +17,9 @@ export class CoreChallengeServerPlugin implements Plugin {
   public setup(core: CoreSetup) {
     // called when plugin is setting up during Kibana's startup sequence
     registerRoutes(core.http.createRouter());
+
+    const savedObjects = core.savedObjects;
+    savedObjects.registerType(todoElementSavedObjectType);
   }
 
   public start(core: CoreStart) {

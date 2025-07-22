@@ -9,8 +9,7 @@
 
 import { schema } from '@kbn/config-schema';
 import { IRouter } from '@kbn/core/server';
-import { v4 as uuidv4 } from 'uuid';
-import { TodoElement, todoElementSchema } from './types';
+import { TodoElement, todoElementSchema, todoElementSavedObjectTypeName } from './types';
 
 export function registerRoutes(router: IRouter) {
   registerGetTodosRoute(router);
@@ -64,13 +63,16 @@ function registerPostTodoRoute(router: IRouter) {
       },
       security: { authz: { enabled: false, reason: 'testing' } },
     },
-    (context, req, res) => {
+    async (context, req, res) => {
+      const core = await context.core;
       const todoElement = {
-        id: uuidv4(),
         ...req.body,
       };
-      todoList.push(todoElement);
-      return res.ok({ body: { result: todoElement } });
+      const result = await core.savedObjects.client.create(
+        todoElementSavedObjectTypeName,
+        todoElement
+      );
+      return res.ok({ body: { result } });
     }
   );
 }

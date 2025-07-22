@@ -10,6 +10,8 @@
 import { schema } from '@kbn/config-schema';
 import { SavedObjectsType } from '@kbn/core/server';
 
+export const todoElementSavedObjectTypeName = 'todo-element-core-challenge';
+
 export interface TodoElement {
   id: string;
   title: string;
@@ -22,7 +24,7 @@ export const todoElementSchema = schema.object({
 });
 
 export const todoElementSavedObjectType: SavedObjectsType = {
-  name: 'todo-element',
+  name: todoElementSavedObjectTypeName,
   hidden: false,
   namespaceType: 'agnostic',
   mappings: {

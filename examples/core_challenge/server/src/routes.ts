@@ -9,7 +9,7 @@
 
 import { schema } from '@kbn/config-schema';
 import { IRouter } from '@kbn/core/server';
-import { todoElementSchema, todoElementSavedObjectTypeName } from './types';
+import { todoElementSchema, todoElementSavedObjectTypeName, TodoElement } from './types';
 
 export function registerRoutes(router: IRouter) {
   registerGetTodosRoute(router);
@@ -28,7 +28,9 @@ function registerGetTodosRoute(router: IRouter) {
     },
     async (context, req, res) => {
       const core = await context.core;
-      const result = await core.savedObjects.client.find({ type: todoElementSavedObjectTypeName });
+      const result = await core.savedObjects.client.find<TodoElement[]>({
+        type: todoElementSavedObjectTypeName,
+      });
       return res.ok({ body: result.saved_objects });
     }
   );
@@ -49,7 +51,10 @@ function registerGetTodoByIdRoute(router: IRouter) {
     async (context, req, res) => {
       const { id } = req.params;
       const core = await context.core;
-      const result = await core.savedObjects.client.get(todoElementSavedObjectTypeName, id);
+      const result = await core.savedObjects.client.get<TodoElement>(
+        todoElementSavedObjectTypeName,
+        id
+      );
       if (result) {
         return res.ok({ body: result });
       } else {
@@ -74,7 +79,7 @@ function registerPostTodoRoute(router: IRouter) {
       const todoElement = {
         ...req.body,
       };
-      const result = await core.savedObjects.client.create(
+      const result = await core.savedObjects.client.create<TodoElement>(
         todoElementSavedObjectTypeName,
         todoElement
       );
@@ -104,7 +109,7 @@ function registerPutTodoRoute(router: IRouter) {
       };
       // to think: should we handle specially updates to description? since it's optional.
       // if no description is in the body, do we keep the previous one or delete it?
-      const result = await core.savedObjects.client.update(
+      const result = await core.savedObjects.client.update<TodoElement>(
         todoElementSavedObjectTypeName,
         id,
         todoElement

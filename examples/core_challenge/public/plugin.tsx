@@ -31,7 +31,14 @@ export class CoreChallengePlugin implements Plugin<void, void, SetupDeps> {
       id: 'coreChallenge',
       title: 'Core Challenge',
       async mount({ element }: AppMountParameters) {
-        ReactDOM.render(<div data-test-subj="coreChallengeDiv">Core Challenge!</div>, element);
+        const elements = await core.http.get('/api/todos');
+        ReactDOM.render(
+          <div data-test-subj="coreChallengeDiv">
+            Core Challenge!
+            <pre>{JSON.stringify(elements, null, 2)}</pre>
+          </div>,
+          element
+        );
         return () => ReactDOM.unmountComponentAtNode(element);
       },
     });

@@ -13,7 +13,6 @@ import { SavedObjectsType } from '@kbn/core/server';
 export const todoElementSavedObjectTypeName = 'todo-element-core-challenge';
 
 export interface TodoElement {
-  id: string;
   title: string;
   description?: string;
 }

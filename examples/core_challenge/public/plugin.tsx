@@ -17,6 +17,7 @@ import type {
   PluginInitializerContext,
 } from '@kbn/core/public';
 import { DeveloperExamplesSetup } from '@kbn/developer-examples-plugin/public';
+import { TodosList } from './src/todos';
 
 interface SetupDeps {
   developerExamples: DeveloperExamplesSetup;
@@ -31,14 +32,7 @@ export class CoreChallengePlugin implements Plugin<void, void, SetupDeps> {
       id: 'coreChallenge',
       title: 'Core Challenge',
       async mount({ element }: AppMountParameters) {
-        const elements = await core.http.get('/api/todos');
-        ReactDOM.render(
-          <div data-test-subj="coreChallengeDiv">
-            Core Challenge!
-            <pre>{JSON.stringify(elements, null, 2)}</pre>
-          </div>,
-          element
-        );
+        ReactDOM.render(<TodosList http={core.http} />, element);
         return () => ReactDOM.unmountComponentAtNode(element);
       },
     });

@@ -29,7 +29,7 @@ function registerGetTodosRoute(router: IRouter) {
     async (context, req, res) => {
       const core = await context.core;
       const result = await core.savedObjects.client.find({ type: todoElementSavedObjectTypeName });
-      return res.ok({ body: { result: result.saved_objects } });
+      return res.ok({ body: result.saved_objects });
     }
   );
 }
@@ -51,7 +51,7 @@ function registerGetTodoByIdRoute(router: IRouter) {
       const core = await context.core;
       const result = await core.savedObjects.client.get(todoElementSavedObjectTypeName, id);
       if (result) {
-        return res.ok({ body: { result } });
+        return res.ok({ body: result });
       } else {
         return res.notFound();
       }
@@ -78,7 +78,7 @@ function registerPostTodoRoute(router: IRouter) {
         todoElementSavedObjectTypeName,
         todoElement
       );
-      return res.ok({ body: { result } });
+      return res.ok({ body: result });
     }
   );
 }
@@ -109,7 +109,7 @@ function registerPutTodoRoute(router: IRouter) {
         id,
         todoElement
       );
-      return res.ok({ body: { result } });
+      return res.ok({ body: result });
     }
   );
 }

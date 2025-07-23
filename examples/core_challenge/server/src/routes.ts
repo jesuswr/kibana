@@ -9,7 +9,7 @@
 
 import { schema } from '@kbn/config-schema';
 import { IRouter } from '@kbn/core/server';
-import { TodoElement, todoElementSchema, todoElementSavedObjectTypeName } from './types';
+import { todoElementSchema, todoElementSavedObjectTypeName } from './types';
 
 export function registerRoutes(router: IRouter) {
   registerGetTodosRoute(router);
@@ -17,8 +17,6 @@ export function registerRoutes(router: IRouter) {
   registerPostTodoRoute(router);
   registerPutTodoRoute(router);
 }
-
-const todoList: TodoElement[] = [];
 
 function registerGetTodosRoute(router: IRouter) {
   router.get(
@@ -49,10 +47,9 @@ function registerGetTodoByIdRoute(router: IRouter) {
     async (context, req, res) => {
       const { id } = req.params;
       const core = await context.core;
-      // need to figure out how to filter by id here
-      const result = await core.savedObjects.client.find({ type: todoElementSavedObjectTypeName });
-      if (result.saved_objects) {
-        return res.ok({ body: { result: result.saved_objects } });
+      const result = await core.savedObjects.client.get(todoElementSavedObjectTypeName, id);
+      if (result) {
+        return res.ok({ body: { result } });
       } else {
         return res.notFound();
       }

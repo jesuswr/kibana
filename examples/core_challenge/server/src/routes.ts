@@ -24,6 +24,7 @@ function registerGetTodosRoute(router: IRouter) {
       path: '/api/todos',
       validate: false,
       security: { authz: { enabled: false, reason: 'testing' } },
+      options: { access: 'public' },
     },
     async (context, req, res) => {
       const core = await context.core;
@@ -43,6 +44,7 @@ function registerGetTodoByIdRoute(router: IRouter) {
         }),
       },
       security: { authz: { enabled: false, reason: 'testing' } },
+      options: { access: 'public' },
     },
     async (context, req, res) => {
       const { id } = req.params;
@@ -65,6 +67,7 @@ function registerPostTodoRoute(router: IRouter) {
         body: todoElementSchema,
       },
       security: { authz: { enabled: false, reason: 'testing' } },
+      options: { access: 'public' },
     },
     async (context, req, res) => {
       const core = await context.core;
@@ -91,6 +94,7 @@ function registerPutTodoRoute(router: IRouter) {
         body: todoElementSchema,
       },
       security: { authz: { enabled: false, reason: 'testing' } },
+      options: { access: 'public' },
     },
     async (context, req, res) => {
       const { id } = req.params;

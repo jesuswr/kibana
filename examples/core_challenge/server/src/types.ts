@@ -21,9 +21,13 @@ export interface TodoElementHttpResponse extends TodoElement {
   id: string;
 }
 
-export const todoElementSchema = schema.object({
+export const todoElementSchemaV1 = schema.object({
   title: schema.string({ minLength: 1 }),
   description: schema.maybe(schema.string()),
+});
+
+export const todoElementSchemaV2 = todoElementSchemaV1.extends({
+  completed: schema.maybe(schema.boolean()),
 });
 
 export const todoElementSavedObjectType: SavedObjectsType = {
@@ -34,14 +38,29 @@ export const todoElementSavedObjectType: SavedObjectsType = {
     properties: {
       title: { type: 'text' },
       description: { type: 'text' },
+      completed: { type: 'boolean' },
     },
   },
   modelVersions: {
     1: {
       changes: [],
       schemas: {
-        forwardCompatibility: todoElementSchema.extends({}, { unknowns: 'ignore' }),
-        create: todoElementSchema,
+        forwardCompatibility: todoElementSchemaV1.extends({}, { unknowns: 'ignore' }),
+        create: todoElementSchemaV1,
+      },
+    },
+    2: {
+      changes: [
+        {
+          type: 'mappings_addition',
+          addedMappings: {
+            completed: { type: 'boolean' },
+          },
+        },
+      ],
+      schemas: {
+        forwardCompatibility: todoElementSchemaV2.extends({}, { unknowns: 'ignore' }),
+        create: todoElementSchemaV2,
       },
     },
   },

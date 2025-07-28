@@ -10,7 +10,7 @@
 import { schema } from '@kbn/config-schema';
 import { IRouter, SavedObject } from '@kbn/core/server';
 import {
-  todoElementSchema,
+  todoElementSchemaV2,
   todoElementSavedObjectTypeName,
   TodoElement,
   TodoElementHttpResponse,
@@ -75,7 +75,7 @@ function registerPostTodoRoute(router: IRouter) {
     {
       path: '/api/todos',
       validate: {
-        body: todoElementSchema,
+        body: todoElementSchemaV2,
       },
       security: { authz: { enabled: false, reason: 'testing' } },
       options: { access: 'public' },
@@ -102,7 +102,7 @@ function registerPutTodoRoute(router: IRouter) {
         params: schema.object({
           id: schema.string(),
         }),
-        body: todoElementSchema,
+        body: todoElementSchemaV2,
       },
       security: { authz: { enabled: false, reason: 'testing' } },
       options: { access: 'public' },

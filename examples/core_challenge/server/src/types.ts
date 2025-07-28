@@ -15,6 +15,7 @@ export const todoElementSavedObjectTypeName = 'todo-element-core-challenge';
 export interface TodoElement {
   title: string;
   description?: string;
+  completed?: boolean;
 }
 
 export interface TodoElementHttpResponse extends TodoElement {

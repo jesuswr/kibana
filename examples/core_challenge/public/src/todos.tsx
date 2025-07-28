@@ -48,6 +48,8 @@ export function TodosList({ http }: TodosListProps) {
   const onGetListClick = () => handleGetListClick(http, setTodos, setLoading, setError);
   const onDeleteClick = (todo: TodoElementHttpResponse) =>
     handleDeleteTodo(http, todo, setTodos, setError, todos);
+  const onToggleComplete = (todo: TodoElementHttpResponse) =>
+    handleToggleComplete(http, todo, setTodos, setError);
   const onCreateClick = () =>
     handleCreateClick(
       setIsModalOpen,
@@ -102,6 +104,18 @@ export function TodosList({ http }: TodosListProps) {
         <EuiBasicTable
           items={todos}
           columns={[
+            {
+              field: 'completed',
+              name: 'Completed',
+              render: (completed: boolean, todo: TodoElementHttpResponse) => (
+                <input
+                  type="checkbox"
+                  checked={completed || false}
+                  onChange={() => onToggleComplete(todo)}
+                  aria-label={`Mark ${todo.title} as ${completed ? 'incomplete' : 'complete'}`}
+                />
+              ),
+            },
             {
               field: 'title',
               name: 'Title',
@@ -315,4 +329,31 @@ async function handleFormSubmit(
   } finally {
     setFormLoading(false);
   }
+}
+
+function handleToggleComplete(
+  http: HttpSetup,
+  todo: TodoElementHttpResponse,
+  setTodos: React.Dispatch<React.SetStateAction<TodoElementHttpResponse[]>>,
+  setError: (error: string | null) => void
+) {
+  setError(null);
+  const newCompletedState = !todo.completed;
+
+  http
+    .put(`/api/todos/${todo.id}`, {
+      body: JSON.stringify({
+        title: todo.title,
+        description: todo.description,
+        completed: newCompletedState,
+      }),
+    })
+    .then(() => {
+      setTodos((prev) =>
+        prev.map((t) => (t.id === todo.id ? { ...t, completed: newCompletedState } : t))
+      );
+    })
+    .catch(() => {
+      setError('Failed to update todo completion status');
+    });
 }

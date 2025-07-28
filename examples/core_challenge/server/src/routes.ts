@@ -8,7 +8,7 @@
  */
 
 import { schema } from '@kbn/config-schema';
-import { IRouter } from '@kbn/core/server';
+import { IRouter, SavedObject } from '@kbn/core/server';
 import { todoElementSchema, todoElementSavedObjectTypeName, TodoElement } from './types';
 
 export function registerRoutes(router: IRouter) {
@@ -31,7 +31,7 @@ function registerGetTodosRoute(router: IRouter) {
       const result = await core.savedObjects.client.find<TodoElement[]>({
         type: todoElementSavedObjectTypeName,
       });
-      return res.ok({ body: result.saved_objects });
+      return res.ok({ body: result.saved_objects.map(savedObjectToHttpResponse) });
     }
   );
 }
@@ -56,7 +56,7 @@ function registerGetTodoByIdRoute(router: IRouter) {
         id
       );
       if (result) {
-        return res.ok({ body: result });
+        return res.ok({ body: savedObjectToHttpResponse(result) });
       } else {
         return res.notFound();
       }
@@ -83,7 +83,7 @@ function registerPostTodoRoute(router: IRouter) {
         todoElementSavedObjectTypeName,
         todoElement
       );
-      return res.ok({ body: result });
+      return res.ok({ body: savedObjectToHttpResponse(result) });
     }
   );
 }
@@ -109,12 +109,19 @@ function registerPutTodoRoute(router: IRouter) {
       };
       // to think: should we handle specially updates to description? since it's optional.
       // if no description is in the body, do we keep the previous one or delete it?
-      const result = await core.savedObjects.client.update<TodoElement>(
+      await core.savedObjects.client.update<TodoElement>(
         todoElementSavedObjectTypeName,
         id,
         todoElement
       );
-      return res.ok({ body: result });
+      return res.ok();
     }
   );
+}
+
+function savedObjectToHttpResponse<T>(so: SavedObject<T>): T & { id: string } {
+  return {
+    ...so.attributes,
+    id: so.id,
+  };
 }

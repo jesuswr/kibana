@@ -128,7 +128,13 @@ export function TodosList({ http }: TodosListProps) {
               field: 'description',
               name: 'Description',
               render: (desc: string) =>
-                desc || <EuiTextColor color="subdued">No description</EuiTextColor>,
+                desc ? (
+                  desc
+                ) : (
+                  <EuiTextColor color="subdued">
+                    <em>No description</em>
+                  </EuiTextColor>
+                ),
             },
           ]}
         />

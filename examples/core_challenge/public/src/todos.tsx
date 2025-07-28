@@ -8,8 +8,7 @@
  */
 
 import React, { useState } from 'react';
-import { EuiTextColor } from '@elastic/eui';
-import { EuiButton, EuiPanel, EuiSpacer } from '@elastic/eui';
+import { EuiTextColor, EuiButton, EuiPanel, EuiSpacer, EuiBasicTable } from '@elastic/eui';
 import type { HttpSetup } from '@kbn/core/public';
 import type { TodoElementHttpResponse } from '../../server/src/types';
 
@@ -56,7 +55,26 @@ export function TodosList({ http }: TodosListProps) {
       </EuiButton>
       <EuiSpacer size="m" />
       {error && <EuiTextColor color="danger">{error}</EuiTextColor>}
-      {todos && <pre data-test-subj="todosListPre">{JSON.stringify(todos, null, 2)}</pre>}
+      {todos && todos.length > 0 ? (
+        <EuiBasicTable
+          data-test-subj="todosTable"
+          items={todos}
+          columns={[
+            {
+              field: 'title',
+              name: 'Title',
+            },
+            {
+              field: 'description',
+              name: 'Description',
+              render: (desc: string) =>
+                desc || <EuiTextColor color="subdued">No description</EuiTextColor>,
+            },
+          ]}
+        />
+      ) : (
+        <EuiTextColor color="subdued">No todos to display.</EuiTextColor>
+      )}
     </EuiPanel>
   );
 }

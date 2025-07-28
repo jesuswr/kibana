@@ -11,17 +11,15 @@ import React, { useState } from 'react';
 import { EuiTextColor } from '@elastic/eui';
 import { EuiButton, EuiPanel, EuiSpacer } from '@elastic/eui';
 import type { HttpSetup } from '@kbn/core/public';
-import type { TodoElement } from '../../server/src/types';
+import type { TodoElementHttpResponse } from '../../server/src/types';
 
 interface TodosListProps {
   http: HttpSetup;
 }
 
-type TodoList = TodoElement[];
-
 export function handleGetListClick(
   http: HttpSetup,
-  setTodos: (todos: any) => void,
+  setTodos: (todos: TodoElementHttpResponse[]) => void,
   setLoading: (loading: boolean) => void,
   setError: (error: string | null) => void
 ) {
@@ -30,7 +28,7 @@ export function handleGetListClick(
   setError(null);
 
   http
-    .get('/api/todos')
+    .get<TodoElementHttpResponse[]>('/api/todos')
     .then((result) => {
       setTodos(result);
     })
@@ -43,7 +41,7 @@ export function handleGetListClick(
 }
 
 export function TodosList({ http }: TodosListProps) {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState<TodoElementHttpResponse[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 

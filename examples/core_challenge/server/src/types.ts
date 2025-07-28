@@ -17,6 +17,10 @@ export interface TodoElement {
   description?: string;
 }
 
+export interface TodoElementHttpResponse extends TodoElement {
+  id: string;
+}
+
 export const todoElementSchema = schema.object({
   title: schema.string({ minLength: 1 }),
   description: schema.maybe(schema.string()),

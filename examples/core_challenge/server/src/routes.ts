@@ -9,7 +9,12 @@
 
 import { schema } from '@kbn/config-schema';
 import { IRouter, SavedObject } from '@kbn/core/server';
-import { todoElementSchema, todoElementSavedObjectTypeName, TodoElement } from './types';
+import {
+  todoElementSchema,
+  todoElementSavedObjectTypeName,
+  TodoElement,
+  TodoElementHttpResponse,
+} from './types';
 
 export function registerRoutes(router: IRouter) {
   registerGetTodosRoute(router);
@@ -28,7 +33,7 @@ function registerGetTodosRoute(router: IRouter) {
     },
     async (context, req, res) => {
       const core = await context.core;
-      const result = await core.savedObjects.client.find<TodoElement[]>({
+      const result = await core.savedObjects.client.find<TodoElement>({
         type: todoElementSavedObjectTypeName,
       });
       return res.ok({ body: result.saved_objects.map(savedObjectToHttpResponse) });
@@ -119,7 +124,7 @@ function registerPutTodoRoute(router: IRouter) {
   );
 }
 
-function savedObjectToHttpResponse<T>(so: SavedObject<T>): T & { id: string } {
+function savedObjectToHttpResponse(so: SavedObject<TodoElement>): TodoElementHttpResponse {
   return {
     ...so.attributes,
     id: so.id,

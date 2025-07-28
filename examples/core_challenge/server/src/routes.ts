@@ -21,6 +21,7 @@ export function registerRoutes(router: IRouter) {
   registerGetTodoByIdRoute(router);
   registerPostTodoRoute(router);
   registerPutTodoRoute(router);
+  registerDeleteTodoRoute(router);
 }
 
 function registerGetTodosRoute(router: IRouter) {
@@ -119,6 +120,27 @@ function registerPutTodoRoute(router: IRouter) {
         id,
         todoElement
       );
+      return res.ok();
+    }
+  );
+}
+
+function registerDeleteTodoRoute(router: IRouter) {
+  router.delete(
+    {
+      path: '/api/todos/{id}',
+      validate: {
+        params: schema.object({
+          id: schema.string(),
+        }),
+      },
+      security: { authz: { enabled: false, reason: 'testing' } },
+      options: { access: 'public' },
+    },
+    async (context, req, res) => {
+      const { id } = req.params;
+      const core = await context.core;
+      await core.savedObjects.client.delete(todoElementSavedObjectTypeName, id);
       return res.ok();
     }
   );

@@ -61,10 +61,12 @@ export function TodosList({ http }: TodosListProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [newTitle, setNewTitle] = useState('');
-  const [newDescription, setNewDescription] = useState('');
-  const [createLoading, setCreateLoading] = useState(false);
-  const [createError, setCreateError] = useState<string | null>(null);
+  const [modalMode, setModalMode] = useState<'create' | 'edit'>('create');
+  const [editTodoId, setEditTodoId] = useState<string | null>(null);
+  const [formTitle, setFormTitle] = useState('');
+  const [formDescription, setFormDescription] = useState('');
+  const [formLoading, setFormLoading] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
 
   function onGetListClick() {
     handleGetListClick(http, setTodos, setLoading, setError);
@@ -72,30 +74,54 @@ export function TodosList({ http }: TodosListProps) {
 
   function onCreateClick() {
     setIsModalOpen(true);
-    setNewTitle('');
-    setNewDescription('');
-    setCreateError(null);
+    setModalMode('create');
+    setEditTodoId(null);
+    setFormTitle('');
+    setFormDescription('');
+    setFormError(null);
+  }
+
+  function onEditClick(todo: TodoElementHttpResponse) {
+    setIsModalOpen(true);
+    setModalMode('edit');
+    setEditTodoId(todo.id);
+    setFormTitle(todo.title);
+    setFormDescription(todo.description || '');
+    setFormError(null);
   }
 
   function closeModal() {
     setIsModalOpen(false);
-    setCreateError(null);
+    setFormError(null);
   }
 
-  async function onCreateSubmit(e: React.FormEvent) {
+  async function onFormSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setCreateLoading(true);
-    setCreateError(null);
+    setFormLoading(true);
+    setFormError(null);
     try {
-      const result = await http.post<TodoElementHttpResponse>('/api/todos', {
-        body: JSON.stringify({ title: newTitle, description: newDescription }),
-      });
-      setTodos((prev) => [...prev, result]);
+      if (modalMode === 'create') {
+        const result = await http.post<TodoElementHttpResponse>('/api/todos', {
+          body: JSON.stringify({ title: formTitle, description: formDescription }),
+        });
+        setTodos((prev) => [...prev, result]);
+      } else if (modalMode === 'edit' && editTodoId) {
+        await http.put(`/api/todos/${editTodoId}`, {
+          body: JSON.stringify({ title: formTitle, description: formDescription }),
+        });
+        setTodos((prev) =>
+          prev.map((todo) =>
+            todo.id === editTodoId
+              ? { ...todo, title: formTitle, description: formDescription }
+              : todo
+          )
+        );
+      }
       closeModal();
     } catch (err) {
-      setCreateError('Failed to create todo');
+      setFormError('Failed to save todo');
     } finally {
-      setCreateLoading(false);
+      setFormLoading(false);
     }
   }
 
@@ -136,6 +162,19 @@ export function TodosList({ http }: TodosListProps) {
                   </EuiTextColor>
                 ),
             },
+            {
+              name: 'Actions',
+              actions: [
+                {
+                  name: 'Edit',
+                  description: 'Edit this todo',
+                  icon: 'pencil',
+                  type: 'icon',
+                  onClick: (todo: TodoElementHttpResponse) => onEditClick(todo),
+                  'data-test-subj': 'editTodoButton',
+                },
+              ],
+            },
           ]}
         />
       ) : (
@@ -145,47 +184,49 @@ export function TodosList({ http }: TodosListProps) {
       {isModalOpen && (
         <EuiModal onClose={closeModal} initialFocus="#todoTitleInput">
           <EuiModalHeader>
-            <EuiModalHeaderTitle>Create new Todo</EuiModalHeaderTitle>
+            <EuiModalHeaderTitle>
+              {modalMode === 'edit' ? 'Edit Todo' : 'Create new Todo'}
+            </EuiModalHeaderTitle>
           </EuiModalHeader>
           <EuiModalBody>
-            <EuiForm component="form" onSubmit={onCreateSubmit}>
+            <EuiForm component="form" onSubmit={onFormSubmit}>
               <EuiFormRow
                 label="Title"
-                error={createError && !newTitle ? 'Title is required' : undefined}
+                error={formError && !formTitle ? 'Title is required' : undefined}
               >
                 <EuiFieldText
                   id="todoTitleInput"
-                  value={newTitle}
-                  onChange={(e) => setNewTitle(e.target.value)}
+                  value={formTitle}
+                  onChange={(e) => setFormTitle(e.target.value)}
                   required
-                  disabled={createLoading}
+                  disabled={formLoading}
                   data-test-subj="todoTitleInput"
                 />
               </EuiFormRow>
               <EuiFormRow label="Description">
                 <EuiTextArea
-                  value={newDescription}
-                  onChange={(e) => setNewDescription(e.target.value)}
-                  disabled={createLoading}
+                  value={formDescription}
+                  onChange={(e) => setFormDescription(e.target.value)}
+                  disabled={formLoading}
                   data-test-subj="todoDescriptionInput"
                 />
               </EuiFormRow>
-              {createError && <EuiTextColor color="danger">{createError}</EuiTextColor>}
+              {formError && <EuiTextColor color="danger">{formError}</EuiTextColor>}
             </EuiForm>
           </EuiModalBody>
           <EuiModalFooter>
-            <EuiButton onClick={closeModal} color="text" disabled={createLoading}>
+            <EuiButton onClick={closeModal} color="text" disabled={formLoading}>
               Cancel
             </EuiButton>
             <EuiButton
               type="submit"
               fill
-              onClick={onCreateSubmit}
-              isLoading={createLoading}
-              disabled={!newTitle.trim() || createLoading}
+              onClick={onFormSubmit}
+              isLoading={formLoading}
+              disabled={!formTitle.trim() || formLoading}
               data-test-subj="submitNewTodoButton"
             >
-              Create
+              {modalMode === 'edit' ? 'Save' : 'Create'}
             </EuiButton>
           </EuiModalFooter>
         </EuiModal>

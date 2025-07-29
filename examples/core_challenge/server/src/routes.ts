@@ -37,7 +37,9 @@ function registerGetTodosRoute(router: IRouter, ignoreCompletedTodos: boolean) {
       const core = await context.core;
       const result = await core.savedObjects.client.find<TodoElement>({
         type: todoElementSavedObjectTypeName,
-        filter: ignoreCompletedTodos ? 'NOT completed: true' : '',
+        filter: ignoreCompletedTodos
+          ? 'NOT todo-element-core-challenge.attributes.completed: true'
+          : undefined,
       });
       return res.ok({ body: result.saved_objects.map(savedObjectToHttpResponse) });
     }

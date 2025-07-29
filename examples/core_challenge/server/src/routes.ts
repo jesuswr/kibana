@@ -15,16 +15,17 @@ import {
   TodoElement,
   TodoElementHttpResponse,
 } from './types';
+import { ConfigType } from './config';
 
-export function registerRoutes(router: IRouter) {
-  registerGetTodosRoute(router);
+export function registerRoutes(router: IRouter, config: ConfigType) {
+  registerGetTodosRoute(router, config.ignore_completed_todos);
   registerGetTodoByIdRoute(router);
   registerPostTodoRoute(router);
   registerPutTodoRoute(router);
   registerDeleteTodoRoute(router);
 }
 
-function registerGetTodosRoute(router: IRouter) {
+function registerGetTodosRoute(router: IRouter, ignoreCompletedTodos: boolean) {
   router.get(
     {
       path: '/api/todos',
@@ -36,6 +37,7 @@ function registerGetTodosRoute(router: IRouter) {
       const core = await context.core;
       const result = await core.savedObjects.client.find<TodoElement>({
         type: todoElementSavedObjectTypeName,
+        filter: ignoreCompletedTodos ? 'NOT completed: true' : '',
       });
       return res.ok({ body: result.saved_objects.map(savedObjectToHttpResponse) });
     }

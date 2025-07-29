@@ -7,14 +7,11 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import type { PluginConfigDescriptor, PluginInitializerContext } from '@kbn/core/server';
-import { CoreChallengeServerPlugin } from './plugin';
-import { ConfigSchema, ConfigType } from './src/config';
+import type { TypeOf } from '@kbn/config-schema';
+import { schema } from '@kbn/config-schema';
 
-export async function plugin(initializerContext: PluginInitializerContext) {
-  return new CoreChallengeServerPlugin(initializerContext);
-}
+export type ConfigType = TypeOf<typeof ConfigSchema>;
 
-export const config: PluginConfigDescriptor<ConfigType> = {
-  schema: ConfigSchema,
-};
+export const ConfigSchema = schema.object({
+  ignore_completed_todos: schema.boolean({ defaultValue: false }),
+});

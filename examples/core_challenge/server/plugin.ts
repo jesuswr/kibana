@@ -11,6 +11,7 @@ import type { Plugin, PluginInitializerContext, CoreSetup, CoreStart } from '@kb
 import { registerRoutes } from './src/routes';
 import { todoElementSavedObjectType } from './src/types';
 import { ConfigType } from './src/config';
+import { uiSettings } from './src/ui_settings';
 
 export class CoreChallengeServerPlugin implements Plugin {
   private readonly config: ConfigType;
@@ -25,6 +26,8 @@ export class CoreChallengeServerPlugin implements Plugin {
 
     const savedObjects = core.savedObjects;
     savedObjects.registerType(todoElementSavedObjectType);
+
+    core.uiSettings.register(uiSettings);
   }
 
   public start(core: CoreStart) {

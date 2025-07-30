@@ -16,6 +16,7 @@ import {
   TodoElementHttpResponse,
 } from './types';
 import { ConfigType } from './config';
+import { IGNORE_COMPLETED_TODOS_UI_SETTING_ID } from './ui_settings';
 
 export function registerRoutes(router: IRouter, config: ConfigType) {
   registerGetTodosRoute(router, config.ignore_completed_todos);
@@ -25,7 +26,7 @@ export function registerRoutes(router: IRouter, config: ConfigType) {
   registerDeleteTodoRoute(router);
 }
 
-function registerGetTodosRoute(router: IRouter, ignoreCompletedTodos: boolean) {
+function registerGetTodosRoute(router: IRouter, ignoreCompletedTodosConfigValue: boolean) {
   router.get(
     {
       path: '/api/todos',
@@ -35,6 +36,13 @@ function registerGetTodosRoute(router: IRouter, ignoreCompletedTodos: boolean) {
     },
     async (context, req, res) => {
       const core = await context.core;
+
+      const ignoreCompletedTodosUiSettingsValue = await core.uiSettings.client.get<boolean>(
+        IGNORE_COMPLETED_TODOS_UI_SETTING_ID
+      );
+      const ignoreCompletedTodos =
+        ignoreCompletedTodosConfigValue || ignoreCompletedTodosUiSettingsValue;
+
       const result = await core.savedObjects.client.find<TodoElement>({
         type: todoElementSavedObjectTypeName,
         filter: ignoreCompletedTodos

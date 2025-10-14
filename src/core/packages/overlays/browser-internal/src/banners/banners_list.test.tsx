@@ -8,8 +8,7 @@
  */
 
 import React from 'react';
-import { act } from 'react-dom/test-utils';
-import { mount } from 'enzyme';
+import { render, act } from '@testing-library/react';
 import { EuiThemeProvider } from '@elastic/eui';
 
 import { BannersList } from './banners_list';
@@ -22,7 +21,8 @@ const Wrapper = ({ children }: { children: React.ReactNode }) => (
 
 describe('BannersList', () => {
   test('renders null if no banners', () => {
-    expect(mount(<BannersList banners$={new BehaviorSubject([])} />).html()).toEqual(null);
+    const { container } = render(<BannersList banners$={new BehaviorSubject([])} />);
+    expect(container.innerHTML).toBe('');
   });
 
   test('renders a list of banners', () => {
@@ -37,9 +37,8 @@ describe('BannersList', () => {
       },
     ]);
 
-    expect(
-      mount(<BannersList banners$={banners$} />, { wrappingComponent: Wrapper }).html()
-    ).toMatchInlineSnapshot(
+    const { container } = render(<BannersList banners$={banners$} />, { wrapper: Wrapper });
+    expect(container.innerHTML).toMatchInlineSnapshot(
       `"<div class=\\"kbnGlobalBannerList\\"><div data-test-priority=\\"0\\" data-test-subj=\\"global-banner-item\\" class=\\"css-rhtlbg-BannerItem\\"><h1>Hello!</h1></div></div>"`
     );
   });
@@ -57,7 +56,7 @@ describe('BannersList', () => {
       },
     ]);
 
-    const component = mount(<BannersList banners$={banners$} />, { wrappingComponent: Wrapper });
+    const { container } = render(<BannersList banners$={banners$} />, { wrapper: Wrapper });
 
     act(() => {
       banners$.next([
@@ -81,7 +80,7 @@ describe('BannersList', () => {
     });
 
     // Two new banners should be rendered
-    expect(component.html()).toMatchInlineSnapshot(
+    expect(container.innerHTML).toMatchInlineSnapshot(
       `"<div class=\\"kbnGlobalBannerList\\"><div data-test-priority=\\"1\\" data-test-subj=\\"global-banner-item\\" class=\\"css-rhtlbg-BannerItem\\"><h1>First Banner!</h1></div><div data-test-priority=\\"0\\" data-test-subj=\\"global-banner-item\\" class=\\"css-rhtlbg-BannerItem\\"><h1>Second banner!</h1></div></div>"`
     );
     // Original banner should be unmounted
@@ -91,12 +90,12 @@ describe('BannersList', () => {
   test('unsubscribe on unmount', () => {
     const banners$ = new BehaviorSubject([]);
     const subscribe = jest.spyOn(banners$, 'subscribe');
-    const component = mount(<BannersList banners$={banners$} />);
+    const { unmount } = render(<BannersList banners$={banners$} />);
     // Grab the returned subscription and spy its `unsubscribe` method
     const subscription = subscribe.mock.results[0].value;
     const unsubscribe = jest.spyOn(subscription, 'unsubscribe');
 
-    component.unmount();
+    unmount();
     expect(unsubscribe).toHaveBeenCalled();
   });
 });

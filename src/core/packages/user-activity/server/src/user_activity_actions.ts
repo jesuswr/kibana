@@ -33,7 +33,7 @@ export const userActivityActions = {
     we can remove this when we have an actual usage`,
     ownerTeam: '@elastic/kibana-core',
     groupName: 'Example plugins',
-    versionAddedAt: '0.0',
+    versionAddedAt: '9.4',
   },
 } as const satisfies Record<string, UserActivityActionDefinition>;
 
@@ -60,15 +60,15 @@ export const removedUserActivityActions = {
     we can remove this when we have an actual usage`,
     ownerTeam: '@elastic/kibana-core',
     groupName: 'Example plugins',
-    versionAddedAt: '0.0',
-    versionRemovedAt: '9.0',
+    versionAddedAt: '9.0',
+    versionRemovedAt: '9.3',
   },
   example_action_3: {
     description: `just an example so the first team using the service can use this as a guide, 
     we can remove this when we have an actual usage`,
     ownerTeam: '@elastic/kibana-core',
     groupName: 'Example plugins #2',
-    versionAddedAt: '0.0',
-    versionRemovedAt: '9.0',
+    versionAddedAt: '8.4',
+    versionRemovedAt: '8.10',
   },
 } as const satisfies Record<string, RemovedUserActivityActionDefinition>;

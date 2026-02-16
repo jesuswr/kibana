@@ -51,7 +51,7 @@ const formatAppliesTo = ({
   versionRemovedAt?: string;
 }) => {
   if (versionRemovedAt) {
-    return `{applies_to}\`stack: ga ${versionAddedAt}-${versionRemovedAt}\``;
+    return `{applies_to}\`stack: ga ${versionAddedAt}, removed ${versionRemovedAt}\``;
   }
 
   return `{applies_to}\`stack: ga ${versionAddedAt}+\``;

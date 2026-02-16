@@ -37,7 +37,7 @@ When enabled, events are logged under the logger context `user_activity.event` a
 
 ## Available actions
 
-This list is generated from the action registries in code. To regenerate it, run `node scripts/generate user-activity-actions-docs`.
+% This list is generated from the action registries in code. To regenerate it, run `node scripts/generate user-activity-actions-docs`.
 
 :::::{include} user-activity/_snippets/user-activity-actions-list.md
 :::::

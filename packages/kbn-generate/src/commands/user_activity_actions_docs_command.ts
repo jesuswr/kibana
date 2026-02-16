@@ -120,11 +120,7 @@ function renderSnippet({
     }))
     .sort(sortByStringKey((g) => g.groupName));
 
-  const header = `<!--
-THIS FILE IS GENERATED. DO NOT EDIT.
-To regenerate, run: node scripts/generate user-activity-actions-docs
--->
-`;
+  const header = `<!-- To regenerate, run: node scripts/generate user-activity-actions-docs -->`;
 
   const body =
     groups.length === 0

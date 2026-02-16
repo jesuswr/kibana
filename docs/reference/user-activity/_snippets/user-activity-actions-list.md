@@ -1,8 +1,4 @@
-<!--
-THIS FILE IS GENERATED. DO NOT EDIT.
-To regenerate, run: node scripts/generate user-activity-actions-docs
--->
-
+<!-- To regenerate, run: node scripts/generate user-activity-actions-docs -->
 ### Example plugins
 
 | Action | Description |

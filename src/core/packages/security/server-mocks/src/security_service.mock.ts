@@ -52,6 +52,7 @@ const createInternalSetupMock = () => {
   const mock: jest.Mocked<InternalSecurityServiceSetup> = lazyObject({
     registerSecurityDelegate: jest.fn(),
     fips: { isEnabled: jest.fn() },
+    uiam: { sharedSecret: 'some-shared-secret' },
   });
 
   return mock;
@@ -99,7 +100,6 @@ const createRequestHandlerContextMock = () => {
         uiam: {
           grant: jest.fn(),
           invalidate: jest.fn(),
-          getScopedClusterClientWithApiKey: jest.fn(),
         },
       }),
     }),

@@ -63,7 +63,11 @@ describe('UserActivityService', () => {
     it('logs a user action with provided message', () => {
       service.trackUserAction({
         message: 'Custom message for action',
+<<<<<<< HEAD
         event: { action: TEST_ACTION, type: 'change' },
+=======
+        event: { action: 'create', type: 'creation' },
+>>>>>>> origin/main
         object: { id: 'obj-1', name: 'Test Object', type: 'dashboard', tags: ['tag1'] },
       });
 
@@ -72,7 +76,11 @@ describe('UserActivityService', () => {
           'Custom message for action',
           {
             message: 'Custom message for action',
+<<<<<<< HEAD
             event: { action: TEST_ACTION, type: 'change' },
+=======
+            event: { action: 'create', type: 'creation' },
+>>>>>>> origin/main
             object: { id: 'obj-1', name: 'Test Object', type: 'dashboard', tags: ['tag1'] },
           },
         ],
@@ -85,13 +93,21 @@ describe('UserActivityService', () => {
       });
 
       service.trackUserAction({
+<<<<<<< HEAD
         event: { action: TEST_ACTION, type: 'change' },
+=======
+        event: { action: 'delete', type: 'deletion' },
+>>>>>>> origin/main
         object: { id: 'obj-2', name: 'My Dashboard', type: 'dashboard', tags: [] },
       });
 
       const logCalls = loggingSystemMock.collect(core.logger).info;
       expect(logCalls).toHaveLength(1);
+<<<<<<< HEAD
       expect(logCalls[0][0]).toBe('User test_user performed test_action on My Dashboard (obj-2)');
+=======
+      expect(logCalls[0][0]).toBe('User test_user performed delete on My Dashboard (obj-2)');
+>>>>>>> origin/main
     });
 
     it('includes injected context in logs', () => {
@@ -108,7 +124,11 @@ describe('UserActivityService', () => {
 
       service.trackUserAction({
         message: 'Test action',
+<<<<<<< HEAD
         event: { action: TEST_ACTION, type: 'change' },
+=======
+        event: { action: 'update', type: 'change' },
+>>>>>>> origin/main
         object: { id: 'obj-3', name: 'Object', type: 'visualization', tags: [] },
       });
 
@@ -136,7 +156,11 @@ describe('UserActivityService', () => {
 
       disabledService.trackUserAction({
         message: 'Should not log',
+<<<<<<< HEAD
         event: { action: TEST_ACTION, type: 'change' },
+=======
+        event: { action: 'create', type: 'creation' },
+>>>>>>> origin/main
         object: { id: 'obj-1', name: 'Test', type: 'test', tags: [] },
       });
 
@@ -157,7 +181,11 @@ describe('UserActivityService', () => {
 
       service.trackUserAction({
         message: 'Test',
+<<<<<<< HEAD
         event: { action: TEST_ACTION, type: 'change' },
+=======
+        event: { action: 'test', type: 'change' },
+>>>>>>> origin/main
         object: { id: '1', name: 'Test', type: 'test', tags: [] },
       });
 
@@ -175,7 +203,11 @@ describe('UserActivityService', () => {
 
       service.trackUserAction({
         message: 'Test',
+<<<<<<< HEAD
         event: { action: TEST_ACTION, type: 'change' },
+=======
+        event: { action: 'test', type: 'change' },
+>>>>>>> origin/main
         object: { id: '1', name: 'Test', type: 'test', tags: [] },
       });
 
@@ -193,7 +225,11 @@ describe('UserActivityService', () => {
 
       service.trackUserAction({
         message: 'Test',
+<<<<<<< HEAD
         event: { action: TEST_ACTION, type: 'change' },
+=======
+        event: { action: 'test', type: 'change' },
+>>>>>>> origin/main
         object: { id: '1', name: 'Test', type: 'test', tags: [] },
       });
 
@@ -220,7 +256,11 @@ describe('UserActivityService', () => {
 
       service.trackUserAction({
         message: 'Test',
+<<<<<<< HEAD
         event: { action: TEST_ACTION, type: 'change' },
+=======
+        event: { action: 'test', type: 'change' },
+>>>>>>> origin/main
         object: { id: '1', name: 'Test', type: 'test', tags: [] },
       });
 
@@ -241,7 +281,11 @@ describe('UserActivityService', () => {
         await timer(100);
         service.trackUserAction({
           message: 'Action A',
+<<<<<<< HEAD
           event: { action: TEST_ACTION, type: 'change' },
+=======
+          event: { action: 'action-a', type: 'change' },
+>>>>>>> origin/main
           object: { id: 'a', name: 'A', type: 'test', tags: [] },
         });
       });
@@ -254,7 +298,11 @@ describe('UserActivityService', () => {
         await timer(10);
         service.trackUserAction({
           message: 'Action B',
+<<<<<<< HEAD
           event: { action: TEST_ACTION, type: 'change' },
+=======
+          event: { action: 'action-b', type: 'change' },
+>>>>>>> origin/main
           object: { id: 'b', name: 'B', type: 'test', tags: [] },
         });
       });
@@ -294,7 +342,11 @@ describe('UserActivityService', () => {
 
           service.trackUserAction({
             message: 'Child action',
+<<<<<<< HEAD
             event: { action: TEST_ACTION, type: 'change' },
+=======
+            event: { action: 'child-action', type: 'change' },
+>>>>>>> origin/main
             object: { id: 'child', name: 'Child', type: 'test', tags: [] },
           });
         });
@@ -318,7 +370,11 @@ describe('UserActivityService', () => {
       // Verify service is working
       setupContract.trackUserAction({
         message: 'Before stop',
+<<<<<<< HEAD
         event: { action: TEST_ACTION, type: 'change' },
+=======
+        event: { action: 'test', type: 'change' },
+>>>>>>> origin/main
         object: { id: '1', name: 'Test', type: 'test', tags: [] },
       });
       expect(loggingSystemMock.collect(core.logger).info).toHaveLength(1);
@@ -329,7 +385,11 @@ describe('UserActivityService', () => {
       // Verify service is disabled
       setupContract.trackUserAction({
         message: 'After stop',
+<<<<<<< HEAD
         event: { action: TEST_ACTION, type: 'change' },
+=======
+        event: { action: 'test', type: 'change' },
+>>>>>>> origin/main
         object: { id: '2', name: 'Test', type: 'test', tags: [] },
       });
       expect(loggingSystemMock.collect(core.logger).info).toHaveLength(1);
@@ -345,7 +405,11 @@ describe('UserActivityService', () => {
       const trackAction = () => {
         service.trackUserAction({
           message: 'Test action',
+<<<<<<< HEAD
           event: { action: TEST_ACTION, type: 'change' },
+=======
+          event: { action: 'test', type: 'change' },
+>>>>>>> origin/main
           object: { id: '1', name: 'Test', type: 'test', tags: [] },
         });
       };

@@ -24,7 +24,7 @@ export interface UserActivityActionDefinition {
 
 /**
  * Central registry of all known user-activity actions.
- * To add a new action, add an entry with a `description` and `ownerTeam`.
+ * To add a new action, add an entry with a `description`, `ownerTeam`, `groupName` and `versionAddedAt`.
  * @private
  */
 export const userActivityActions = {

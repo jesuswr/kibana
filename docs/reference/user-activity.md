@@ -42,3 +42,72 @@ When enabled, events are logged under the logger context `user_activity.event` a
 :::::{include} user-activity/_snippets/user-activity-actions-list.md
 :::::
 
+## Logs schema
+
+User activity events are written as JSON log entries. When using the JSON logging layout, these entries are ECS-compatible (see [Elastic Common Schema (ECS)](ecs://reference/index.md)) and may include additional non-ECS fields used by Kibana (for example, `kibana.space.id` and `object.*`).
+
+### Base fields
+
+| **Field** | **Description** |
+| --- | --- |
+| `@timestamp` | The timestamp of the event. |
+| `message` | Human readable description of the action performed. |
+
+### Event fields
+
+| **Field** | **Description** |
+| --- | --- |
+| `event.action` | Human readable standardized description of the action performed. Refer to [Available actions](#available-actions) for a list of possible values. |
+| `event.type` | Human readable standardized categorization of actions performed. |
+
+### Tracing fields
+
+| **Field** | **Description** |
+| --- | --- |
+| `trace.id` | Correlation id for events that happen together (for example, events for the same HTTP request). |
+
+### Session fields
+
+| **Field** | **Description** |
+| --- | --- |
+| `session.id` | Redacted id of the session. |
+
+### Space fields
+
+| **Field** | **Description** |
+| --- | --- |
+| `kibana.space.id` | ID of the space where the action originates from. |
+
+### User fields
+
+| **Field** | **Description** |
+| --- | --- |
+| `user.id` | Unique identifier of the user. |
+| `user.username` | Username of the user. |
+| `user.email` | Email address of the user at the time of the action. |
+| `user.roles` | Kibana roles of the user at the time of the action. |
+
+### Client and HTTP fields
+
+| **Field** | **Description** |
+| --- | --- |
+| `client.ip` | IP address of the client that performed the action. |
+| `client.address` | Copy of `client.ip` for OpenTelemetry compliance. |
+| `http.request.referrer` | Referrer associated with the request that triggered the action. |
+
+### Object fields
+
+| **Field** | **Description** |
+| --- | --- |
+| `object.id` | Unique id of the target. |
+| `object.name` | Target resource name. |
+| `object.type` | Target resource type of the action. |
+| `object.tags` | List of tags assigned to the target. |
+
+### Service fields
+
+| **Field** | **Description** |
+| --- | --- |
+| `service.version` | Version of Kibana that emitted the event. |
+
+

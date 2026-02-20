@@ -1,13 +1,13 @@
 <!-- To regenerate, run: node scripts/generate user-activity-actions-docs -->
-### Example plugins
+### Dashboards
 
 | Action | Description |
 | --- | --- |
-| `example_action` {applies_to}`stack: ga 9.4+` | just an example so the first team using the service can use this as a guide, we can remove this when we have an actual usage |
-| `example_action_2` {applies_to}`stack: ga 9.0, removed 9.3` | just an example so the first team using the service can use this as a guide, we can remove this when we have an actual usage |
+| `dashboard_created` {applies_to}`stack: ga 9.4.0+` | [THIS IS AN EXAMPLE AND WILL BE REMOVED LATER] User created a dashboard in Kibana. |
+| `dashboard_duplicated` {applies_to}`stack: ga 8.4.0, removed 8.10.0` | [THIS IS AN EXAMPLE AND WILL BE REMOVED LATER] User duplicated a dashboard. |
 
-### Example plugins #2
+### Rules
 
 | Action | Description |
 | --- | --- |
-| `example_action_3` {applies_to}`stack: ga 8.4, removed 8.10` | just an example so the first team using the service can use this as a guide, we can remove this when we have an actual usage |
+| `rule_schedule_updated` {applies_to}`stack: ga 9.0.0, removed 9.3.0` | [THIS IS AN EXAMPLE AND WILL BE REMOVED LATER] User updated an alerting rule schedule. |

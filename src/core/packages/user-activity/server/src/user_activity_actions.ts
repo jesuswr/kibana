@@ -18,7 +18,7 @@ export interface UserActivityActionDefinition {
   ownerTeam: string;
   /** Group name used to organize actions in UIs/docs (for example: `dashboard`, `cases`). */
   groupName: string;
-  /** Stack version where the action was introduced (for example: `9.5.0`). */
+  /** Stack version where the action was introduced (for example: `9.5`). */
   versionAddedAt: string;
 }
 
@@ -33,7 +33,7 @@ export const userActivityActions = {
       '[THIS IS AN EXAMPLE AND WILL BE REMOVED LATER] User created a dashboard in Kibana.',
     ownerTeam: '@elastic/kibana-core',
     groupName: 'Dashboards',
-    versionAddedAt: '9.4.0',
+    versionAddedAt: '9.4',
   },
 } as const satisfies Record<string, UserActivityActionDefinition>;
 
@@ -60,14 +60,14 @@ export const removedUserActivityActions = {
       '[THIS IS AN EXAMPLE AND WILL BE REMOVED LATER] User updated an alerting rule schedule.',
     ownerTeam: '@elastic/kibana-core',
     groupName: 'Rules',
-    versionAddedAt: '9.0.0',
-    versionRemovedAt: '9.3.0',
+    versionAddedAt: '9.0',
+    versionRemovedAt: '9.3',
   },
   dashboard_duplicated: {
     description: '[THIS IS AN EXAMPLE AND WILL BE REMOVED LATER] User duplicated a dashboard.',
     ownerTeam: '@elastic/kibana-core',
     groupName: 'Dashboards',
-    versionAddedAt: '8.4.0',
-    versionRemovedAt: '8.10.0',
+    versionAddedAt: '8.4',
+    versionRemovedAt: '8.10',
   },
 } as const satisfies Record<string, RemovedUserActivityActionDefinition>;

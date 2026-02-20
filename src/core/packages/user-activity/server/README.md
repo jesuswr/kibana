@@ -74,7 +74,7 @@ The following context is automatically added to every log entry by Kibana's HTTP
 | Field | Description |
 |-------|-------------|
 | `user.id` | User's profile UID |
-| `user.username` | Username |
+| `user.name` | Username |
 | `user.email` | Email address |
 | `user.roles` | Array of roles |
 | `client.ip` | IP address |

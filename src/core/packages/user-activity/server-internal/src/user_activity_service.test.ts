@@ -81,7 +81,7 @@ describe('UserActivityService', () => {
 
     it('generates default message when not provided', () => {
       service.setInjectedContext({
-        user: { username: 'test_user' },
+        user: { name: 'test_user' },
       });
 
       service.trackUserAction({
@@ -98,7 +98,7 @@ describe('UserActivityService', () => {
       service.setInjectedContext({
         user: {
           id: 'jesuswr',
-          username: 'jesuswr',
+          name: 'jesuswr',
           email: 'jesuswr@test.com',
           roles: ['superuser', 'normaluser', 'magicknight'],
         },
@@ -116,7 +116,7 @@ describe('UserActivityService', () => {
       expect(logCalls[0][1]).toMatchObject({
         user: {
           id: 'jesuswr',
-          username: 'jesuswr',
+          name: 'jesuswr',
           email: 'jesuswr@test.com',
           roles: ['superuser', 'normaluser', 'magicknight'],
         },
@@ -151,7 +151,7 @@ describe('UserActivityService', () => {
 
     it('sets user context', () => {
       service.setInjectedContext({
-        user: { id: 'user-1', username: 'testuser' },
+        user: { id: 'user-1', name: 'testuser' },
         client: { ip: '127.0.0.1', address: '127.0.0.1' },
       });
 
@@ -163,7 +163,7 @@ describe('UserActivityService', () => {
 
       const logCalls = loggingSystemMock.collect(core.logger).info;
       expect(logCalls[0][1]).toMatchObject({
-        user: { id: 'user-1', username: 'testuser' },
+        user: { id: 'user-1', name: 'testuser' },
         client: { ip: '127.0.0.1', address: '127.0.0.1' },
       });
     });
@@ -210,7 +210,7 @@ describe('UserActivityService', () => {
       });
 
       service.setInjectedContext({
-        user: { username: 'testuser' },
+        user: { name: 'testuser' },
         session: { id: 'session-1' },
       });
 
@@ -226,7 +226,7 @@ describe('UserActivityService', () => {
 
       const logCalls = loggingSystemMock.collect(core.logger).info;
       expect(logCalls[0][1]).toMatchObject({
-        user: { id: 'user-1', username: 'testuser' },
+        user: { id: 'user-1', name: 'testuser' },
         session: { id: 'session-1' },
         kibana: { space: { id: 'space-1' } },
       });
@@ -235,7 +235,7 @@ describe('UserActivityService', () => {
     it('maintains context isolation across async operations', async () => {
       const chainA = Promise.resolve().then(async () => {
         service.setInjectedContext({
-          user: { username: 'user-a' },
+          user: { name: 'user-a' },
           session: { id: 'session-a' },
         });
         await timer(100);
@@ -248,7 +248,7 @@ describe('UserActivityService', () => {
 
       const chainB = Promise.resolve().then(async () => {
         service.setInjectedContext({
-          user: { username: 'user-b' },
+          user: { name: 'user-b' },
           session: { id: 'session-b' },
         });
         await timer(10);
@@ -264,12 +264,12 @@ describe('UserActivityService', () => {
       const logCalls = loggingSystemMock.collect(core.logger).info;
       // B finishes first due to shorter timer
       expect(logCalls[0][1]).toMatchObject({
-        user: { username: 'user-b' },
+        user: { name: 'user-b' },
         session: { id: 'session-b' },
       });
       // A finishes second but keeps its values
       expect(logCalls[1][1]).toMatchObject({
-        user: { username: 'user-a' },
+        user: { name: 'user-a' },
         session: { id: 'session-a' },
       });
     });
@@ -278,7 +278,7 @@ describe('UserActivityService', () => {
       await Promise.resolve().then(async () => {
         // Parent sets initial context
         service.setInjectedContext({
-          user: { username: 'parent-user' },
+          user: { name: 'parent-user' },
           session: { id: 'parent-session' },
           kibana: { space: { id: 'parent-space' } },
         });
@@ -303,7 +303,7 @@ describe('UserActivityService', () => {
       const logCalls = loggingSystemMock.collect(core.logger).info;
       // Should have both parent's context and child's additions
       expect(logCalls[0][1]).toMatchObject({
-        user: { username: 'parent-user' },
+        user: { name: 'parent-user' },
         session: { id: 'parent-session' },
         kibana: { space: { id: 'child-space' } },
       });

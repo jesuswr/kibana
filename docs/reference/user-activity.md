@@ -83,7 +83,7 @@ User activity events are written as JSON log entries. When using the JSON loggin
 | **Field** | **Description** |
 | --- | --- |
 | `user.id` | Unique identifier of the user. |
-| `user.username` | Username of the user. |
+| `user.name` | Username of the user. |
 | `user.email` | Email address of the user at the time of the action. |
 | `user.roles` | Kibana roles of the user at the time of the action. |
 

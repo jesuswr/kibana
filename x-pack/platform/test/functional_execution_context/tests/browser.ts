@@ -7,7 +7,12 @@
 
 import type { Ecs, KibanaExecutionContext } from '@kbn/core/server';
 import type { FtrProviderContext } from '../ftr_provider_context';
-import { assertLogContains, isExecutionContextLog, readLogFile } from '../test_utils';
+import {
+  assertLogContains,
+  hasStringRequestId,
+  isExecutionContextLog,
+  readLogFile,
+} from '../test_utils';
 
 export default function ({ getService, getPageObjects }: FtrProviderContext) {
   const PageObjects = getPageObjects(['common', 'dashboard', 'header', 'home', 'timePicker']);
@@ -69,6 +74,13 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
           });
       }
 
+      function checkExecutionContextEntryAndRequestId(
+        expectedExecutionContext: KibanaExecutionContext
+      ) {
+        const executionContextCheck = checkExecutionContextEntry(expectedExecutionContext);
+        return (record: Ecs) => executionContextCheck(record) && hasStringRequestId(record);
+      }
+
       describe('propagates context for Discover', () => {
         it('propagates to Elasticsearch via "x-opaque-id" header', async () => {
           await logContains({
@@ -81,7 +93,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
         it('propagates to Kibana logs (fetch documents)', async () => {
           await logContains({
             description: 'execution context propagates to Kibana logs (fetch documents)',
-            predicate: checkExecutionContextEntry({
+            predicate: checkExecutionContextEntryAndRequestId({
               type: 'application',
               name: 'discover',
               url: '/app/discover',
@@ -97,7 +109,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
           await logContains({
             description:
               'execution context propagates to Kibana logs (fetch chart data and total hits)',
-            predicate: checkExecutionContextEntry({
+            predicate: checkExecutionContextEntryAndRequestId({
               type: 'application',
               name: 'discover',
               url: '/app/discover',
@@ -172,6 +184,13 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
             isExecutionContextLog(record, expectedExecutionContext.child));
       }
 
+      function checkExecutionContextEntryAndRequestId(
+        expectedExecutionContext: KibanaExecutionContext
+      ) {
+        const executionContextCheck = checkExecutionContextEntry(expectedExecutionContext);
+        return (record: Ecs) => executionContextCheck(record) && hasStringRequestId(record);
+      }
+
       describe('propagates context for Lens visualizations', () => {
         describe('lnsXY', () => {
           it('propagates to Elasticsearch via "x-opaque-id" header', async () => {
@@ -184,7 +203,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
           it('propagates to Kibana logs', async () => {
             await logContains({
               description: 'execution context propagates to Kibana logs',
-              predicate: checkExecutionContextEntry({
+              predicate: checkExecutionContextEntryAndRequestId({
                 type: 'dashboard',
                 name: 'dashboards',
                 url: '/app/dashboards',
@@ -215,7 +234,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
           it('propagates to Kibana logs', async () => {
             await logContains({
               description: 'execution context propagates to Kibana logs',
-              predicate: checkExecutionContextEntry({
+              predicate: checkExecutionContextEntryAndRequestId({
                 type: 'dashboard',
                 name: 'dashboards',
                 url: '/app/dashboards',
@@ -248,7 +267,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
           it('propagates to Kibana logs', async () => {
             await logContains({
               description: 'execution context propagates to Kibana logs',
-              predicate: checkExecutionContextEntry({
+              predicate: checkExecutionContextEntryAndRequestId({
                 type: 'dashboard',
                 name: 'dashboards',
                 url: '/app/dashboards',
@@ -279,7 +298,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
           it('propagates to Kibana logs', async () => {
             await logContains({
               description: 'execution context propagates to Kibana logs',
-              predicate: checkExecutionContextEntry({
+              predicate: checkExecutionContextEntryAndRequestId({
                 type: 'dashboard',
                 name: 'dashboards',
                 url: '/app/dashboards',
@@ -313,7 +332,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
         it('propagates to Kibana logs', async () => {
           await logContains({
             description: 'execution context propagates to Kibana logs',
-            predicate: checkExecutionContextEntry({
+            predicate: checkExecutionContextEntryAndRequestId({
               type: 'dashboard',
               name: 'dashboards',
               url: '/app/dashboards',
@@ -344,7 +363,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
         it('propagates to Kibana logs', async () => {
           await logContains({
             description: 'execution context propagates to Kibana logs',
-            predicate: checkExecutionContextEntry({
+            predicate: checkExecutionContextEntryAndRequestId({
               name: 'dashboards',
               url: '/app/dashboards',
               type: 'application',
@@ -376,7 +395,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
         it('propagates to Kibana logs', async () => {
           await logContains({
             description: 'execution context propagates to Kibana logs',
-            predicate: checkExecutionContextEntry({
+            predicate: checkExecutionContextEntryAndRequestId({
               name: 'dashboards',
               url: '/app/dashboards',
               type: 'application',
@@ -413,7 +432,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
         it('propagates to Kibana logs', async () => {
           await logContains({
             description: 'execution context propagates to Kibana logs',
-            predicate: checkExecutionContextEntry({
+            predicate: checkExecutionContextEntryAndRequestId({
               name: 'dashboards',
               url: '/app/dashboards',
               type: 'application',
@@ -450,7 +469,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
         it('propagates to Kibana logs', async () => {
           await logContains({
             description: 'execution context propagates to Kibana logs',
-            predicate: checkExecutionContextEntry({
+            predicate: checkExecutionContextEntryAndRequestId({
               type: 'application',
               name: 'dashboards',
               url: '/app/dashboards',

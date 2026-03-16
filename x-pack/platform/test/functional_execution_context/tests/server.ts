@@ -11,7 +11,13 @@ import {
 } from '@kbn/core-http-common';
 import expect from '@kbn/expect';
 import type { FtrProviderContext } from '../ftr_provider_context';
-import { readLogFile, assertLogContains, isExecutionContextLog, ANY } from '../test_utils';
+import {
+  readLogFile,
+  assertLogContains,
+  isExecutionContextLog,
+  hasStringRequestId,
+  ANY,
+} from '../test_utils';
 
 function delay(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -108,7 +114,7 @@ export default function ({ getService }: FtrProviderContext) {
               id: alertId,
               description: 'execute [test.executionContext] with name [abc] in [default] namespace',
             },
-          }),
+          }) && hasStringRequestId(record),
         logs,
       });
     });
@@ -145,7 +151,7 @@ export default function ({ getService }: FtrProviderContext) {
             name: 'collector.fetch',
             id: 'application_usage',
             description: 'Fetch method in the Collector "application_usage"',
-          }),
+          }) && hasStringRequestId(record),
         logs,
       });
     });
@@ -173,7 +179,7 @@ export default function ({ getService }: FtrProviderContext) {
             name: 'status check',
             id: 'test-123',
             space: 'default',
-          }),
+          }) && hasStringRequestId(record),
         logs,
       });
     });
@@ -201,7 +207,7 @@ export default function ({ getService }: FtrProviderContext) {
             name: 'api call',
             id: 'test-456',
             space: 'myspace',
-          }),
+          }) && hasStringRequestId(record),
         logs,
       });
     });

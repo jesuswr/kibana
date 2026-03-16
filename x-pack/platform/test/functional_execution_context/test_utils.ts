@@ -16,7 +16,17 @@ export function getExecutionContextFromLogRecord(record: Ecs | undefined): Kiban
   if (record?.log?.logger !== 'execution_context' || !record?.message) {
     throw new Error(`The record is not an entry of execution context`);
   }
-  return JSON.parse(record.message);
+  const { requestId, ...context } = JSON.parse(record.message);
+  return context;
+}
+
+export function hasStringRequestId(record: Ecs | undefined): boolean {
+  try {
+    const { requestId } = JSON.parse(record?.message ?? '');
+    return typeof requestId === 'string';
+  } catch {
+    return false;
+  }
 }
 
 export function isExecutionContextLog(

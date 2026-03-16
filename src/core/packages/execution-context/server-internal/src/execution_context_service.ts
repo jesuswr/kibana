@@ -121,7 +121,9 @@ export class ExecutionContextService
     // therefore if we wrapped request handler in asyncLocalStorage.run(), we would lose context in other lifecycles.
     this.contextStore.enterWith(contextContainer);
     if (this.log.isLevelEnabled('debug')) {
-      this.log.debug(JSON.stringify(contextContainer));
+      this.log.debug(
+        JSON.stringify({ ...contextContainer.toJSON(), requestId: this.getRequestId() })
+      );
     }
   }
 
@@ -135,7 +137,9 @@ export class ExecutionContextService
     const parent = this.contextStore.getStore();
     const contextContainer = new ExecutionContextContainer(context, parent);
     if (this.log.isLevelEnabled('debug')) {
-      this.log.debug(JSON.stringify(contextContainer));
+      this.log.debug(
+        JSON.stringify({ ...contextContainer.toJSON(), requestId: this.getRequestId() })
+      );
     }
 
     return this.contextStore.run(contextContainer, fn);
@@ -151,10 +155,14 @@ export class ExecutionContextService
     return this.contextStore.getStore();
   }
 
+  // requestId may not be present in the case of FakeRequest
+  private getRequestId(): string {
+    return this.requestIdStore.getStore()?.requestId ?? 'unknownId';
+  }
+
   private getAsHeader(): string | undefined {
     if (!this.enabled) return;
-    // requestId may not be present in the case of FakeRequest
-    const requestId = this.requestIdStore.getStore()?.requestId ?? 'unknownId';
+    const requestId = this.getRequestId();
     const executionContext = this.contextStore.getStore()?.toString();
     const executionContextStr = executionContext ? `;kibana:${executionContext}` : '';
 

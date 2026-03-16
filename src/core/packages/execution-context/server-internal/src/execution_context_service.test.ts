@@ -111,7 +111,24 @@ describe('ExecutionContextService', () => {
         expect(loggingSystemMock.collect(core.logger).debug).toMatchInlineSnapshot(`
           Array [
             Array [
-              "{\\"type\\":\\"type-a\\",\\"name\\":\\"name-a\\",\\"id\\":\\"id-a\\",\\"description\\":\\"description-a\\"}",
+              "{\\"type\\":\\"type-a\\",\\"name\\":\\"name-a\\",\\"id\\":\\"id-a\\",\\"description\\":\\"description-a\\",\\"requestId\\":\\"unknownId\\"}",
+            ],
+          ]
+        `);
+      });
+
+      it('includes requestId in the log when "set" is called', async () => {
+        service.setRequestId('abc');
+        service.set({
+          type: 'type-a',
+          name: 'name-a',
+          id: 'id-a',
+          description: 'description-a',
+        });
+        expect(loggingSystemMock.collect(core.logger).debug).toMatchInlineSnapshot(`
+          Array [
+            Array [
+              "{\\"type\\":\\"type-a\\",\\"name\\":\\"name-a\\",\\"id\\":\\"id-a\\",\\"description\\":\\"description-a\\",\\"requestId\\":\\"abc\\"}",
             ],
           ]
         `);
@@ -351,12 +368,32 @@ describe('ExecutionContextService', () => {
           () => null
         );
         expect(loggingSystemMock.collect(core.logger).debug).toMatchInlineSnapshot(`
-                  Array [
-                    Array [
-                      "{\\"type\\":\\"type-a\\",\\"name\\":\\"name-a\\",\\"id\\":\\"id-a\\",\\"description\\":\\"description-a\\"}",
-                    ],
-                  ]
-              `);
+          Array [
+            Array [
+              "{\\"type\\":\\"type-a\\",\\"name\\":\\"name-a\\",\\"id\\":\\"id-a\\",\\"description\\":\\"description-a\\",\\"requestId\\":\\"unknownId\\"}",
+            ],
+          ]
+        `);
+      });
+
+      it('includes requestId in the log when "withContext" is called', async () => {
+        service.setRequestId('abc');
+        service.withContext(
+          {
+            type: 'type-a',
+            name: 'name-a',
+            id: 'id-a',
+            description: 'description-a',
+          },
+          () => null
+        );
+        expect(loggingSystemMock.collect(core.logger).debug).toMatchInlineSnapshot(`
+          Array [
+            Array [
+              "{\\"type\\":\\"type-a\\",\\"name\\":\\"name-a\\",\\"id\\":\\"id-a\\",\\"description\\":\\"description-a\\",\\"requestId\\":\\"abc\\"}",
+            ],
+          ]
+        `);
       });
 
       it('can be disabled', async () => {

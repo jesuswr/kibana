@@ -7,7 +7,7 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { getZodObjectFromProperty } from './get_zod_object_from_property';
 
 describe('getZodObjectFromProperty', () => {

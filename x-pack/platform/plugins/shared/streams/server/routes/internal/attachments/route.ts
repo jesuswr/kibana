@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { ATTACHMENT_SUGGESTIONS_LIMIT, STREAMS_API_PRIVILEGES } from '../../../../common/constants';
 import { createServerRoute } from '../../create_server_route';
 import type { Attachment } from '../../../lib/streams/attachments/types';

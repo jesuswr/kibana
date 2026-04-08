@@ -9,7 +9,7 @@
 
 import { parseDocument } from 'yaml';
 import type { PublicTriggerDefinition } from '@kbn/workflows-extensions/public';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { getRegisteredTriggerConditionDefinition } from './get_registered_trigger_condition_definition';
 import { isCursorInKqlTriggerConditionField } from './is_cursor_in_kql_trigger_condition_field';
 import { triggerSchemas } from '../../../../trigger_schemas';

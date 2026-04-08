@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { schema } from '@kbn/config-schema';
 
 import type { SettingsConfig } from '../../../common/settings/types';

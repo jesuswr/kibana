@@ -10,7 +10,7 @@ import { validateQuery } from '@kbn/esql-language';
 import { i18n } from '@kbn/i18n';
 
 import { EsqlToolFieldType, ToolType } from '@kbn/agent-builder-common/tools';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { sharedValidationSchemas } from './shared_tool_validation';
 import { EsqlParamSource } from '../types/tool_form_types';
 

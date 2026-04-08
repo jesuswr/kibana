@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 const LicenseType = z.enum(['basic', 'standard', 'gold', 'platinum', 'enterprise', 'trial']);
 

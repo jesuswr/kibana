@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 const startDescription =
   'The start time of the query window using Elasticsearch date math. Examples: "now-24h", "now-15m".';

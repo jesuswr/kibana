@@ -7,7 +7,7 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import type { ZodError, z } from '@kbn/zod/v4';
+import type { ZodError, z } from '@kbn/zod';
 
 const MAX_ERRORS = 5;
 

@@ -11,7 +11,7 @@ import { i18n } from '@kbn/i18n';
 import type { monaco } from '@kbn/monaco';
 import { isTriggerType } from '@kbn/workflows';
 import type { PublicTriggerDefinition } from '@kbn/workflows-extensions/public';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import type { EventSchemaPropertyInfo } from './event_schema_properties';
 import { getEventSchemaProperties } from './event_schema_properties';
 import { getStabilityNote } from '../get_stability_note';

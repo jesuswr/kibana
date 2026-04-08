@@ -12,7 +12,7 @@ import {
   type NormalizableFieldSchema,
   normalizeFieldsToJsonSchema,
 } from '@kbn/workflows/spec/lib/field_conversion';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 // Generic interface for validation errors
 export interface WorkflowFieldValidationError {

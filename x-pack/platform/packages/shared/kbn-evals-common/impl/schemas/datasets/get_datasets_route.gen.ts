@@ -14,7 +14,7 @@
  *   version: 1
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 export type DatasetSummary = z.infer<typeof DatasetSummary>;
 export const DatasetSummary = z.object({

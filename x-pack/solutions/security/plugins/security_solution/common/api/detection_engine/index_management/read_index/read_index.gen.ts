@@ -14,7 +14,7 @@
  *   version: 2023-10-31
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 export type ReadAlertsIndexResponse = z.infer<typeof ReadAlertsIndexResponse>;
 export const ReadAlertsIndexResponse = z.object({

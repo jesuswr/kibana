@@ -7,7 +7,7 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { timezoneNames } from './timezone_names';
 
 // Minimum interval is 1 minute (60s). Seconds are allowed only for values ≥ 60.

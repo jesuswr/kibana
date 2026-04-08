@@ -4,7 +4,7 @@
  * 2.0; you may not use this file except in compliance with the Elastic License
  * 2.0.
  */
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { InferenceConnector } from '@kbn/inference-common';
 import { createGenAiSettingsServerRoute } from '../create_gen_ai_settings_server_route';
 

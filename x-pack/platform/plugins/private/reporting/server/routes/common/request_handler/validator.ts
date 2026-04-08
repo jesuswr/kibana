@@ -6,7 +6,7 @@
  */
 
 import moment from 'moment-timezone';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { load } from 'cheerio';
 import type { BaseParams } from '@kbn/reporting-common/types';
 

@@ -18,7 +18,7 @@ import {
 } from '@kbn/workflows';
 import { buildFieldsZodValidator } from '@kbn/workflows/spec/lib/build_fields_zod_validator';
 import { normalizeFieldsToJsonSchema } from '@kbn/workflows/spec/lib/field_conversion';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { inferZodType } from '../../../../common/lib/zod';
 import { triggerSchemas } from '../../../trigger_schemas';
 

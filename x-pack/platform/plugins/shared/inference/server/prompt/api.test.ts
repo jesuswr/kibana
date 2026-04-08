@@ -20,7 +20,7 @@ import {
   createPrompt,
   ChatCompletionEventType,
 } from '@kbn/inference-common';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 import type {
   ChatCompleteApiWithCallback,

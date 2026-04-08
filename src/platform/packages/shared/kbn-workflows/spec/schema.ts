@@ -7,7 +7,7 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { convertLegacyFieldsToJsonSchema } from './lib/field_conversion';
 import { JsonModelSchema } from './schema/common/json_model_schema';
 import { TriggerSchema } from './schema/triggers';

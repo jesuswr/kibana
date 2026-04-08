@@ -7,7 +7,7 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 const options: Parameters<typeof z.toJSONSchema>[1] = {
   target: 'draft-7',

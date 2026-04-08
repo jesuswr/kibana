@@ -10,7 +10,7 @@ import {
   type SignificantEventsQueriesGenerationResult,
   type SignificantEventsQueriesGenerationTaskResult,
 } from '@kbn/streams-schema';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { readSignificantEventsFromAlertsIndices } from '../../../../lib/sig_events/read_significant_events_from_alerts_indices';
 import { STREAMS_API_PRIVILEGES } from '../../../../../common/constants';
 import { searchModeSchema } from '../../../utils/search_mode';

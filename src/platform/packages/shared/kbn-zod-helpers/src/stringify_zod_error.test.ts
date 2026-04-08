@@ -8,7 +8,7 @@
  */
 
 import assert from 'assert';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { stringifyZodError } from './stringify_zod_error';
 
 describe('stringifyZodError', () => {

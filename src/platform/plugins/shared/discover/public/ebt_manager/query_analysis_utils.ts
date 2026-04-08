@@ -8,7 +8,7 @@
  */
 
 import type { Request as InspectedRequest } from '@kbn/inspector-plugin/public';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 /**
  * Analysis result for multi_match query types found in ES query DSL.

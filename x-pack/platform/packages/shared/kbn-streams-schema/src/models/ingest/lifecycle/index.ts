@@ -5,8 +5,8 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
-import { NonEmptyString } from '@kbn/zod-helpers/v4';
+import { z } from '@kbn/zod';
+import { NonEmptyString } from '@kbn/zod-helpers';
 import { createIsNarrowSchema } from '../../../shared/type_guards';
 
 export interface IngestStreamLifecycleDSL {

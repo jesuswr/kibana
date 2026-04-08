@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { __IntlProvider as IntlProvider } from '@kbn/i18n-react';
 import { EuiButton } from '@elastic/eui';
 import { Form, useForm } from '@kbn/es-ui-shared-plugin/static/forms/hook_form_lib';

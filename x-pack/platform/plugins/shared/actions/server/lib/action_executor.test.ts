@@ -5,7 +5,7 @@
  * 2.0.
  */
 import type { KibanaRequest } from '@kbn/core/server';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { ActionExecutor } from './action_executor';
 import { actionTypeRegistryMock } from '../action_type_registry.mock';
 import { encryptedSavedObjectsMock } from '@kbn/encrypted-saved-objects-plugin/server/mocks';

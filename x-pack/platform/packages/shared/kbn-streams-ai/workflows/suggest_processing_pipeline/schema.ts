@@ -6,7 +6,7 @@
  */
 
 import type { OpenAPIV3 } from 'openapi-types';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import {
   conditionSchema,
   filterConditionSchema,
@@ -27,7 +27,7 @@ import {
   renameProcessorSchema,
   convertProcessorSchema,
 } from '@kbn/streamlang';
-import { NonEmptyString } from '@kbn/zod-helpers/v4';
+import { NonEmptyString } from '@kbn/zod-helpers';
 
 export const pipelineDefinitionSchema = z
   .object({

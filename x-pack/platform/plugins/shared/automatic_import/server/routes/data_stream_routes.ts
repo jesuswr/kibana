@@ -7,7 +7,7 @@
 
 import type { IRouter } from '@kbn/core/server';
 import type { Logger } from '@kbn/logging';
-import { buildRouteValidationWithZod } from '@kbn/zod-helpers/v4';
+import { buildRouteValidationWithZod } from '@kbn/zod-helpers';
 import type { AutomaticImportPluginRequestHandlerContext } from '../types';
 import { buildAutomaticImportResponse } from './utils';
 import { withAvailability } from './with_availability';

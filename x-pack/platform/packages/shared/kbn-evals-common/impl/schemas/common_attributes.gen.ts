@@ -14,7 +14,7 @@
  *   version: 1
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 export type Model = z.infer<typeof Model>;
 export const Model = z.object({

@@ -5,8 +5,8 @@
  * 2.0.
  */
 
-import { buildRouteValidationWithZod } from '@kbn/zod-helpers/v4';
-import { z } from '@kbn/zod/v4';
+import { buildRouteValidationWithZod } from '@kbn/zod-helpers';
+import { z } from '@kbn/zod';
 import type { IKibanaResponse } from '@kbn/core-http-server';
 import { API_VERSIONS, ENTITY_STORE_ROUTES } from '../../../../common';
 import { RESOLUTION_ENTITY_STORE_PERMISSIONS } from '../../constants';

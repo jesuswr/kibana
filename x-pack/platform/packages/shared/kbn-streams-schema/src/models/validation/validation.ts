@@ -5,8 +5,8 @@
  * 2.0.
  */
 
-import type { z } from '@kbn/zod/v4';
-import { DeepStrict } from '@kbn/zod-helpers/v4';
+import type { z } from '@kbn/zod';
+import { DeepStrict } from '@kbn/zod-helpers';
 
 export interface Validation<TLeft = unknown, TRight extends TLeft = TLeft> {
   is: (value: TLeft) => value is TRight;

@@ -7,9 +7,9 @@
 
  {{> disclaimer}}
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 {{#if useZodHelpers}}
-import { isValidDateMath, isNonEmptyString, ArrayFromString, BooleanFromString } from '@kbn/zod-helpers/v4';
+import { isValidDateMath, isNonEmptyString, ArrayFromString, BooleanFromString } from '@kbn/zod-helpers';
 {{/if}}
 
 {{#each imports}}

@@ -12,7 +12,7 @@
  * and will be deprecated once connectors will expose their schemas
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 // HTTP connector parameter schema
 export const HttpParamsSchema = z.object({

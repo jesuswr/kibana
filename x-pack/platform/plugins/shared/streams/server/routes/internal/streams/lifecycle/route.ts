@@ -5,8 +5,8 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
-import { BooleanFromString } from '@kbn/zod-helpers/v4';
+import { z } from '@kbn/zod';
+import { BooleanFromString } from '@kbn/zod-helpers';
 import type { IndicesGetResponse } from '@elastic/elasticsearch/lib/api/types';
 import type { IScopedClusterClient } from '@kbn/core/server';
 import { Streams, isIlmLifecycle, type IlmPolicyWithUsage } from '@kbn/streams-schema';

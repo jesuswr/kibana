@@ -30,7 +30,7 @@ describe('registerGetStepDefinitionsTool', () => {
   } as any;
 
   beforeEach(async () => {
-    const { z } = await import('@kbn/zod/v4');
+    const { z } = await import('@kbn/zod');
     mockGetAllConnectors.mockReturnValue([
       {
         type: 'kibana.createCase',

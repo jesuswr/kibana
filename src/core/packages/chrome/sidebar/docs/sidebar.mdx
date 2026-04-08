@@ -21,7 +21,7 @@ Register apps during the plugin `setup()` phase. Each app provides an async comp
 Before registering, confirm the `appId` is allowed. Valid app ids are restricted and new ones should be added only after discussing with the UX team.
 
 ```tsx
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { createSidebarStore } from '@kbn/core-chrome-sidebar';
 
 const mySidebarStore = createSidebarStore({
@@ -153,7 +153,7 @@ Stores provide a persisted, validated state layer with custom actions:
 ### Creating a store
 
 ```tsx
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { createSidebarStore } from '@kbn/core-chrome-sidebar';
 
 const store = createSidebarStore({

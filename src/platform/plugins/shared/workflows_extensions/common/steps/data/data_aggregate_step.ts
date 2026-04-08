@@ -8,7 +8,7 @@
  */
 
 import { StepCategory } from '@kbn/workflows';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { CommonStepDefinition } from '../../step_registry/types';
 
 export const DataAggregateStepTypeId = 'data.aggregate' as const;

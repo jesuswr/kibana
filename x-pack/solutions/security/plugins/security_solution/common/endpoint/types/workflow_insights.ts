@@ -6,7 +6,7 @@
  */
 
 import type { Moment } from 'moment';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 import type { ExceptionListItemSchema } from '@kbn/securitysolution-io-ts-list-types';
 

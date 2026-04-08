@@ -26,8 +26,8 @@ import type {
   MappingVersionProperty,
   MappingWildcardProperty,
 } from '@elastic/elasticsearch/lib/api/types';
-import { z } from '@kbn/zod/v4';
-import { NonEmptyString } from '@kbn/zod-helpers/v4';
+import { z } from '@kbn/zod';
+import { NonEmptyString } from '@kbn/zod-helpers';
 
 import { recursiveRecord } from '../shared/record_types';
 

@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { EngineDescriptor, LogExtractionConfig, HistorySnapshotState } from './saved_objects';
 import type { EntityStoreStatus } from '../../common';
 import type { ENTITY_STORE_STATUS } from './constants';

@@ -7,7 +7,7 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { CommonTriggerDefinition } from '@kbn/workflows-extensions/common';
 
 export const CUSTOM_TRIGGER_ID = 'example.customTrigger' as const;

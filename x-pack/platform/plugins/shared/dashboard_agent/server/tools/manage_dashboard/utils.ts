@@ -12,7 +12,7 @@ import { DASHBOARD_ATTACHMENT_TYPE, isDashboardAttachment } from '@kbn/dashboard
 import type { Logger } from '@kbn/core/server';
 import { type AttachmentVersion, getLatestVersion } from '@kbn/agent-builder-common/attachments';
 import type { LensApiSchemaType } from '@kbn/lens-embeddable-utils';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { toEmbeddablePanel, type VisualizationContent } from '@kbn/dashboard-agent-common';
 import { LENS_EMBEDDABLE_TYPE } from '@kbn/lens-common';
 

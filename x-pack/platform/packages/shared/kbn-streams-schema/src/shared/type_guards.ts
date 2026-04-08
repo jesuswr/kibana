@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 
 /**
  * Type guard to check if a value is a non-null object (record).

@@ -14,7 +14,7 @@ import type { FetcherConfigSchema } from '@kbn/workflows';
 import { buildKibanaRequest } from '@kbn/workflows';
 import type { KibanaGraphNode } from '@kbn/workflows/graph/types';
 import { getOutboundEventChainHeaders } from '@kbn/workflows-extensions/server';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import { ResponseSizeLimitError } from './errors';
 import type { BaseStep, RunStepResult } from './node_implementation';
 import { BaseAtomicNodeImplementation } from './node_implementation';

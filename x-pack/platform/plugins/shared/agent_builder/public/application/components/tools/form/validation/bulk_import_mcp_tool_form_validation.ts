@@ -12,7 +12,7 @@ import {
 } from '@kbn/agent-builder-common/base/namespaces';
 import { toolIdRegexp, toolIdMaxLength } from '@kbn/agent-builder-common/tools';
 import { useQueryClient } from '@kbn/react-query';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { useAgentBuilderServices } from '../../../../hooks/use_agent_builder_service';
 import { queryKeys } from '../../../../query_keys';
 

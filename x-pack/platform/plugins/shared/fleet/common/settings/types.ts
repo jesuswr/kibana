@@ -6,7 +6,7 @@
  */
 
 import type React from 'react';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 
 export type SettingsSection = 'AGENT_POLICY_ADVANCED_SETTINGS';
 

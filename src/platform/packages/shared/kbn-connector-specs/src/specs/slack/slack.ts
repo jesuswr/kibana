@@ -8,7 +8,7 @@
  */
 
 import { i18n } from '@kbn/i18n';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { AxiosError, AxiosResponse } from 'axios';
 import type { ConnectorSpec, ActionContext } from '../../connector_spec';
 import type { SlackAssistantSearchContextResponse, SlackErrorFields } from './types';

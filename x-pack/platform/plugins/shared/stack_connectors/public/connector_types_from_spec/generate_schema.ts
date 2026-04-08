@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { AuthMode, ConnectorSpec } from '@kbn/connector-specs';
 import { generateSecretsSchemaFromSpec } from '@kbn/connector-specs/src/lib';
 

@@ -9,7 +9,7 @@
 
 import { DynamicStepContextSchema, ForEachContextSchema } from '@kbn/workflows';
 import { expectZodSchemaEqual } from '@kbn/workflows/common/utils/zod/test_utils/expect_zod_schema_equal';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { getForeachStateSchema } from './get_foreach_state_schema';
 
 describe('getForeachStateSchema', () => {

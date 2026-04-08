@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { castArray, isPlainObject, forEach, unset } from 'lodash';
 import type { CompatibleJSONSchema } from '@kbn/observability-ai-assistant-plugin/common/functions/types';
 

@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { SEARCH_MODES } from '../../../common/queries';
 
 export const searchModeSchema = z

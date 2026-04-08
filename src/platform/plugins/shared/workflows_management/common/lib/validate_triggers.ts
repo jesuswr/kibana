@@ -11,7 +11,7 @@ import { i18n } from '@kbn/i18n';
 import type { WorkflowYaml } from '@kbn/workflows';
 import { isTriggerType, validateKqlAgainstSchema } from '@kbn/workflows';
 import { EVENT_FIELD_PREFIX } from '@kbn/workflows-extensions/common';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 
 export interface TriggerDefinitionForConditionValidation {
   eventSchema: z.ZodType;

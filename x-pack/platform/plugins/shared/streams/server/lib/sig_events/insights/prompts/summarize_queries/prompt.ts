@@ -6,7 +6,7 @@
  */
 
 import { createPrompt } from '@kbn/inference-common';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import systemPromptTemplate from './system_prompt.text';
 import userPromptTemplate from './user_prompt.text';
 import { insightsSchema, SUBMIT_INSIGHTS_TOOL_NAME } from '../../client/insight_tool';

@@ -7,7 +7,7 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import { ES_INVALID_SAMPLE_STEPS, ES_VALID_SAMPLE_STEPS } from './samples';
 import { generateYamlSchemaFromConnectors, getElasticsearchConnectors } from '../..';
 

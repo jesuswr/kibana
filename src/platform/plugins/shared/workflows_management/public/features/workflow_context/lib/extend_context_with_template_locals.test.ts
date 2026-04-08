@@ -10,7 +10,7 @@
 import { type Document, parseDocument } from 'yaml';
 import { DynamicStepContextSchema } from '@kbn/workflows';
 import { getShape } from '@kbn/workflows/common/utils/zod';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import {
   extendContextWithTemplateLocals,
   getContextSchemaWithTemplateLocals,

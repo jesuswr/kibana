@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { LogExtractionInstallSchema, validateKql } from './log_extraction_validator';
 
 const TestSchema = z.object({ logExtraction: LogExtractionInstallSchema });

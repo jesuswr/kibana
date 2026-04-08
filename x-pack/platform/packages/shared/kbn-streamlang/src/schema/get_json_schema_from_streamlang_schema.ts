@@ -8,7 +8,7 @@
 // NOTE: This file uses Zod v4's native z.toJSONSchema() for JSON Schema conversion.
 // The fixup pipeline enforces strict additionalProperties and enhances the schema
 // with editor-friendly metadata (titles, snippets, etc.) for Monaco YAML.
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { i18n } from '@kbn/i18n';
 import { ACTION_METADATA_MAP } from '../actions/action_metadata';
 import type { StreamType } from '../../types/streamlang';

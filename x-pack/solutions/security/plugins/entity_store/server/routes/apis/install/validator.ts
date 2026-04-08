@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { EntityType, ALL_ENTITY_TYPES } from '../../../../common/domain/definitions/entity_schema';
 import { HistorySnapshotBodyParams } from '../../constants';
 import { parseDurationToMs } from '../../../infra/time';

@@ -6,8 +6,8 @@
  */
 
 import type { IndicesDataStream } from '@elastic/elasticsearch/lib/api/types';
-import { z } from '@kbn/zod/v4';
-import { NonEmptyString } from '@kbn/zod-helpers/v4';
+import { z } from '@kbn/zod';
+import { NonEmptyString } from '@kbn/zod-helpers';
 import { isSchema } from '../../../shared/type_guards';
 
 export interface FailureStoreStatsResponse {

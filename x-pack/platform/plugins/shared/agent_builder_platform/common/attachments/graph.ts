@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { Attachment } from '@kbn/agent-builder-common/attachments';
 
 export const GRAPH_ATTACHMENT_TYPE = 'graph' as const;

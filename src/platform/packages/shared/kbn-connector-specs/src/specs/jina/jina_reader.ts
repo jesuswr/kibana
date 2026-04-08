@@ -13,7 +13,7 @@
  * MVP implementation focusing on core reader features.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { i18n } from '@kbn/i18n';
 import { UISchemas, type ConnectorSpec } from '../../connector_spec';
 

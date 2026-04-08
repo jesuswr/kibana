@@ -14,7 +14,7 @@
  *   version: 0.1
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 /**
  * An array containing users that are assigned to the case.

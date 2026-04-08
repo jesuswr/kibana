@@ -26,7 +26,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { i18n } from '@kbn/i18n';
 import { FormattedMessage } from '@kbn/i18n-react';
 import type { WorkflowGraph } from '@kbn/workflows/graph';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { ENABLED_STEP_TRIGGER_TABS } from './constants';
 import { NOT_READY_SENTINEL, StepExecuteHistoricalForm } from './step_execute_historical_form';
 import { StepExecuteManualForm } from './step_execute_manual_form';

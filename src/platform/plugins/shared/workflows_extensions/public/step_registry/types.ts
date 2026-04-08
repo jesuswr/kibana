@@ -9,7 +9,7 @@
 
 import type { DotKeysOf, DotObject } from '@kbn/utility-types';
 import type { StepPropertyHandler } from '@kbn/workflows';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import type { CommonStepDefinition } from '../../common';
 
 /**

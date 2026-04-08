@@ -5,8 +5,8 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
-import { fromJSONSchema } from '@kbn/zod/v4/from_json_schema';
+import { z } from '@kbn/zod';
+import { fromJSONSchema } from '@kbn/zod/from_json_schema';
 import { compact, keyBy } from 'lodash';
 import type { Logger } from '@kbn/logging';
 import { createToolValidationError } from '@kbn/inference-plugin/common/chat_complete/errors';

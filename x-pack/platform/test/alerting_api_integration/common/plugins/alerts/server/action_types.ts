@@ -6,7 +6,7 @@
  */
 
 import type { CoreSetup } from '@kbn/core/server';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { ActionType } from '@kbn/actions-plugin/server';
 import type { FixtureStartDeps, FixtureSetupDeps } from './plugin';
 import {

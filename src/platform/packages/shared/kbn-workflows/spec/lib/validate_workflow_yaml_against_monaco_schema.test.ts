@@ -12,7 +12,7 @@ import addFormats from 'ajv-formats';
 import { readFileSync } from 'fs'; // eslint-disable-line import/no-nodejs-modules
 import { join } from 'path'; // eslint-disable-line import/no-nodejs-modules
 import { parse } from 'yaml';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { generateYamlSchemaFromConnectors } from './generate_yaml_schema_from_connectors';
 import { getWorkflowJsonSchema } from './get_workflow_json_schema';
 import type { ConnectorContractUnion } from '../..';

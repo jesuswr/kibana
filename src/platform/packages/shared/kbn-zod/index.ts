@@ -7,4 +7,5 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-export * from './v4';
+export * from 'zod/v4';
+export { isZod } from './util';

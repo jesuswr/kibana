@@ -10,7 +10,7 @@
 import type { IRouter } from '@kbn/core/server';
 import { createSHA256Hash } from '@kbn/crypto';
 import { stableStringify } from '@kbn/std';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { TriggerRegistry } from '../trigger_registry';
 
 const ROUTE_PATH = '/internal/workflows_extensions/trigger_definitions';

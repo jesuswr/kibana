@@ -15,7 +15,7 @@
  * and uses passthrough() to preserve all mapping properties.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 import { getShapeAt } from '../../../common/utils/zod';
 

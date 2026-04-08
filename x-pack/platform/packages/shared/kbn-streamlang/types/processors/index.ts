@@ -5,8 +5,8 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
-import { createIsNarrowSchema, NonEmptyString } from '@kbn/zod-helpers/v4';
+import { z } from '@kbn/zod';
+import { createIsNarrowSchema, NonEmptyString } from '@kbn/zod-helpers';
 import type { Condition } from '../conditions';
 import { conditionSchema, isAlwaysCondition } from '../conditions';
 import {

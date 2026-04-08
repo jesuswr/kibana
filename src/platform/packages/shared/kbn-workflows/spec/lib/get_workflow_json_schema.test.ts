@@ -8,7 +8,7 @@
  */
 
 import Ajv from 'ajv';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { getWorkflowJsonSchema } from './get_workflow_json_schema';
 
 describe('getWorkflowJsonSchema', () => {

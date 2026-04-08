@@ -7,8 +7,8 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import { z } from '@kbn/zod/v4';
-import { ZodError } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
+import { ZodError } from '@kbn/zod';
 
 export const SCOUT_TARGET_LOCATION: string = process.env.SCOUT_TARGET_LOCATION || 'unknown';
 export const SCOUT_TARGET_ARCH: string = process.env.SCOUT_TARGET_ARCH || 'unknown';

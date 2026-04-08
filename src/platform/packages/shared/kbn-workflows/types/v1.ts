@@ -8,7 +8,7 @@
  */
 
 import type { JsonValue } from '@kbn/utility-types';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { SerializedError, WorkflowYaml } from '../spec/schema';
 import { WorkflowSchema } from '../spec/schema';
 

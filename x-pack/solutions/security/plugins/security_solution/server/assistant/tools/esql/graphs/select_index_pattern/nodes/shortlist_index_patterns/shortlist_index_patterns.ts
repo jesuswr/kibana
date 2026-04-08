@@ -8,7 +8,7 @@
 import { HumanMessage, SystemMessage } from '@langchain/core/messages';
 import type { BaseChatModel } from '@langchain/core/language_models/chat_models';
 import { Command } from '@langchain/langgraph';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { SelectIndexPatternAnnotation } from '../../state';
 import type { CreateLlmInstance } from '../../../../utils/common';
 

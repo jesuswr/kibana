@@ -6,7 +6,7 @@
  */
 
 import dedent from 'dedent';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { Logger } from '@kbn/core/server';
 import { ToolType } from '@kbn/agent-builder-common';
 import { ToolResultType } from '@kbn/agent-builder-common/tools/tool_result';

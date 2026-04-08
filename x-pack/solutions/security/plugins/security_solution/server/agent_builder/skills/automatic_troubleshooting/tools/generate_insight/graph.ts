@@ -7,7 +7,7 @@
 
 import type { ScopedModel, ToolHandlerResult } from '@kbn/agent-builder-server';
 import { StateGraph, Annotation } from '@langchain/langgraph';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { ToolResultType } from '@kbn/agent-builder-common/tools';
 
 import {

@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { createPrompt } from '@kbn/inference-common';
 import reviewFieldsPromptTemplate from './review_fields_prompt_template.text';
 

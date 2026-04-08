@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { ActionType as ConnectorType, ExecutorType } from './types';
 
 export const defaultValidateDef = {

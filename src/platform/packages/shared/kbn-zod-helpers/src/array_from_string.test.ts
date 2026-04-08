@@ -8,7 +8,7 @@
  */
 
 import { ArrayFromString } from './array_from_string';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 describe('ArrayFromString', () => {
   const itemsSchema = z.string();

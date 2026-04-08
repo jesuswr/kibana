@@ -12,7 +12,7 @@ import { css } from '@emotion/react';
 import React, { useCallback, useRef } from 'react';
 import { CodeEditor, monaco } from '@kbn/code-editor';
 import { i18n } from '@kbn/i18n';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import { InputValidationCallout } from './input_validation_callout';
 import { WORKFLOWS_MONACO_EDITOR_THEME } from '../../../widgets/workflow_yaml_editor/styles/use_workflows_monaco_theme';
 

@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { TemplateSchema } from '../../domain/template/v1';
 /**
  * Sort field for templates.

@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { isEmpty } from 'lodash';
 import type { LoghubSystem } from './read_loghub_system_files';
 import { getFileOrThrow } from '../utils';

@@ -5,8 +5,8 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
-import { BooleanFromString } from '@kbn/zod-helpers/v4';
+import { z } from '@kbn/zod';
+import { BooleanFromString } from '@kbn/zod-helpers';
 import type { IdentifyFeaturesResult, TaskResult } from '@kbn/streams-schema';
 import { baseFeatureSchema, featureSchema, type Feature } from '@kbn/streams-schema';
 import { v4 as uuid } from 'uuid';

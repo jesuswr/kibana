@@ -9,7 +9,7 @@ import type { ToolRunnableConfig } from '@langchain/core/tools';
 import { DynamicStructuredTool } from '@langchain/core/tools';
 import { Command } from '@langchain/langgraph';
 import { ToolMessage } from '@langchain/core/messages';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { CallbackManagerForToolRun } from '@langchain/core/callbacks/manager';
 import { FIELD_MAPPING_TYPES } from '../state';
 

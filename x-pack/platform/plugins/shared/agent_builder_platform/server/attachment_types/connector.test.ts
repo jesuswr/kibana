@@ -14,7 +14,7 @@ import {
 import type { AgentFormattedAttachment } from '@kbn/agent-builder-server/attachments';
 import { getConnectorSpec } from '@kbn/connector-specs';
 import { formatSchemaForLlm } from '@kbn/agent-builder-server';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { createConnectorAttachmentType } from './connector';
 
 jest.mock('@kbn/connector-specs', () => ({

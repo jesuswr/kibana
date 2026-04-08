@@ -12,7 +12,7 @@ import { loggingSystemMock } from '@kbn/core-logging-server-mocks';
 import type { CallToolResult, JSONRPCMessage } from '@modelcontextprotocol/sdk/types.js';
 import { randomUUID } from 'node:crypto';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 const mockLoggerFactory = loggingSystemMock.create();
 const mockLogger = mockLoggerFactory.get('mock logger');

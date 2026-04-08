@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import {
   createPublicStepDefinition,
   type PublicStepDefinition,

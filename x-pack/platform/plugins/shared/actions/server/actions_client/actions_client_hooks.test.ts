@@ -6,7 +6,7 @@
  */
 
 import { omit } from 'lodash';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { MockedLogger } from '@kbn/logging-mocks';
 import { loggerMock } from '@kbn/logging-mocks';
 import type { ActionTypeRegistryOpts } from '../action_type_registry';

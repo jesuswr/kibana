@@ -8,7 +8,7 @@
  */
 
 import type { WorkflowYaml } from '@kbn/workflows';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { validateTriggerConditionsForWorkflow, validateTriggers } from './validate_triggers';
 
 const CUSTOM_TRIGGER_TYPE = 'my.custom.trigger';

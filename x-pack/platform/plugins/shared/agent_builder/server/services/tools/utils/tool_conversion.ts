@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z, type ZodObject } from '@kbn/zod/v4';
+import { z, type ZodObject } from '@kbn/zod';
 import type { KibanaRequest } from '@kbn/core-http-server';
 import type { ToolDefinitionWithSchema, ToolDefinition, ToolType } from '@kbn/agent-builder-common';
 import type { Runner, ExecutableTool, InternalToolDefinition } from '@kbn/agent-builder-server';

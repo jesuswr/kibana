@@ -8,7 +8,7 @@
  */
 
 import { getSchemaAtPath } from '@kbn/workflows/common/utils/zod/get_schema_at_path';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 // Mock the dependencies
 jest.mock('../../../../common/step_schemas', () => ({

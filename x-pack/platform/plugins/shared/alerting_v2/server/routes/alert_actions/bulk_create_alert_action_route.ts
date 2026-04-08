@@ -7,7 +7,7 @@
 
 import { Request } from '@kbn/core-di-server';
 import type { KibanaRequest, RouteSecurity } from '@kbn/core-http-server';
-import { buildRouteValidationWithZod } from '@kbn/zod-helpers/v4';
+import { buildRouteValidationWithZod } from '@kbn/zod-helpers';
 import { inject, injectable } from 'inversify';
 import {
   bulkCreateAlertActionBodySchema,

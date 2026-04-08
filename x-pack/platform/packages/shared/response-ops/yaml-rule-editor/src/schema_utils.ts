@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { createRuleDataSchema } from '@kbn/alerting-v2-schemas';
 import type { JsonSchema, SchemaPropertyInfo } from './types';
 

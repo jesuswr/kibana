@@ -8,7 +8,7 @@
 import { validateToolSelection } from './tools';
 import type { KibanaRequest } from '@kbn/core/server';
 import { ToolType } from '@kbn/agent-builder-common';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 const mockRequest = {} as KibanaRequest;
 const generateMockTool = (id: string, type: ToolType) => ({

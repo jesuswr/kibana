@@ -9,7 +9,7 @@
 
 import { isFilterable } from '@kbn/data-views-plugin/common';
 import { fieldFormatsServiceMock } from '@kbn/field-formats-plugin/public/mocks';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import {
   createStubDataViewForTriggerEventSchema,
   eventSchemaPropertiesToFieldSpecs,

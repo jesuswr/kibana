@@ -9,7 +9,7 @@
 
 import type { ValidateWorkflowResponseDto, WorkflowYaml } from '@kbn/workflows';
 import type { WorkflowDiagnostic } from '@kbn/workflows/types/v1';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import { InvalidYamlSchemaError, InvalidYamlSyntaxError } from './errors';
 import { validateLiquidTemplate } from './validate_liquid_template';
 import { validateStepNameUniqueness } from './validate_step_names';

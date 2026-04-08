@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 import { WorkflowInsightType } from '../../../../../../common/endpoint/types/workflow_insights';
 import { PROMPTS } from './prompts';

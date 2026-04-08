@@ -8,8 +8,8 @@
  */
 
 import type { Document } from 'yaml';
-import type { ZodSafeParseResult, ZodType } from '@kbn/zod/v4';
-import { ZodError } from '@kbn/zod/v4';
+import type { ZodSafeParseResult, ZodType } from '@kbn/zod';
+import { ZodError } from '@kbn/zod';
 import { parseYamlToJSONWithoutValidation } from './parse_workflow_yaml_to_json_without_validation';
 import { getYamlDocumentErrors } from './validate_yaml_document';
 import { InvalidYamlSchemaError, InvalidYamlSyntaxError } from '../errors';

@@ -7,7 +7,7 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { AxiosInstance } from 'axios';
 import { isString } from 'lodash';
 import type { SSLSettings } from '@kbn/actions-utils';

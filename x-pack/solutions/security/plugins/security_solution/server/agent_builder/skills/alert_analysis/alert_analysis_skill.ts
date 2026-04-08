@@ -8,7 +8,7 @@
 import { ToolType } from '@kbn/agent-builder-common/tools';
 import { ToolResultType } from '@kbn/agent-builder-common/tools/tool_result';
 import { defineSkillType } from '@kbn/agent-builder-server/skills/type_definition';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import {
   SECURITY_ALERTS_TOOL_ID,
   SECURITY_LABS_SEARCH_TOOL_ID,

@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { ScopedModel } from '@kbn/agent-builder-server';
 import type { ActiveMlModules } from './get_security_ml_jobs';
 import type { EntityType } from '../../../../../../common/api/entity_analytics';

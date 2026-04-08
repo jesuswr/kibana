@@ -6,9 +6,9 @@
  */
 
 import type { IKibanaResponse, Logger } from '@kbn/core/server';
-import { buildRouteValidationWithZod } from '@kbn/zod-helpers/v4';
+import { buildRouteValidationWithZod } from '@kbn/zod-helpers';
 import { v4 as uuidV4 } from 'uuid';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { RuleMigrationTaskExecutionSettings } from '../../../../../../common/siem_migrations/model/rule_migration.gen';
 import { LangSmithEvaluationOptions } from '../../../../../../common/siem_migrations/model/common.gen';
 import { SIEM_RULE_MIGRATION_EVALUATE_PATH } from '../../../../../../common/siem_migrations/constants';

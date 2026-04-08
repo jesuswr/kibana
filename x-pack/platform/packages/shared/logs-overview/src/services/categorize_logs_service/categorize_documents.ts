@@ -9,7 +9,7 @@ import type { ISearchGeneric } from '@kbn/search-types';
 import { lastValueFrom } from 'rxjs';
 import { fromPromise } from 'xstate';
 import { createRandomSamplerWrapper } from '@kbn/ml-random-sampler-utils';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { LogCategorizationParams } from './types';
 import { createCategorizationRequestParams } from './queries';
 import type { LogCategory, LogCategoryChange } from '../../types';

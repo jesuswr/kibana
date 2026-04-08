@@ -18,7 +18,7 @@ import type YAML from 'yaml';
 import { FormattedMessage } from '@kbn/i18n-react';
 import { monaco, YAML_LANG_ID } from '@kbn/monaco';
 import { isTriggerType } from '@kbn/workflows';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import { ActionsMenuButton } from './actions_menu_button';
 import {
   useAlertTriggerDecorations,

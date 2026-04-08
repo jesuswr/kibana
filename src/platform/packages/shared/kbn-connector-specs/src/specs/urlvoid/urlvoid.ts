@@ -19,7 +19,7 @@
  * MVP implementation focusing on core domain reputation actions.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { i18n } from '@kbn/i18n';
 
 import type { ConnectorSpec } from '../../connector_spec';

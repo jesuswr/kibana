@@ -6,7 +6,7 @@
  */
 
 import type { BrowserApiToolMetadata } from '@kbn/agent-builder-common';
-import { z, type ZodType } from '@kbn/zod/v4';
+import { z, type ZodType } from '@kbn/zod';
 
 /**
  * Definition of a browser API tool that can be provided by consumers

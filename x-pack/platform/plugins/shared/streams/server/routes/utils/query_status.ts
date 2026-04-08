@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { QUERY_STATUSES } from '../../../common/queries';
 import type { QueryStatus } from '../../../common/queries';
 import type { RuleUnbackedFilter } from '../../lib/streams/assets/query/query_client';

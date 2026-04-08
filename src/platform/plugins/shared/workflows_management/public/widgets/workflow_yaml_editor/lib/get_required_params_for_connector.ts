@@ -10,7 +10,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { type ConnectorTypeInfo, isInternalConnector } from '@kbn/workflows';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { getCachedAllConnectors } from './connectors_cache';
 
 export interface RequiredParamForConnector {

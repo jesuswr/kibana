@@ -7,7 +7,7 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 import { i18n } from '@kbn/i18n';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { ConnectorSpec } from '../../connector_spec';
 import type * as Notion from './types';
 export const NotionConnector: ConnectorSpec = {

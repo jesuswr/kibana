@@ -8,7 +8,7 @@
  */
 
 import { ExecutionError } from '@kbn/workflows/server';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import type { AiClassifyStepOutputSchema } from '../../../../common/steps/ai';
 
 export function validateModelResponse({

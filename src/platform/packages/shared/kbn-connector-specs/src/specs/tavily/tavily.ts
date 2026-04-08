@@ -16,7 +16,7 @@
  */
 
 import { i18n } from '@kbn/i18n';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { UISchemas, type ConnectorSpec } from '../../connector_spec';
 import { withMcpClient, callToolContent, callToolJson } from '../../lib/mcp';
 import type { CallToolInput, CrawlInput, ExtractInput, MapInput, SearchInput } from './types';

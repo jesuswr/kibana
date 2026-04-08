@@ -6,7 +6,7 @@
  */
 
 import type { FieldValue } from '@elastic/elasticsearch/lib/api/types';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { platformCoreTools, ToolType } from '@kbn/agent-builder-common';
 import {
   executeEsql,

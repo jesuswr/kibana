@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import type { FieldMap, SchemaFieldMapKeys } from '@kbn/data-stream-adapter';
 import type { SiemMigrationResource } from '../../../../../common/siem_migrations/model/common.gen';
 import type {

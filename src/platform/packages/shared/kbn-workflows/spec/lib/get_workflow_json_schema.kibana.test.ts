@@ -10,7 +10,7 @@
 import type { ValidateFunction } from 'ajv';
 import { Ajv } from 'ajv';
 import yaml from 'yaml';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import { generateYamlSchemaFromConnectors } from './generate_yaml_schema_from_connectors';
 import { getWorkflowJsonSchema } from './get_workflow_json_schema';
 import { KIBANA_INVALID_SAMPLE_STEPS, KIBANA_VALID_SAMPLE_STEPS } from './samples';

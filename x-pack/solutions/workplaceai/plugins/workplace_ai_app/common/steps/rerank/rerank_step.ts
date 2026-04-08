@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { i18n } from '@kbn/i18n';
 import type { CommonStepDefinition } from '@kbn/workflows-extensions/common';
 import { StepCategory } from '@kbn/workflows';

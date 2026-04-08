@@ -7,7 +7,7 @@
 
 import { load } from 'js-yaml';
 import { type Props, schema } from '@kbn/config-schema';
-import { stringifyZodError } from '@kbn/zod-helpers/v4';
+import { stringifyZodError } from '@kbn/zod-helpers';
 
 import type { SettingsConfig, SettingsSection } from '../../../common/settings/types';
 import { getAgentPolicyAdvancedSettings } from '../../../common/settings';

@@ -14,7 +14,7 @@ import type {
 } from '@kbn/core/server';
 import { InferenceTaskEventType, isInferenceError } from '@kbn/inference-common';
 import { observableIntoEventSourceStream } from '@kbn/sse-utils-server';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { PromptRequestBody } from '../../common/http_apis';
 import type { InferenceServerStart, InferenceStartDependencies } from '../types';
 import { promptBodySchema } from './schemas';

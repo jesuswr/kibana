@@ -9,7 +9,7 @@
 
 import type { Document } from 'yaml';
 import type { DynamicStepContextSchema } from '@kbn/workflows';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import {
   forLoopScopesContainingOffset,
   getTemplateLocalContext,

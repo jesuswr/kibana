@@ -9,8 +9,8 @@
 
 import type { GraphNodeUnion } from '@kbn/workflows/graph';
 import { isAtomic } from '@kbn/workflows/graph';
-import { z } from '@kbn/zod/v4';
-import { fromJSONSchema } from '@kbn/zod/v4/from_json_schema';
+import { z } from '@kbn/zod';
+import { fromJSONSchema } from '@kbn/zod/from_json_schema';
 import { structuralStepOutputSchemas } from './structural_step_output_schemas';
 import { stepSchemas } from '../../../../common/step_schemas';
 

@@ -9,7 +9,7 @@
 
 import React from 'react';
 import { EuiPanel, EuiSpacer, EuiButtonGroup, EuiText, EuiFormRow, EuiTitle } from '@elastic/eui';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { createSidebarStore, type SidebarComponentProps } from '@kbn/core-chrome-sidebar';
 import { SidebarHeader, SidebarBody, useSidebarApp } from '@kbn/core-chrome-sidebar-components';
 

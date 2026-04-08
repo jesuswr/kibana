@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import { EuiSpacer } from '@elastic/eui';
 import type { BaseWidgetProps } from '../types';
 import { getFieldsFromSchema, renderField } from '../../field_builder';

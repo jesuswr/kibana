@@ -15,7 +15,7 @@ import {
   PostAttackDiscoveryGenerationsDismissRequestParams,
   PostAttackDiscoveryGenerationsDismissResponse,
 } from '@kbn/elastic-assistant-common';
-import { buildRouteValidationWithZod } from '@kbn/zod-helpers/v4';
+import { buildRouteValidationWithZod } from '@kbn/zod-helpers';
 
 import { ATTACK_DISCOVERY_EVENT_LOG_ACTION_GENERATION_DISMISSED } from '../../../../../common/constants';
 import { performChecks } from '../../../helpers';

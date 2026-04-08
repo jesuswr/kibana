@@ -8,7 +8,7 @@
  */
 
 import React from 'react';
-import { fromJSONSchema } from '@kbn/zod/v4/from_json_schema';
+import { fromJSONSchema } from '@kbn/zod/from_json_schema';
 import {
   AiPromptOutputSchema,
   AiPromptStepCommonDefinition,

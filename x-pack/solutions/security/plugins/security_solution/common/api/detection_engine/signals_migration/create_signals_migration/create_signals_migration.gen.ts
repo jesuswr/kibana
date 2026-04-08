@@ -14,8 +14,8 @@
  *   version: 2023-10-31
  */
 
-import { z } from '@kbn/zod/v4';
-import { isNonEmptyString } from '@kbn/zod-helpers/v4';
+import { z } from '@kbn/zod';
+import { isNonEmptyString } from '@kbn/zod-helpers';
 
 export type AlertsReindexOptions = z.infer<typeof AlertsReindexOptions>;
 export const AlertsReindexOptions = z.object({

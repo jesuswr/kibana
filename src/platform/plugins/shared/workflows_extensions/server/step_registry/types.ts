@@ -10,7 +10,7 @@
 import type { ElasticsearchClient, KibanaRequest } from '@kbn/core/server';
 import type { OrStringRecursive } from '@kbn/utility-types';
 import type { StepContext } from '@kbn/workflows';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import type { CommonStepDefinition } from '../../common';
 
 /**

@@ -19,7 +19,7 @@ import {
   getKibanaConnectors,
   SystemConnectorsMap,
 } from '@kbn/workflows';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 // Import connector schemas from the organized structure
 import {

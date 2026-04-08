@@ -14,7 +14,7 @@
  *   version: 2026-02-10
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 export type AnonymizationEntityClass = z.infer<typeof AnonymizationEntityClass>;
 export const AnonymizationEntityClass = z.enum([

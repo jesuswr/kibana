@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
 import type { IKibanaResponse, Logger, StartServicesAccessor } from '@kbn/core/server';
 import { buildSiemResponse } from '@kbn/lists-plugin/server/routes/utils';
 import { transformError } from '@kbn/securitysolution-es-utils';
-import { buildRouteValidationWithZod } from '@kbn/zod-helpers/v4';
+import { buildRouteValidationWithZod } from '@kbn/zod-helpers';
 
 import { GENERATE_LEADS_URL } from '../../../../../common/entity_analytics/lead_generation/constants';
 import { generateLeadsRequestSchema } from '../../../../../common/entity_analytics/lead_generation/types';

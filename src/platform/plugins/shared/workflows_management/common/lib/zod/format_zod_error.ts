@@ -10,8 +10,8 @@
 
 import type { Document } from 'yaml';
 import { getSchemaAtPath } from '@kbn/workflows/common/utils/zod';
-import type { ZodError } from '@kbn/zod/v4';
-import { z } from '@kbn/zod/v4';
+import type { ZodError } from '@kbn/zod';
+import { z } from '@kbn/zod';
 import { getCompactTypeDescription, getDetailedTypeDescription } from './zod_type_description';
 import { getAllConnectors } from '../../schema';
 import type { FormattedZodError, MockZodError } from '../errors/invalid_yaml_schema';

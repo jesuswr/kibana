@@ -7,7 +7,7 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { getSchemaForAuthType } from './get_schema_for_auth_type';
 
 describe('getSchemaForAuthType()', () => {

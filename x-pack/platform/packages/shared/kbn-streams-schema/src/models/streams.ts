@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { Validation } from './validation/validation';
 import { validation } from './validation/validation';
 import type { BaseStream } from './base';

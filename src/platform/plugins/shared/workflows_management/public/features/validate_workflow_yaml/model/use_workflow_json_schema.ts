@@ -11,7 +11,7 @@
 
 import { useMemo } from 'react';
 import { getWorkflowJsonSchema } from '@kbn/workflows';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import { getWorkflowZodSchema, getWorkflowZodSchemaLoose } from '../../../../common/schema';
 import { useAvailableConnectors } from '../../../entities/connectors/model/use_available_connectors';
 import { triggerSchemas } from '../../../trigger_schemas';

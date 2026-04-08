@@ -7,7 +7,7 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { emitEvent } from './emit_event';
 import type { EmitEventDeps } from './emit_event';
 import { setWorkflowEventChainContext } from './event_chain_context';

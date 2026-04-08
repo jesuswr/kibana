@@ -20,7 +20,7 @@
  */
 
 import { i18n } from '@kbn/i18n';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { ConnectorSpec } from '../../connector_spec';
 /**
  * Common output schema for Microsoft Graph API responses that return a collection.

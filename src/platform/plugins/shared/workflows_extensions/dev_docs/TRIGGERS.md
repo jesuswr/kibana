@@ -25,7 +25,7 @@ Trigger IDs use the following convention:
 Create a shared definition (e.g. `common/triggers/my_trigger.ts`) in your plugin:
 
 ```typescript
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { CommonTriggerDefinition } from '@kbn/workflows-extensions/common';
 
 /** Trigger id: kebab-case namespace, camelCase event */

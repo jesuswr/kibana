@@ -6,7 +6,7 @@
  */
 
 import type { FC } from 'react';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 
 import { FieldType } from '../../../../common/types/domain/template/fields';
 import type {

@@ -5,8 +5,8 @@
  * 2.0.
  */
 
-import { BooleanFromString, buildRouteValidationWithZod } from '@kbn/zod-helpers/v4';
-import { z } from '@kbn/zod/v4';
+import { BooleanFromString, buildRouteValidationWithZod } from '@kbn/zod-helpers';
+import { z } from '@kbn/zod';
 import type { IKibanaResponse } from '@kbn/core-http-server';
 import { unflattenObject } from '@kbn/object-utils';
 import { ALL_ENTITY_TYPES, API_VERSIONS, ENTITY_STORE_ROUTES } from '../../../../common';

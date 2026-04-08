@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { CommonStepDefinition } from '@kbn/workflows-extensions/common';
 import { StepCategory } from '@kbn/workflows';
 import { JsonModelShapeSchema } from '@kbn/workflows/spec/schema/common/json_model_shape_schema';

@@ -6,7 +6,7 @@
  */
 
 import { of, Observable } from 'rxjs';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { AIMessageChunk } from '@langchain/core/messages';
 import {
   AIMessage,

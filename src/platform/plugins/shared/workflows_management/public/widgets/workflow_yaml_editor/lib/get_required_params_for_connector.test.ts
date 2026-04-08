@@ -8,7 +8,7 @@
  */
 
 import type { ConnectorTypeInfo } from '@kbn/workflows';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { getCachedAllConnectors } from './connectors_cache';
 import { getRequiredParamsForConnector } from './get_required_params_for_connector';
 

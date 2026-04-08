@@ -6,7 +6,7 @@
  */
 
 import dedent from 'dedent';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { ToolType } from '@kbn/agent-builder-common';
 import {
   ToolResultType,

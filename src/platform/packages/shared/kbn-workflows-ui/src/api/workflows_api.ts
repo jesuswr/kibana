@@ -29,7 +29,7 @@ import type {
   WorkflowStepExecutionListDto,
 } from '@kbn/workflows';
 
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import type {
   BulkCreateWorkflowsParams,
   BulkCreateWorkflowsResponse,

@@ -8,7 +8,7 @@
  */
 
 import { expectZodSchemaEqual } from '@kbn/workflows/common/utils/zod/test_utils/expect_zod_schema_equal';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { inferZodType } from './infer_zod_type';
 
 describe('inferZodType', () => {

@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { platformCoreTools, ToolType } from '@kbn/agent-builder-common';
 import type { MappingField } from '@kbn/agent-builder-genai-utils';
 import { otherResult } from '@kbn/agent-builder-genai-utils/tools/utils/results';

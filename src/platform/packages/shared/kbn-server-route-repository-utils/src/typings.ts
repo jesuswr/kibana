@@ -18,7 +18,7 @@ import type {
   RouteMethod,
 } from '@kbn/core/server';
 import type { ServerSentEvent } from '@kbn/sse-utils';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import type * as t from 'io-ts';
 import type { Observable } from 'rxjs';
 import type { Readable } from 'stream';

@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import { StepCategory } from '@kbn/workflows';
 import type { CommonStepDefinition } from '@kbn/workflows-extensions/common';
 import { UpdateCaseRequest as UpdateCaseRequestSchema } from '../../bundled-types.gen';

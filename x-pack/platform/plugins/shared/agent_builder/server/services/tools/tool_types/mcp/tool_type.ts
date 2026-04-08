@@ -5,13 +5,13 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { ToolType, ToolResultType } from '@kbn/agent-builder-common';
 import type { McpToolConfig } from '@kbn/agent-builder-common/tools';
 import type { KibanaRequest } from '@kbn/core-http-server';
 import type { PluginStartContract as ActionsPluginStart } from '@kbn/actions-plugin/server';
 import type { ListToolsResponse } from '@kbn/mcp-client';
-import { fromJSONSchema } from '@kbn/zod/v4/from_json_schema';
+import { fromJSONSchema } from '@kbn/zod/from_json_schema';
 import type { Logger } from '@kbn/core/server';
 import type { ToolTypeDefinition } from '../definitions';
 import { configurationSchema, configurationUpdateSchema } from './schemas';

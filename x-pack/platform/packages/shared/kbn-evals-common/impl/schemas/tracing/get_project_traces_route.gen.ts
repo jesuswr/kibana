@@ -14,7 +14,7 @@
  *   version: 1
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 export type TraceSummaryTokens = z.infer<typeof TraceSummaryTokens>;
 export const TraceSummaryTokens = z.object({

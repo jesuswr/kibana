@@ -7,7 +7,7 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import type { RefinementCtx } from '@kbn/zod/v4';
+import type { RefinementCtx } from '@kbn/zod';
 import dateMath from '@kbn/datemath';
 
 function validateDateMath(time: string): boolean {

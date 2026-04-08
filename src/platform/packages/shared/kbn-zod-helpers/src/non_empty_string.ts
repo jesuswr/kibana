@@ -7,8 +7,8 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import { z, ZodIssueCode } from '@kbn/zod/v4';
-import type { RefinementCtx } from '@kbn/zod/v4';
+import { z, ZodIssueCode } from '@kbn/zod';
+import type { RefinementCtx } from '@kbn/zod';
 
 export function isNonEmptyString(input: string, ctx: RefinementCtx): void {
   if (input.trim() === '') {

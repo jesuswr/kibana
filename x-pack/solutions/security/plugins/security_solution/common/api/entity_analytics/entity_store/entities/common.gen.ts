@@ -14,7 +14,7 @@
  *   version: 1
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 import { EntityRiskLevels, EntityRiskScoreRecord } from '../../common/common.gen';
 import { AssetCriticalityLevel } from '../../asset_criticality/common.gen';

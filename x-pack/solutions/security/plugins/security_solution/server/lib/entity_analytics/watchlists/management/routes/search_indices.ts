@@ -9,8 +9,8 @@ import type { IKibanaResponse, Logger } from '@kbn/core/server';
 import { buildSiemResponse } from '@kbn/lists-plugin/server/routes/utils';
 import { transformError } from '@kbn/securitysolution-es-utils';
 import { take } from 'lodash/fp';
-import { buildRouteValidationWithZod } from '@kbn/zod-helpers/v4';
-import { z } from '@kbn/zod/v4';
+import { buildRouteValidationWithZod } from '@kbn/zod-helpers';
+import { z } from '@kbn/zod';
 import {
   API_VERSIONS,
   APP_ID,

@@ -13,7 +13,7 @@ import type { monaco } from '@kbn/monaco';
 import type { WorkflowYaml } from '@kbn/workflows';
 import { DynamicStepContextSchema } from '@kbn/workflows';
 import type { WorkflowGraph } from '@kbn/workflows/graph';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import type { AutocompleteContext } from './autocomplete.types';
 import { getFocusedYamlPair } from './get_focused_yaml_pair';
 import { isInsideLiquidBlock } from './liquid_utils';

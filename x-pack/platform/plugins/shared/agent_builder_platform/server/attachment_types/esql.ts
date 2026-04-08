@@ -6,7 +6,7 @@
  */
 
 import { validateQuery } from '@kbn/esql-language';
-import { z as z4 } from '@kbn/zod/v4';
+import { z as z4 } from '@kbn/zod';
 import type { EsqlAttachmentData } from '@kbn/agent-builder-common/attachments';
 import { AttachmentType, esqlAttachmentDataSchema } from '@kbn/agent-builder-common/attachments';
 import { platformCoreTools } from '@kbn/agent-builder-common/tools';

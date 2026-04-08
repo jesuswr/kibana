@@ -8,7 +8,7 @@
 import type { IKibanaResponse } from '@kbn/core/server';
 import { AbortError } from '@kbn/kibana-utils-plugin/common';
 import { transformError } from '@kbn/securitysolution-es-utils';
-import { buildRouteValidationWithZod } from '@kbn/zod-helpers/v4';
+import { buildRouteValidationWithZod } from '@kbn/zod-helpers';
 import type {
   BulkActionSkipResult,
   GapFillStatus,

@@ -8,7 +8,7 @@
 import type { ClassicIngestUpsertRequest } from '@kbn/streams-schema';
 import { badData } from '@hapi/boom';
 import type { Streams } from '@kbn/streams-schema';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 import { STREAMS_API_PRIVILEGES } from '../../../../common/constants';
 import { getErrorMessage } from '../../../lib/streams/errors/parse_error';

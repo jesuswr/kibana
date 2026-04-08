@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import type { BaseMetadata } from './schema_connector_metadata';
 
 /**

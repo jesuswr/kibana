@@ -14,7 +14,7 @@
  *   version: 1
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 export type UpsertDatasetExamplePayload = z.infer<typeof UpsertDatasetExamplePayload>;
 export const UpsertDatasetExamplePayload = z.object({

@@ -6,7 +6,7 @@
  */
 
 import { conditionSchema as streamlangConditionSchema } from '@kbn/streamlang';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 export type EntityType = z.infer<typeof EntityType>;
 export const EntityType = z.enum(['user', 'host', 'service', 'generic']);

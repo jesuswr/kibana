@@ -9,7 +9,7 @@
 
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { SidebarAppConfig, SidebarAppId, SidebarStart } from '@kbn/core-chrome-sidebar';
 import { createSidebarStore } from '@kbn/core-chrome-sidebar';
 import { SidebarService } from '@kbn/core-chrome-sidebar-internal';

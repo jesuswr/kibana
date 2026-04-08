@@ -7,8 +7,8 @@
 
 import { Request } from '@kbn/core-di-server';
 import type { KibanaRequest, RouteSecurity } from '@kbn/core-http-server';
-import { buildRouteValidationWithZod } from '@kbn/zod-helpers/v4';
-import { z } from '@kbn/zod/v4';
+import { buildRouteValidationWithZod } from '@kbn/zod-helpers';
+import { z } from '@kbn/zod';
 import { inject, injectable } from 'inversify';
 import { NotificationPolicyClient } from '../../lib/notification_policy_client';
 import { ALERTING_V2_API_PRIVILEGES } from '../../lib/security/privileges';

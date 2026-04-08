@@ -6,7 +6,7 @@
  */
 
 import { AttackDiscovery, Replacements } from '@kbn/elastic-assistant-common';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 const Document = z.object({
   pageContent: z.string(),

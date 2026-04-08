@@ -37,7 +37,7 @@ import type {
   WorkflowsExtensionsServerPluginSetup,
   WorkflowsExtensionsServerPluginStart,
 } from '@kbn/workflows-extensions/server';
-import type { ZodObject } from '@kbn/zod/v4';
+import type { ZodObject } from '@kbn/zod';
 import type { WorkflowsManagementApi } from './api/workflows_management_api';
 
 export interface WorkflowsServerPluginSetup {

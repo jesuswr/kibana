@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { buildRouteValidationWithZod } from '@kbn/zod-helpers/v4';
+import { buildRouteValidationWithZod } from '@kbn/zod-helpers';
 import { transformError } from '@kbn/securitysolution-es-utils';
 import { RULES_API_READ } from '@kbn/security-solution-features/constants';
 import {

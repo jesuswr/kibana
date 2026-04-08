@@ -18,7 +18,7 @@ import type {
 import type { AxiosHeaderValue } from 'axios';
 import type { LicenseType } from '@kbn/licensing-types';
 import type { PublicMethodsOf } from '@kbn/utility-types';
-import type * as z4 from '@kbn/zod/v4';
+import type * as z4 from '@kbn/zod';
 import type { AuthMode } from '@kbn/connector-specs';
 import type { ConnectorTokenClient } from './lib/connector_token_client';
 import type { ActionTypeExecutorResult, SubFeature, ActionTypeSource } from '../common';

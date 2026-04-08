@@ -21,7 +21,7 @@
  * - Zod for validation and UI derivation
  */
 
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import type { Logger } from '@kbn/logging';
 import type { CustomHostSettings, ProxySettings, SSLSettings } from '@kbn/actions-utils';
 import type { LicenseType } from '@kbn/licensing-types';

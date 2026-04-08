@@ -7,7 +7,7 @@
 
 import type { BuiltinSkillBoundedTool } from '@kbn/agent-builder-server/skills';
 import { ToolResultType, ToolType } from '@kbn/agent-builder-common';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 import { GENERATE_INSIGHT_TOOL_ID } from '../..';
 import { createGenerateInsightGraph } from './graph';

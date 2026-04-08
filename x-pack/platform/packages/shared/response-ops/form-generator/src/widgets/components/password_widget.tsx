@@ -8,7 +8,7 @@
 import React from 'react';
 import type { EuiFieldPasswordProps } from '@elastic/eui';
 import { UseField } from '@kbn/es-ui-shared-plugin/static/forms/hook_form_lib';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import { PasswordField as FormPasswordField } from '@kbn/es-ui-shared-plugin/static/forms/components';
 import type { BaseWidgetProps } from '../types';
 

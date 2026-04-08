@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import { getFieldsFromSchema, renderField } from './field_builder';
 import { type MetaFunctions, type GetMetaFn, type SetMetaFn } from './meta_types';
 import { getMeta as defaultGetMeta, setMeta as defaultSetMeta } from './schema_connector_metadata';

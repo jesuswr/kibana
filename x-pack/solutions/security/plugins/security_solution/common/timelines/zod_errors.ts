@@ -5,8 +5,8 @@
  * 2.0.
  */
 
-import type { ZodError, ZodType } from '@kbn/zod/v4';
-import { stringifyZodError } from '@kbn/zod-helpers/v4';
+import type { ZodError, ZodType } from '@kbn/zod';
+import { stringifyZodError } from '@kbn/zod-helpers';
 import { type Either, fold, left, right } from 'fp-ts/Either';
 import { identity } from 'fp-ts/function';
 import { pipe } from 'fp-ts/pipeable';

@@ -8,7 +8,7 @@
 import type { Filter, TimeRange } from '@kbn/es-query';
 import type { SampleDocument } from '@kbn/streams-schema/src/shared/record_types';
 import { sampleDocument } from '@kbn/streams-schema/src/shared/record_types';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 /**
  * Base interface for all data source types with common properties

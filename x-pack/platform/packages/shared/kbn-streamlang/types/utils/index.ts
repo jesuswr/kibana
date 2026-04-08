@@ -11,7 +11,7 @@ export * from './grok_to_regex';
 export * from './painless_field_access';
 export * from './painless_encoding';
 
-import type { z, ZodObject } from '@kbn/zod/v4';
+import type { z, ZodObject } from '@kbn/zod';
 
 // Utility type to rename multiple fields in a type
 export type RenameFields<

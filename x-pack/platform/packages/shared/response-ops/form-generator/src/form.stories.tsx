@@ -7,7 +7,7 @@
 
 import React from 'react';
 import type { StoryObj } from '@storybook/react';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { EuiButton } from '@elastic/eui';
 import { Form, useForm } from '@kbn/es-ui-shared-plugin/static/forms/hook_form_lib';
 import { generateFormFields } from './form';

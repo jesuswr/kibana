@@ -29,7 +29,7 @@ import {
   normalizeFieldsToJsonSchema,
 } from '@kbn/workflows/spec/lib/field_conversion';
 import type { JsonModelSchemaType } from '@kbn/workflows/spec/schema/common/json_model_schema';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { INPUT_STRING_PLACEHOLDER } from '../../../../common/consts/placeholders';
 
 export interface ContextOverrideData {

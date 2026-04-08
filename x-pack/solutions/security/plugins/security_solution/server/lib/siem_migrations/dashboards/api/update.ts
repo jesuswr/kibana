@@ -6,7 +6,7 @@
  */
 
 import type { IKibanaResponse, Logger } from '@kbn/core/server';
-import { buildRouteValidationWithZod } from '@kbn/zod-helpers/v4';
+import { buildRouteValidationWithZod } from '@kbn/zod-helpers';
 import { SIEM_DASHBOARD_MIGRATION_PATH } from '../../../../../common/siem_migrations/dashboards/constants';
 import type { SecuritySolutionPluginRouter } from '../../../../types';
 import { SiemMigrationAuditLogger } from '../../common/api/util/audit';

@@ -10,7 +10,7 @@
 import { DynamicStepContextSchema } from '@kbn/workflows';
 import { expectZodSchemaEqual } from '@kbn/workflows/common/utils/zod/test_utils/expect_zod_schema_equal';
 import { WorkflowGraph } from '@kbn/workflows/graph';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { getStepsCollectionSchema } from './get_steps_collection_schema';
 
 function unwrapStepSchema(schema: z.ZodTypeAny): z.ZodObject<any> {

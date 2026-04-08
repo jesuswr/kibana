@@ -7,7 +7,7 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import type { ZodSafeParseResult, ZodSafeParseSuccess } from '@kbn/zod/v4';
+import type { ZodSafeParseResult, ZodSafeParseSuccess } from '@kbn/zod';
 import { stringifyZodError } from './stringify_zod_error';
 
 export function expectParseSuccess<Output>(

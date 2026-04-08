@@ -10,7 +10,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 import { I18nProvider } from '@kbn/i18n-react';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { StepExecuteModalProps } from './step_execute_modal';
 import { StepExecuteModal } from './step_execute_modal';
 

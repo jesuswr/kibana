@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { transformConnectorsForExport } from './transform_connectors_for_export';
 import { actionTypeRegistryMock } from '../action_type_registry.mock';
 import type { ActionTypeRegistryContract } from '../types';

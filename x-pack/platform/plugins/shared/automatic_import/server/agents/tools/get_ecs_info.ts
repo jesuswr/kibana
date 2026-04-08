@@ -6,7 +6,7 @@
  */
 
 import { DynamicStructuredTool } from '@langchain/core/tools';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { IFieldsMetadataClient } from '@kbn/fields-metadata-plugin/server';
 
 /**

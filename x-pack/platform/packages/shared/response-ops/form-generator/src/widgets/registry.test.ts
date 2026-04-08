@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { getWidgetComponent } from './registry';
 import { WidgetType } from './types';
 import { getMeta, addMeta } from '../schema_connector_metadata';

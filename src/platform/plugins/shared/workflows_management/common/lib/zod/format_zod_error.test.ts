@@ -8,7 +8,7 @@
  */
 
 import { parseDocument } from 'yaml';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { formatZodError } from './format_zod_error';
 import type { MockZodError } from '../errors/invalid_yaml_schema';
 

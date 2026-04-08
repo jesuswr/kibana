@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { validateDataView } from '@kbn/data-view-validation';
 import { fromKueryExpression } from '@kbn/es-query';
 import type { LogExtractionBodyParams } from '../../constants';

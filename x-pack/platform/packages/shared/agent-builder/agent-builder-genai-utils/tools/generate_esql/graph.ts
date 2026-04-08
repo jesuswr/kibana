@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { StateGraph, Annotation } from '@langchain/langgraph';
 import type { TimeRange } from '@kbn/agent-builder-common';
 import type { ScopedModel } from '@kbn/agent-builder-server';

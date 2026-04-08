@@ -46,7 +46,7 @@ import {
   ALERT_RULE_EXECUTION_TYPE,
 } from '@kbn/rule-data-utils';
 import { flattenWithPrefix } from '@kbn/securitysolution-rules';
-import { requiredOptional } from '@kbn/zod-helpers/v4';
+import { requiredOptional } from '@kbn/zod-helpers';
 
 import { createHash } from 'crypto';
 

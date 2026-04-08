@@ -8,7 +8,7 @@
  */
 
 import { z, isZod } from '@kbn/zod';
-import { isPassThroughAny } from '@kbn/zod-helpers/v4';
+import { isPassThroughAny } from '@kbn/zod-helpers';
 import type { OpenAPIV3 } from 'openapi-types';
 
 import type { ConvertOptions, KnownParameters } from '../../type';

@@ -9,7 +9,7 @@
 
 import YAML, { Document } from 'yaml';
 import { monaco } from '@kbn/monaco';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import {
   getWorkflowOutputsSuggestions,
   isInWorkflowOutputWithBlock,

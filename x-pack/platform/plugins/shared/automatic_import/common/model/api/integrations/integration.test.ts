@@ -5,8 +5,8 @@
  * 2.0.
  */
 
-import { expectParseError, expectParseSuccess, stringifyZodError } from '@kbn/zod-helpers/v4';
-import type { z } from '@kbn/zod/v4';
+import { expectParseError, expectParseSuccess, stringifyZodError } from '@kbn/zod-helpers';
+import type { z } from '@kbn/zod';
 
 import {
   ApproveAutoImportIntegrationRequestBody,

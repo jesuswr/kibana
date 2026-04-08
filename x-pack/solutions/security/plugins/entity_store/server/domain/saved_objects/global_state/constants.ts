@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 export const DEFAULT_HISTORY_SNAPSHOT_FREQUENCY = '24h';
 

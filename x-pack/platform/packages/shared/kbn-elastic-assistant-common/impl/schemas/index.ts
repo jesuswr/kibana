@@ -133,7 +133,7 @@ export * from './conversations/find_conversations_route.gen';
 export * from './actions_connector/post_actions_connector_execute_route.gen';
 
 // Knowledge Base Schemas
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import {
   CreateKnowledgeBaseRequestParams as CreateKnowledgeBaseRequestParamsBase,
   ReadKnowledgeBaseRequestParams as ReadKnowledgeBaseRequestParamsBase,

@@ -9,7 +9,7 @@ import { omit } from 'lodash';
 import { httpServiceMock } from '@kbn/core/public/mocks';
 import type { PromptAPI, PromptOptions, ToolOptions } from '@kbn/inference-common';
 import { createPrompt } from '@kbn/inference-common';
-import { z, ZodError } from '@kbn/zod/v4';
+import { z, ZodError } from '@kbn/zod';
 import { createPromptRestApi } from './prompt';
 import { lastValueFrom } from 'rxjs';
 import { getMockHttpFetchStreamingResponse } from '../utils/mock_http_fetch_streaming';

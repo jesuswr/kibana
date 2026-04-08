@@ -9,7 +9,7 @@ import type { FC } from 'react';
 import React, { useMemo } from 'react';
 import { camelCase } from 'lodash';
 import { EuiFlexGroup, EuiFlexItem, EuiButton } from '@elastic/eui';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import { FormProvider, useForm } from '@kbn/es-ui-shared-plugin/static/forms/hook_form_lib';
 import type { CaseUI } from '../../../../common';
 import { CASE_EXTENDED_FIELDS } from '../../../../common/constants';

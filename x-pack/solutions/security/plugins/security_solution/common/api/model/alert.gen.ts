@@ -14,8 +14,8 @@
  *   version: not applicable
  */
 
-import { z } from '@kbn/zod/v4';
-import { isNonEmptyString } from '@kbn/zod-helpers/v4';
+import { z } from '@kbn/zod';
+import { isNonEmptyString } from '@kbn/zod-helpers';
 
 /**
  * A list of alerts `id`s.

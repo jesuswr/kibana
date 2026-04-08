@@ -11,7 +11,7 @@ import type {
   AttachmentFormatContext,
   AttachmentResolveContext,
 } from '@kbn/agent-builder-server/attachments';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import {
   WORKFLOW_YAML_ATTACHMENT_TYPE,
   workflowTools,

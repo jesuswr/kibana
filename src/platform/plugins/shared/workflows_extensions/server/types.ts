@@ -11,7 +11,7 @@ import type { PluginStartContract as ActionsPluginStartContract } from '@kbn/act
 import type { KibanaRequest } from '@kbn/core/server';
 import type { InferenceServerStart } from '@kbn/inference-plugin/server';
 import type { SpacesPluginStart } from '@kbn/spaces-plugin/server';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import type { EventChainContext } from './event_chain_context';
 import type { ServerStepDefinition } from './step_registry/types';
 import type { CommonTriggerDefinition } from '../common';

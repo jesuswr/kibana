@@ -14,7 +14,7 @@
  *   version: 1
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 export type TracingProject = z.infer<typeof TracingProject>;
 export const TracingProject = z.object({

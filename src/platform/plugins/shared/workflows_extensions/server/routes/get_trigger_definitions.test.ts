@@ -8,7 +8,7 @@
  */
 
 import { httpServerMock, httpServiceMock } from '@kbn/core/server/mocks';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { registerGetTriggerDefinitionsRoute } from './get_trigger_definitions';
 import { TriggerRegistry } from '../trigger_registry';
 import type { ServerTriggerDefinition } from '../types';

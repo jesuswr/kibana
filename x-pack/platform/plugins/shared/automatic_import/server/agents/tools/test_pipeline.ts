@@ -6,7 +6,7 @@
  */
 
 import { DynamicStructuredTool } from '@langchain/core/tools';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { ElasticsearchClient } from '@kbn/core/server';
 import type { CallbackManagerForToolRun } from '@langchain/core/callbacks/manager';
 import type { ToolRunnableConfig } from '@langchain/core/tools';

@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import type { Assign } from 'utility-types';
 import type { ChatCompleteOptions, Message } from '../chat_complete';
 import type {

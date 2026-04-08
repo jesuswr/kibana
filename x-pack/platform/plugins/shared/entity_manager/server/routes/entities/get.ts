@@ -5,7 +5,7 @@
  * 2.0.
  */
 import { getEntityDefinitionQuerySchema } from '@kbn/entities-schema';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { createEntityManagerServerRoute } from '../create_entity_manager_server_route';
 
 /**

@@ -6,7 +6,7 @@
  */
 
 import { set } from '@kbn/safer-lodash-set';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { get } from 'lodash';
 import type { FieldErrors, FieldValues, Resolver } from 'react-hook-form';
 

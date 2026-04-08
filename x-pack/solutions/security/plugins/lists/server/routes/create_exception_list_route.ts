@@ -8,7 +8,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import { transformError } from '@kbn/securitysolution-es-utils';
 import { EXCEPTION_LIST_URL } from '@kbn/securitysolution-list-constants';
-import { buildRouteValidationWithZod } from '@kbn/zod-helpers/v4';
+import { buildRouteValidationWithZod } from '@kbn/zod-helpers';
 import {
   CreateExceptionListRequestBody,
   CreateExceptionListResponse,

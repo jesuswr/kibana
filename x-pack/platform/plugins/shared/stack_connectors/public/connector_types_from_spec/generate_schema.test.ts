@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z as z4 } from '@kbn/zod/v4';
+import { z as z4 } from '@kbn/zod';
 import { generateSchema } from './generate_schema';
 import type { ConnectorSpec } from '@kbn/connector-specs';
 

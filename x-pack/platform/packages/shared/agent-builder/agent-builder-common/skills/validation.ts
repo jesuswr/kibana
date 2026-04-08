@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 /** Maximum allowed length for a skill ID. */
 export const skillIdMaxLength = 64;

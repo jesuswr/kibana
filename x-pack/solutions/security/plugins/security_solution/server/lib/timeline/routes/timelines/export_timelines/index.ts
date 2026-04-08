@@ -6,7 +6,7 @@
  */
 
 import { transformError } from '@kbn/securitysolution-es-utils';
-import { buildRouteValidationWithZod } from '@kbn/zod-helpers/v4';
+import { buildRouteValidationWithZod } from '@kbn/zod-helpers';
 import { TIMELINE_EXPORT_URL } from '../../../../../../common/constants';
 import type { SecuritySolutionPluginRouter } from '../../../../../types';
 import type { ConfigType } from '../../../../../config';

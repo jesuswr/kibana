@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { IScopedClusterClient, Logger } from '@kbn/core/server';
 import { ReviewFieldsPrompt, assembleGrokProcessor } from '@kbn/grok-heuristics';
 import type { GrokProcessor } from '@kbn/streamlang';

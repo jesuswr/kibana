@@ -16,7 +16,7 @@ import type { ActionsConfigurationUtilities } from '../actions_config';
 import * as utils from '../lib/axios_utils';
 import { ConnectorUsageCollector } from '../usage';
 import { z as z3 } from '@kbn/zod';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import { SubActionConnector } from './sub_action_connector';
 
 jest.mock('axios');

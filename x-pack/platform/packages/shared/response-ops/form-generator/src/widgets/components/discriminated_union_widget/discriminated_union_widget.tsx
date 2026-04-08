@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import type { EuiFormFieldsetProps } from '@elastic/eui';
 import { SingleOptionUnionWidget } from './single_option_union_widget';
 import type { BaseWidgetPropsWithOptions } from '../../types';

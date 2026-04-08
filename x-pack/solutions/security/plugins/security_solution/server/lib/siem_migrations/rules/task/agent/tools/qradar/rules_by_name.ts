@@ -6,7 +6,7 @@
  */
 
 import { tool } from '@langchain/core/tools';
-import * as z from '@kbn/zod/v4';
+import * as z from '@kbn/zod';
 import type { RuleMigrationsDataClient } from '../../../../data/rule_migrations_data_client';
 
 const NAME = 'getRulesByName' as const;

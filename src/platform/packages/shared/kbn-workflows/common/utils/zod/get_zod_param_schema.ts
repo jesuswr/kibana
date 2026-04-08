@@ -7,7 +7,7 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 // Helper function to get a parameter schema from different schema types
 export const getZodParamSchema = (schema: z.ZodType, paramName: string): z.ZodType | undefined => {

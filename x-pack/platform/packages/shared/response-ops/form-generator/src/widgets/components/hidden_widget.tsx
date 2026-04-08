@@ -8,7 +8,7 @@
 import React from 'react';
 import type { EuiFieldTextProps } from '@elastic/eui';
 import { UseField } from '@kbn/es-ui-shared-plugin/static/forms/hook_form_lib';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import { HiddenField as FormHiddenField } from '@kbn/es-ui-shared-plugin/static/forms/components';
 import type { BaseWidgetProps } from '../types';
 

@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { HostEntity } from '../../api/entity_analytics/entity_store/entities/common.gen';
 import { UpsertEntitiesBulkRequestBody } from '../../api/entity_analytics/entity_store/entities/upsert_entities_bulk.gen';
 import {

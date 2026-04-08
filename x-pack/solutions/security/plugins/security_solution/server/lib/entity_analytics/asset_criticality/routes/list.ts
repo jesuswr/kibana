@@ -7,7 +7,7 @@
 import type { IKibanaResponse } from '@kbn/core/server';
 import { buildSiemResponse } from '@kbn/lists-plugin/server/routes/utils';
 import { transformError } from '@kbn/securitysolution-es-utils';
-import { buildRouteValidationWithZod } from '@kbn/zod-helpers/v4';
+import { buildRouteValidationWithZod } from '@kbn/zod-helpers';
 import {
   ASSET_CRITICALITY_PUBLIC_LIST_URL,
   APP_ID,

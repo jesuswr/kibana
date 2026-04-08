@@ -8,7 +8,7 @@
  */
 
 import type { BaseStepDefinition } from '@kbn/workflows';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 
 /**
  * Common step definition fields shared between server and public.

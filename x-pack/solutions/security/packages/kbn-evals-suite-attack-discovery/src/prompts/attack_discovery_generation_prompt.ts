@@ -6,7 +6,7 @@
  */
 
 import { createPrompt } from '@kbn/inference-common';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 export const AttackDiscoveryGenerationPrompt = createPrompt({
   name: 'attack_discovery_generation',

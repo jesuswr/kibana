@@ -11,11 +11,11 @@ import type { PluginStartContract as ActionsPluginStart } from '@kbn/actions-plu
 import { loggerMock, type MockedLogger } from '@kbn/logging-mocks';
 import { getMcpToolType, listMcpTools, getNamedMcpTools } from './tool_type';
 
-jest.mock('@kbn/zod/v4/from_json_schema', () => ({
+jest.mock('@kbn/zod/from_json_schema', () => ({
   fromJSONSchema: jest.fn(),
 }));
 
-import { fromJSONSchema } from '@kbn/zod/v4/from_json_schema';
+import { fromJSONSchema } from '@kbn/zod/from_json_schema';
 
 const mockFromJSONSchema = fromJSONSchema as jest.MockedFunction<typeof fromJSONSchema>;
 

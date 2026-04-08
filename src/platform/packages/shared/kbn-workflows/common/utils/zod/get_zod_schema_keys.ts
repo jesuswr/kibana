@@ -7,8 +7,8 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import type { ZodType } from '@kbn/zod/v4';
-import { ZodIntersection, ZodObject, ZodUnion } from '@kbn/zod/v4';
+import type { ZodType } from '@kbn/zod';
+import { ZodIntersection, ZodObject, ZodUnion } from '@kbn/zod';
 
 /**
  * Returns the keys of a flattened zod schema.

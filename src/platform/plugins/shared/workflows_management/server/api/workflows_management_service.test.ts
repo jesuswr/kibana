@@ -15,7 +15,7 @@ import { loggerMock } from '@kbn/logging-mocks';
 import type { PublicMethodsOf } from '@kbn/utility-types';
 import { ExecutionStatus, ExecutionType } from '@kbn/workflows';
 import { workflowsExecutionEngineMock } from '@kbn/workflows-execution-engine/server/mocks';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { WorkflowsService } from './workflows_management_service';
 import { WORKFLOWS_EXECUTIONS_INDEX, WORKFLOWS_STEP_EXECUTIONS_INDEX } from '../../common';
 

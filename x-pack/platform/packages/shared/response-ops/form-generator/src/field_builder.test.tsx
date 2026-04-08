@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { __IntlProvider as IntlProvider } from '@kbn/i18n-react';
 import {
   Form,

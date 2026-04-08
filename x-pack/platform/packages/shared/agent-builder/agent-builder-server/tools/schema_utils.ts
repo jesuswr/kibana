@@ -5,8 +5,8 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
-import type { ZodType } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
+import type { ZodType } from '@kbn/zod';
 
 interface FieldDescription {
   name: string;

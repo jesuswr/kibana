@@ -5,9 +5,9 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { QueryDslQueryContainer } from '@elastic/elasticsearch/lib/api/types';
-import { NonEmptyString } from '@kbn/zod-helpers/v4';
+import { NonEmptyString } from '@kbn/zod-helpers';
 import { primitive } from '../shared/record_types';
 import type { SignificantEventsResponse } from '../api/significant_events';
 

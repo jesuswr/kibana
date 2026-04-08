@@ -12,7 +12,7 @@
 import type YAML from 'yaml';
 import { monaco } from '@kbn/monaco';
 import { SCHEDULED_INTERVAL_ERROR, SCHEDULED_INTERVAL_PATTERN } from '@kbn/workflows';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import { getPathAtOffset } from '../../../../common/lib/yaml';
 import { formatZodError } from '../../../../common/lib/zod';
 

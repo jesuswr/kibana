@@ -10,7 +10,7 @@ import {
   type SignificantEventsGetResponse,
   type SignificantEventsPreviewResponse,
 } from '@kbn/streams-schema';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { catchError, from as fromRxjs, map } from 'rxjs';
 import { STREAMS_API_PRIVILEGES } from '../../../../../common/constants';
 import { PromptsConfigService } from '../../../../lib/sig_events/saved_objects/prompts_config_service';

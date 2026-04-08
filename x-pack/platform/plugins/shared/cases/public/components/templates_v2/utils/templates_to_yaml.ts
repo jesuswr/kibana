@@ -6,7 +6,7 @@
  */
 
 import { dump as yamlDump } from 'js-yaml';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import { FieldType, type FieldSchema } from '../../../../common/types/domain/template/fields';
 import type { ParsedTemplate } from '../../../../common/types/domain/template/v1';
 

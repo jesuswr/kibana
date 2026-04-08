@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { conflict } from '@hapi/boom';
 import { STREAMS_API_PRIVILEGES, STREAMS_SETTINGS_DOCUMENT_ID } from '../../../../common/constants';
 import { NameTakenError } from '../../../lib/streams/errors/name_taken_error';

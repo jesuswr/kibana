@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import type * as z4 from '@kbn/zod/v4';
+import type * as z4 from '@kbn/zod';
 import type { Logger } from '@kbn/logging';
 import type { LicenseType } from '@kbn/licensing-types';
 

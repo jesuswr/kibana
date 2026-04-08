@@ -11,7 +11,7 @@ import {
   isInProtectedNamespace,
   hasNamespaceName,
 } from '@kbn/agent-builder-common/base/namespaces';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { isValidAgentAvatarColor } from '../../../utils/color';
 
 const isEmoji = (str: string): boolean =>

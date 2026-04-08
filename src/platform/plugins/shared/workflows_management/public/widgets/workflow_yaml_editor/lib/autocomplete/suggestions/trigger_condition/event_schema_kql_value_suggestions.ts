@@ -11,7 +11,7 @@ import { escapeQuotes, fromKueryExpression, type KueryNode } from '@kbn/es-query
 import { i18n } from '@kbn/i18n';
 import { type QuerySuggestion, QuerySuggestionTypes } from '@kbn/kql/public';
 import { EVENT_FIELD_PREFIX } from '@kbn/workflows-extensions/common';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { getSchemaAtPath } from '../../../../../../../common/lib/zod';
 
 /** Must match {@link setupKqlQuerySuggestionProvider} / KQL grammar cursor token. */

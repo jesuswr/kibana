@@ -6,7 +6,7 @@
  */
 
 import { isString, uniq } from 'lodash';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { IScopedClusterClient } from '@kbn/core/server';
 
 export interface ProcessingDateSuggestionsParams {

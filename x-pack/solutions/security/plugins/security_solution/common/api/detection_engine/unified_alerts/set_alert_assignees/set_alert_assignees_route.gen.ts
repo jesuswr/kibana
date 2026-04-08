@@ -14,7 +14,7 @@
  *   version: 1
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 import { SetAlertAssigneesBody } from '../../model/set_alert_assignees_body.gen';
 

@@ -8,7 +8,7 @@
  */
 
 import { act, renderHook } from '@testing-library/react';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { useMonacoMarkersChangedInterceptor } from './use_monaco_markers_changed_interceptor';
 import { MarkerSeverity } from '../../../widgets/workflow_yaml_editor/lib/utils';
 import { BATCHED_CUSTOM_MARKER_OWNER } from '../model/types';

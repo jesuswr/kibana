@@ -9,7 +9,7 @@ import React, { useMemo, useRef } from 'react';
 import { EuiHorizontalRule, EuiText, EuiSpacer } from '@elastic/eui';
 import { useFormContext, useWatch } from 'react-hook-form';
 import { load as parseYaml } from 'js-yaml';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import { ParsedTemplateDefinitionSchema } from '../../../../common/types/domain/template/v1';
 import { TemplateFieldRenderer } from '../field_types/field_renderer';
 import { TemplateMetadataPreview } from './template_metadata_preview';

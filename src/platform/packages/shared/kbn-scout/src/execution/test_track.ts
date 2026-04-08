@@ -8,7 +8,7 @@
  */
 
 // eslint-disable-next-line max-classes-per-file
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 export class TestTrackError extends Error {
   // Base exception for test track errors

@@ -9,8 +9,8 @@ import { httpServerMock } from '@kbn/core/server/mocks';
 import { elasticsearchServiceMock } from '@kbn/core/server/mocks';
 import type { BuiltinToolDefinition } from '@kbn/agent-builder-server';
 import type { ToolHandlerContext } from '@kbn/agent-builder-server/tools/handler';
-import type { ZodObject } from '@kbn/zod/v4';
-import type { z } from '@kbn/zod/v4';
+import type { ZodObject } from '@kbn/zod';
+import type { z } from '@kbn/zod';
 import type { StreamsClient } from '../../lib/streams/client';
 import type { GetScopedClients } from '../../routes/types';
 

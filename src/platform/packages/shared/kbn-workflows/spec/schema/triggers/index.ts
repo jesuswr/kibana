@@ -7,7 +7,7 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { AlertRuleTriggerSchema } from './alert_trigger_schema';
 import { ManualTriggerSchema } from './manual_trigger_schema';
 import { ScheduledTriggerSchema } from './scheduled_trigger_schema';

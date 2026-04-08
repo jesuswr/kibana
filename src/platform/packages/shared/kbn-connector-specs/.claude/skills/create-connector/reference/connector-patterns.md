@@ -50,7 +50,7 @@ After running the generator, fill in the TODO placeholders.
 
 ```typescript
 import { i18n } from '@kbn/i18n';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { ConnectorSpec } from '../../connector_spec';
 import { SearchInputSchema, GetItemInputSchema } from './types';
 import type { SearchInput, GetItemInput } from './types';
@@ -110,7 +110,7 @@ Define Zod schemas and inferred types in a separate `types.ts` file alongside th
 **Path**: `src/platform/packages/shared/kbn-connector-specs/src/specs/<name>/types.ts`
 
 ```typescript
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 export const SearchInputSchema = z.object({
   query: z.string().describe('Search query string'),
@@ -134,7 +134,7 @@ This pattern (used by ServiceNow, Slack, GitHub connectors):
 For connectors backed by an MCP server. Uses `withMcpClient` from `lib/mcp` to wrap MCP tool calls as typed actions.
 
 ```typescript
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { ConnectorSpec } from '../../connector_spec';
 import { withMcpClient } from '../../lib/mcp/with_mcp_client';
 import { UISchemas } from '../../connector_spec_ui';

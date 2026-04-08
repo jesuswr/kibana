@@ -6,7 +6,7 @@
  */
 
 import { ToolType } from '@kbn/agent-builder-common';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 import { transformBuiltInToolToFormData } from '../../../../../utils/transform_built_in_form_data';
 import { zodResolver } from '../../../../../utils/zod_resolver';

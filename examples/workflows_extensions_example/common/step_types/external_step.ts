@@ -7,7 +7,7 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { CommonStepDefinition } from '@kbn/workflows-extensions/common';
 import { StepCategory } from '@kbn/workflows';
 import { i18n } from '@kbn/i18n';

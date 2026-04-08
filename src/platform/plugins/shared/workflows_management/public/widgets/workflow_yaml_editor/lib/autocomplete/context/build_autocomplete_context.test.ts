@@ -11,7 +11,7 @@ import { monaco } from '@kbn/monaco';
 import type { ConnectorTypeInfo } from '@kbn/workflows';
 import { expectZodSchemaEqual } from '@kbn/workflows/common/utils/zod/test_utils/expect_zod_schema_equal';
 import type { PublicTriggerDefinition } from '@kbn/workflows-extensions/public';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { BuildAutocompleteContextParams } from './build_autocomplete_context';
 import { buildAutocompleteContext } from './build_autocomplete_context';
 import { createFakeMonacoModel } from '../../../../../../common/mocks/monaco_model';

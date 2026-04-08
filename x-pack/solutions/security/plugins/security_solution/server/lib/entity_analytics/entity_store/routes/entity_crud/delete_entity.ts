@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { buildRouteValidationWithZod } from '@kbn/zod-helpers/v4';
+import { buildRouteValidationWithZod } from '@kbn/zod-helpers';
 import type { IKibanaResponse, Logger } from '@kbn/core/server';
 import type { DeleteSingleEntityResponse } from '../../../../../../common/api/entity_analytics/entity_store/entities/delete_entity.gen';
 import {

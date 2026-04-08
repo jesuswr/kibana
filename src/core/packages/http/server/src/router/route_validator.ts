@@ -8,7 +8,7 @@
  */
 
 import { type ObjectType, SchemaTypeError, type Type } from '@kbn/config-schema';
-import type { ZodType } from '@kbn/zod/v4';
+import type { ZodType } from '@kbn/zod';
 
 /**
  * Error to return when the validation is not successful.

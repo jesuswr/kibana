@@ -11,7 +11,7 @@
 
 import { readFileSync } from 'fs';
 import Path from 'path';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { validateWorkflowYaml } from './validate_workflow_yaml';
 import { getWorkflowZodSchema } from '../schema';
 

@@ -11,7 +11,7 @@ import { connectorsSpecs } from '@kbn/connector-specs';
 import { i18n } from '@kbn/i18n';
 import type { BaseConnectorContract } from '@kbn/workflows';
 import { FetcherConfigSchema, KibanaStepMetaSchema } from '@kbn/workflows';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 import {
   BedrockParamsSchema,

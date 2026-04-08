@@ -10,7 +10,7 @@
 import { DataView, type FieldSpec } from '@kbn/data-views-plugin/common';
 import type { FieldFormatsStart } from '@kbn/field-formats-plugin/public';
 import { EVENT_FIELD_PREFIX } from '@kbn/workflows-extensions/common';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import { getEventSchemaProperties } from '../../../trigger_hover/event_schema_properties';
 
 /** Synthetic index title; no cluster index is required (allowNoIndex). */

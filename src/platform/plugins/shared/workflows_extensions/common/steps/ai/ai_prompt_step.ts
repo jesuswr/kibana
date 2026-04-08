@@ -10,7 +10,7 @@
 import { i18n } from '@kbn/i18n';
 import { StepCategory } from '@kbn/workflows';
 import { JsonModelShapeSchema } from '@kbn/workflows/spec/schema/common/json_model_shape_schema';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { CommonStepDefinition } from '../../step_registry/types';
 
 /**

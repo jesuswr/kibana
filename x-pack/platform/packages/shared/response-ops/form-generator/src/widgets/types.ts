@@ -6,7 +6,7 @@
  */
 
 import type { ValidationFunc } from '@kbn/es-ui-shared-plugin/static/forms/hook_form_lib';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import type { FormConfig, ResolvedMetaFunctions } from '../form';
 
 export enum WidgetType {

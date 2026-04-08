@@ -14,7 +14,7 @@
  *   version: 1
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 import { SetAlertTagsBody } from '../../model/set_alert_tags_body.gen';
 

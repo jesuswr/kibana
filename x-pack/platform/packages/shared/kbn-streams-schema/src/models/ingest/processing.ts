@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { streamlangDSLSchema, type StreamlangDSL } from '@kbn/streamlang';
 
 export interface IngestStreamProcessing extends StreamlangDSL {

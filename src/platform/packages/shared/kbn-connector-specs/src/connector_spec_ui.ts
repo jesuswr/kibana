@@ -18,7 +18,7 @@
  * UI derivation is handled here.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 // ============================================================================
 // ZOD METADATA EXTENSIONS
@@ -75,7 +75,7 @@ export function addMeta<T extends z.ZodType>(schema: T, meta: Partial<BaseMetada
  * This metadata extension allows schemas to carry UI hints while remaining
  * completely optional - fields without metadata get sensible defaults.
  */
-declare module '@kbn/zod/v4' {
+declare module '@kbn/zod' {
   interface GlobalMeta extends BaseMetadata {
     [key: string]: unknown;
   }

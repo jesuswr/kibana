@@ -7,7 +7,7 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import { KIBANA_INVALID_SAMPLE_STEPS, KIBANA_VALID_SAMPLE_STEPS } from './samples';
 import { generateYamlSchemaFromConnectors, getKibanaConnectors } from '../..';
 

@@ -11,7 +11,7 @@ import { v4 } from 'uuid';
 import { ToolType } from '@kbn/agent-builder-common';
 import type { ToolHandlerContext } from '@kbn/agent-builder-server';
 import { AGENT_BUILDER_EXPERIMENTAL_FEATURES_SETTING_ID } from '@kbn/management-settings-ids';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { EditResult, StepDefinition } from './yaml_edit_utils';
 import {
   deleteStep,

@@ -7,7 +7,7 @@
 
 import type { ConnectorSpec } from '@kbn/connector-specs';
 import { ACTION_TYPE_SOURCES } from '@kbn/actions-types';
-import { z as z4 } from '@kbn/zod/v4';
+import { z as z4 } from '@kbn/zod';
 import { createConnectorTypeFromSpec } from './create_connector_from_spec';
 import { WorkflowsConnectorFeatureId } from '../../../common';
 import type { PluginSetupContract as ActionsPluginSetupContract } from '../../plugin';

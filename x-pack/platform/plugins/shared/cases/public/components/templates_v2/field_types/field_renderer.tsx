@@ -6,7 +6,7 @@
  */
 
 import type { FC } from 'react';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import React, { useMemo } from 'react';
 import type { FormHook } from '@kbn/es-ui-shared-plugin/static/forms/hook_form_lib';
 import {

@@ -8,9 +8,9 @@
  */
 
 import { z } from '@kbn/zod';
-import { z as z4 } from '@kbn/zod/v4';
+import { z as z4 } from '@kbn/zod';
 import { BooleanFromString, PassThroughAny } from '@kbn/zod-helpers';
-import { DeepStrict } from '@kbn/zod-helpers/v4';
+import { DeepStrict } from '@kbn/zod-helpers';
 import {
   convert,
   convertPathParameters,

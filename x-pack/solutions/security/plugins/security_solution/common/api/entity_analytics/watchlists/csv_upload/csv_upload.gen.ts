@@ -14,7 +14,7 @@
  *   version: 2023-10-31
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 export type WatchlistCsvUploadResponseItem = z.infer<typeof WatchlistCsvUploadResponseItem>;
 export const WatchlistCsvUploadResponseItem = z.object({

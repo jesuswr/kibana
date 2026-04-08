@@ -7,7 +7,7 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 /**
  * These schemas were copied from Zod v3 schemas in src/platform/packages/shared/kbn-connector-schemas/mcp/schemas/v1.ts

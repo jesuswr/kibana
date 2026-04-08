@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { AuthTypeRegistry } from './auth_type_registry';
 import type { NormalizedAuthType } from '@kbn/connector-specs';
 

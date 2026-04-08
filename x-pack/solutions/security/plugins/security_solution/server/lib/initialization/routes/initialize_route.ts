@@ -7,7 +7,7 @@
 
 import type { IKibanaResponse, Logger } from '@kbn/core/server';
 import { transformError } from '@kbn/securitysolution-es-utils';
-import { buildRouteValidationWithZod } from '@kbn/zod-helpers/v4';
+import { buildRouteValidationWithZod } from '@kbn/zod-helpers';
 import {
   INITIALIZE_SECURITY_SOLUTION_URL,
   INITIALIZE_SECURITY_SOLUTION_SOCKET_TIMEOUT_MS,

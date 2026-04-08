@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { QueriesGetResponse, QueriesOccurrencesGetResponse } from '@kbn/streams-schema';
 import { sortForQueriesTable } from '../../../../lib/sig_events/utils';
 import { STREAMS_API_PRIVILEGES } from '../../../../../common/constants';

@@ -6,7 +6,7 @@
  */
 
 import { tool } from '@langchain/core/tools';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { AssistantTool, AssistantToolParams } from '@kbn/elastic-assistant-plugin/server';
 import { DocumentEntryType } from '@kbn/elastic-assistant-common';
 import type { KnowledgeBaseEntryCreateProps } from '@kbn/elastic-assistant-common';

@@ -7,7 +7,7 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { ConnectorContractUnion } from '../..';
 import { getShape } from '../../common/utils/zod/get_shape';
 import { getZodSchemaType } from '../../common/utils/zod/get_zod_schema_type';

@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { extractSchemaCore } from './schema_extract_core';
 import { getMeta, setMeta } from './schema_connector_metadata';
 import type { ResolvedMetaFunctions } from './form';

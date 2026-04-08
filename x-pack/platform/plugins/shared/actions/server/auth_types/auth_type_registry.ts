@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import Boom from '@hapi/boom';
 import type { NormalizedAuthType } from '@kbn/connector-specs';
 import { i18n } from '@kbn/i18n';

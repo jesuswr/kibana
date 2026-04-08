@@ -7,7 +7,7 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import {
   connectorTypeRequiresConnectorId,
   generateConnectorSnippet,
@@ -241,10 +241,10 @@ describe('getEnhancedTypeInfo', () => {
   });
 
   it('should extract example from description containing e.g.', () => {
-    // In @kbn/zod/v4, descriptions are stored in _zod.def.description
+    // In @kbn/zod, descriptions are stored in _zod.def.description
     const schema = z.string().describe('A name field, e.g., "John Doe"');
     const result = getEnhancedTypeInfo(schema);
-    // The _def.description path may not exist in @kbn/zod/v4, so description can be undefined
+    // The _def.description path may not exist in @kbn/zod, so description can be undefined
     if (result.description) {
       expect(result.description).toBe('A name field, e.g., "John Doe"');
       expect(result.example).toBe('John Doe');

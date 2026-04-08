@@ -6,7 +6,7 @@
  */
 
 import { omitBy, isUndefined } from 'lodash';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { EncryptedSavedObjectsClient } from '@kbn/encrypted-saved-objects-plugin/server';
 import type { Logger, SavedObjectsClientContract, SavedObjectAttributes } from '@kbn/core/server';
 import { SavedObjectsUtils } from '@kbn/core/server';

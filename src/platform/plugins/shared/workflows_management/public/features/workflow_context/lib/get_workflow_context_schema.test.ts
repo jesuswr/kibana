@@ -9,7 +9,7 @@
 
 import type { WorkflowYaml } from '@kbn/workflows';
 import { getSchemaAtPath, getShape } from '@kbn/workflows/common/utils/zod';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import {
   getWorkflowContextSchema,
   type WorkflowDefinitionForContext,

@@ -6,7 +6,7 @@
  */
 
 import type { KibanaRequest } from '@kbn/core/server';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import type { StepHandlerContext } from '@kbn/workflows-extensions/server';
 import type { CasesClient } from '../../client';
 import type { CreateCaseStepOutput } from '../../../common/workflows/steps/create_case';

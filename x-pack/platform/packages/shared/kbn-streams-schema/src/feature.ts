@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { isEqual, uniq } from 'lodash';
 import { conditionSchema, type Condition } from '@kbn/streamlang';
 

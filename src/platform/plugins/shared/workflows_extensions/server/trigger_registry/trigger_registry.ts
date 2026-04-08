@@ -7,7 +7,7 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import type { ServerTriggerDefinition } from '../types';
 
 /** Id must be <domain>.<event> (e.g. cases.updated, alerts.recovered) */

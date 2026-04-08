@@ -14,7 +14,7 @@ import { I18nProvider } from '@kbn/i18n-react';
 import type { StepContext } from '@kbn/workflows';
 import { convertJsonSchemaToZod } from '@kbn/workflows/spec/lib/build_fields_zod_validator';
 import type { JsonModelSchemaType } from '@kbn/workflows/spec/schema/common/json_model_schema';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { ResumeExecutionModalProps } from './resume_execution_modal';
 import { ResumeExecutionModal } from './resume_execution_modal';
 

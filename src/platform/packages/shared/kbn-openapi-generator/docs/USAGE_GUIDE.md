@@ -210,7 +210,7 @@ components:
 Running OpenAPI Generator on that file will produce the following `.gen.ts` file
 
 ```ts
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 export type EntityId = z.infer<typeof EntityId>;
 export const EntityId = z.string();

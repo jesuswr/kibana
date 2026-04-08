@@ -7,7 +7,7 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { getKibanaConnectors } from '.';
 import { getZodParamSchema, getZodSchemaKeys } from '../../common/utils/zod';
 import type { InternalConnectorContract } from '../../types/v1';

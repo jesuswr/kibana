@@ -11,7 +11,7 @@ import { ToolType } from '@kbn/agent-builder-common';
 import { AGENT_BUILDER_EXPERIMENTAL_FEATURES_SETTING_ID } from '@kbn/management-settings-ids';
 import type { ConnectorContractUnion } from '@kbn/workflows';
 import { builtInStepDefinitions } from '@kbn/workflows';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { StepDefinitionForAgent } from './get_step_definitions_tool';
 import {
   formatBuiltInStep,

@@ -8,8 +8,8 @@
 import { parseDuration } from '@kbn/alerting-plugin/common';
 import { BadRequestError } from '@kbn/securitysolution-es-utils';
 import type { RouteValidationFunction, RouteValidationResultFactory } from '@kbn/core-http-server';
-import { buildRouteValidationWithZod } from '@kbn/zod-helpers/v4';
-import type { TypeOf, ZodType } from '@kbn/zod/v4';
+import { buildRouteValidationWithZod } from '@kbn/zod-helpers';
+import type { TypeOf, ZodType } from '@kbn/zod';
 import type { InitEntityEngineRequestBody } from '../../../../../common/api/entity_analytics';
 
 export const buildInitRequestBodyValidation =

@@ -105,7 +105,7 @@ The `createConnectorTypeFromSpec()` function converts the `SingleFileConnectorDe
 
 ```typescript
 // src/specs/my_connector/my_connector.ts
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { ConnectorSpec } from '../../connector_spec';
 
 export const MyConnector: ConnectorSpec = {

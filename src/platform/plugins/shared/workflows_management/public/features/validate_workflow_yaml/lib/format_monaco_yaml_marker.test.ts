@@ -10,7 +10,7 @@
 import { parseDocument } from 'yaml';
 import { monaco } from '@kbn/monaco';
 import { SCHEDULED_INTERVAL_ERROR, SCHEDULED_INTERVAL_PATTERN } from '@kbn/workflows';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { formatMonacoYamlMarker } from './format_monaco_yaml_marker';
 
 jest.mock('../../../../common/lib/yaml', () => ({

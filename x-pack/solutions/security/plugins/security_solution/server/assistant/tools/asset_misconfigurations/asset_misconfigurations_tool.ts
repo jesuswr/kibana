@@ -6,7 +6,7 @@
  */
 
 import { tool } from '@langchain/core/tools';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import {
   getAnonymizedValue,
   getRawDataOrDefault,

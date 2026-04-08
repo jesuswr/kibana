@@ -24,7 +24,7 @@ import { useSelector } from 'react-redux';
 import { CodeEditor, monaco } from '@kbn/code-editor';
 import { i18n } from '@kbn/i18n';
 import type { WorkflowGraph } from '@kbn/workflows/graph';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import { InputValidationCallout } from './input_validation_callout';
 import { useWorkflowExecution } from '../../../entities/workflows/model/use_workflow_execution';
 import { useWorkflowStepExecutions } from '../../../entities/workflows/model/use_workflow_step_executions';

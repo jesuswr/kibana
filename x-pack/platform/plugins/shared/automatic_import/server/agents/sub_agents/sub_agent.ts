@@ -10,7 +10,7 @@ import { tool } from '@langchain/core/tools';
 import { ToolMessage } from '@langchain/core/messages';
 import { Command, getCurrentTaskInput } from '@langchain/langgraph';
 import { createReactAgent } from '@langchain/langgraph/prebuilt';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { InferenceChatModel } from '@kbn/inference-langchain';
 import { TASK_TOOL_DESCRIPTION } from '../prompts';
 import { AutomaticImportAgentState } from '../state';

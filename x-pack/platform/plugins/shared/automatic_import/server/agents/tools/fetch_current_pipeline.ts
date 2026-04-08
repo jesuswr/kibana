@@ -10,7 +10,7 @@ import { ToolMessage } from '@langchain/core/messages';
 import type { ToolRunnableConfig } from '@langchain/core/tools';
 import { DynamicStructuredTool } from '@langchain/core/tools';
 import { Command, getCurrentTaskInput } from '@langchain/langgraph';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 import type { AutomaticImportAgentStateType } from '../state';
 import { formatPipelineToc } from './pipeline_constants';

@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 // ============================================================================
 // Panel Grid Schema - ideally we should import the schema from dashboard schemas, but they use config-schema library

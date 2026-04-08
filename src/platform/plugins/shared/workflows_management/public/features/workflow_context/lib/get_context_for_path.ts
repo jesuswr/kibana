@@ -13,7 +13,7 @@ import type { WorkflowYaml } from '@kbn/workflows';
 import { DynamicStepContextSchema, getStepId, WhileContextSchema } from '@kbn/workflows';
 import { isAtomic, isEnterForeach, isEnterWhile, type WorkflowGraph } from '@kbn/workflows/graph';
 import { DataMapStepTypeId } from '@kbn/workflows-extensions/common';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import { getContextSchemaWithTemplateLocals } from './extend_context_with_template_locals';
 import { getDataMapContextSchema } from './get_data_map_context_schema';
 import { getForeachStateSchema } from './get_foreach_state_schema';

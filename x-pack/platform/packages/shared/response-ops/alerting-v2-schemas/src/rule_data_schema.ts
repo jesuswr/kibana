@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import {
   DEFAULT_ARTIFACT_VALUE_LIMIT,
   ARTIFACT_VALUE_LIMITS,

@@ -8,7 +8,7 @@
 require('@kbn/setup-node-env');
 
 const swaggerJsdoc = require('swagger-jsdoc');
-const { z } = require('@kbn/zod/v4');
+const { z } = require('@kbn/zod');
 
 const {
   createEntityDefinitionQuerySchema,

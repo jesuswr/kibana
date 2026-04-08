@@ -8,7 +8,7 @@
  */
 
 import { i18n } from '@kbn/i18n';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { ActionContext, ConnectorSpec } from '../../../..';
 const buildBaseUrl = (ctx: ActionContext) =>
   `https://${(ctx.config?.subdomain as string).trim()}.atlassian.net`;

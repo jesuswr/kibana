@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { UseField } from '@kbn/es-ui-shared-plugin/static/forms/hook_form_lib';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { SelectField as FormSelectField } from '@kbn/es-ui-shared-plugin/static/forms/components';
 import type { EuiSelectProps } from '@elastic/eui';
 import type { BaseWidgetProps } from '../types';

@@ -8,7 +8,7 @@
  */
 
 import { i18n } from '@kbn/i18n';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { ConnectorSpec } from '../../connector_spec';
 const GMAIL_API_BASE = 'https://gmail.googleapis.com/gmail/v1/users/me';
 const DEFAULT_MAX_RESULTS = 10;

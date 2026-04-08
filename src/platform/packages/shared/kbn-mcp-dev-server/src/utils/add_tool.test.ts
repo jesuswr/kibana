@@ -8,7 +8,7 @@
  */
 
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { addTool } from './add_tool';
 import type { ToolDefinition } from '../types';
 

@@ -5,4 +5,4 @@
  * 2.0.
  */
 
-export { buildRouteValidationWithZod } from '@kbn/zod-helpers/v4';
+export { buildRouteValidationWithZod } from '@kbn/zod-helpers';

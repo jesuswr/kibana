@@ -7,7 +7,7 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import { JsonModelRootShapeSchema } from './json_model_shape_schema';
 import { isValidJsonSchema } from '../../lib/validate_json_schema';
 

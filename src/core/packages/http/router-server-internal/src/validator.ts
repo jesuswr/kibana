@@ -8,7 +8,7 @@
  */
 
 import { Stream } from 'stream';
-import { isZod } from '@kbn/zod/v4';
+import { isZod } from '@kbn/zod';
 import { ValidationError, schema, isConfigSchema } from '@kbn/config-schema';
 import type {
   RouteValidationSpec,

@@ -28,7 +28,7 @@ This section provides a complete guide for contributors who want to add custom s
 Create a shared definition file (e.g., `common/step_types/my_step.ts`) that contains the step ID and schemas:
 
 ```typescript
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { CommonStepDefinition } from '@kbn/workflows-extensions/common';
 
 /**

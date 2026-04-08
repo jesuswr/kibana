@@ -6,8 +6,8 @@
  */
 
 import React from 'react';
-import type { z } from '@kbn/zod/v4';
-import { ZodError } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
+import { ZodError } from '@kbn/zod';
 import type { ValidationFunc } from '@kbn/es-ui-shared-plugin/static/forms/hook_form_lib';
 import { i18n } from '@kbn/i18n';
 import { EuiText } from '@elastic/eui';

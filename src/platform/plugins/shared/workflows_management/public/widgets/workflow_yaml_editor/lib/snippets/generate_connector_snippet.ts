@@ -11,7 +11,7 @@ import { stringify, type ToStringOptions } from 'yaml';
 import { isMac } from '@kbn/shared-ux-utility';
 import type { ConnectorTypeInfo } from '@kbn/workflows';
 import { isBuiltInStepType } from '@kbn/workflows';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { getZodTypeName } from '../../../../../common/lib/zod';
 import { getConnectorInstancesForType } from '../autocomplete/suggestions/connector_id/get_connector_id_suggestions_items';
 import { getCachedAllConnectors } from '../connectors_cache';

@@ -6,7 +6,7 @@
  */
 
 import { FilterStateStore, type Filter } from '@kbn/es-query';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 const filtersSchema = z.array(
   z.object({

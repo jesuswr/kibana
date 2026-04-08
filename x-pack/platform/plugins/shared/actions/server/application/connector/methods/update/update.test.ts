@@ -12,7 +12,7 @@ import { elasticsearchServiceMock } from '@kbn/core-elasticsearch-server-mocks';
 import { httpServerMock } from '@kbn/core-http-server-mocks';
 import { auditLoggerMock } from '@kbn/security-plugin/server/audit/mocks';
 import { loggingSystemMock } from '@kbn/core-logging-server-mocks';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { Logger } from '@kbn/logging';
 import type { ActionTypeRegistry } from '../../../../action_type_registry';
 import type { AuthTypeRegistry } from '../../../../auth_types/auth_type_registry';

@@ -86,7 +86,7 @@ Inside the new file, create a `ToolDefinition` object. This object will contain 
 **Example:** `src/platform/packages/shared/kbn-mcp-dev-server/src/tools/my_new_tool.ts`
 
 ```typescript
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { ToolDefinition } from '@kbn/mcp-server-common';
 
 // Define the input schema for your tool using Zod

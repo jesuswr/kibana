@@ -6,7 +6,7 @@
  */
 
 import type { ConnectorSpec } from '@kbn/connector-specs';
-import { z as z4 } from '@kbn/zod/v4';
+import { z as z4 } from '@kbn/zod';
 
 import type { ActionTypeParams, ValidatorType } from '../../types';
 

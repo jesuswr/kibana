@@ -8,7 +8,7 @@
  */
 
 import type { DynamicStepContextSchema } from '@kbn/workflows';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { parseVariablePath } from '../../../../common/lib/parse_variable_path';
 import { VARIABLE_REGEX } from '../../../../common/lib/regex';
 import { getSchemaAtPath, inferZodType } from '../../../../common/lib/zod';

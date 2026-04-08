@@ -9,8 +9,8 @@
 
 import { fromKueryExpression, getKqlFieldNames } from '@kbn/es-query';
 import { i18n } from '@kbn/i18n';
-import { isZod } from '@kbn/zod/v4';
-import type { z } from '@kbn/zod/v4';
+import { isZod } from '@kbn/zod';
+import type { z } from '@kbn/zod';
 import { extractSchemaPropertyPaths } from '../extract_schema_property_paths/extract_schema_property_paths';
 
 export type ValidateKqlAgainstSchemaResult = { valid: true } | { valid: false; error: string };

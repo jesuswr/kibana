@@ -11,7 +11,7 @@ import type { DynamicStepContextSchema } from '@kbn/workflows';
 import { getStepId } from '@kbn/workflows';
 import type { GraphNodeUnion, WorkflowGraph } from '@kbn/workflows/graph';
 import { isEnterForeach, shouldSuggestInnerSteps } from '@kbn/workflows/graph';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { getForeachStateSchema } from './get_foreach_state_schema';
 import { getOutputSchemaForStepType } from './get_output_schema_for_step_type';
 

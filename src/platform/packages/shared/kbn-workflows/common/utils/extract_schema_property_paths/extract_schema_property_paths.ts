@@ -7,8 +7,8 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import type { ZodType } from '@kbn/zod/v4';
-import { isZod, z } from '@kbn/zod/v4';
+import type { ZodType } from '@kbn/zod';
+import { isZod, z } from '@kbn/zod';
 import { getZodSchemaType as getSchemaType, type ZodTypeKind } from '../zod/get_zod_schema_type';
 
 export interface ExtractedSchemaPropertyPath {

@@ -12,9 +12,9 @@ import {
 } from '@kbn/alerting-v2-schemas';
 import { Request, type RouteDefinition } from '@kbn/core-di-server';
 import type { KibanaRequest, RouteSecurity } from '@kbn/core-http-server';
-import { buildRouteValidationWithZod } from '@kbn/zod-helpers/v4';
+import { buildRouteValidationWithZod } from '@kbn/zod-helpers';
 import { inject, injectable } from 'inversify';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import { AlertActionsClient } from '../../lib/alert_actions_client';
 import { ALERTING_V2_API_PRIVILEGES } from '../../lib/security/privileges';
 import { ALERTING_V2_ALERT_API_PATH } from '../constants';

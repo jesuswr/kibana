@@ -8,8 +8,8 @@
 import type { KibanaRequest, RouteSecurity } from '@kbn/core-http-server';
 import { inject, injectable } from 'inversify';
 import { Request } from '@kbn/core-di-server';
-import { buildRouteValidationWithZod } from '@kbn/zod-helpers/v4';
-import type { z } from '@kbn/zod/v4';
+import { buildRouteValidationWithZod } from '@kbn/zod-helpers';
+import type { z } from '@kbn/zod';
 import { ruleResponseSchema } from '@kbn/alerting-v2-schemas';
 
 import { RulesClient } from '../../lib/rules_client';

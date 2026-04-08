@@ -7,7 +7,7 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { convertLegacyFieldsToJsonSchema } from './field_conversion';
 import { type ConnectorContractUnion } from '../..';
 import { KIBANA_TYPE_ALIASES } from '../kibana/aliases';

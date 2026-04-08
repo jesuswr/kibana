@@ -7,7 +7,7 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 export function getShape(schema: z.ZodType): Record<string, z.ZodType> {
   let current: unknown = schema;

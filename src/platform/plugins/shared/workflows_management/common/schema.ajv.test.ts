@@ -15,7 +15,7 @@ import { readFileSync, writeFileSync } from 'fs';
 import Path from 'path';
 import yaml from 'yaml';
 import { getWorkflowJsonSchema } from '@kbn/workflows';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import { getWorkflowZodSchema } from './schema';
 
 const JSON_SCHEMA_FILE_NAME = 'workflow_schema.json';

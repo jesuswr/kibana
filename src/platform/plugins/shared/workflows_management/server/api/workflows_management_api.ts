@@ -35,7 +35,7 @@ import type {
   ExecutionLogsParams,
   StepLogsParams,
 } from '@kbn/workflows-execution-engine/server/workflow_event_logger/types';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import type { StepExecutionListResult } from './lib/search_step_executions';
 import type {
   SearchWorkflowExecutionsParams,

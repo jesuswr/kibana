@@ -167,7 +167,7 @@ function generateKibanaConnectorFile(contract: ContractMeta) {
  */
 
 import type { InternalConnectorContract } from '../../../types/latest';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 ${StaticImports}
 
 ${
@@ -220,7 +220,7 @@ async function generateZodSchemas(contracts: ContractMeta[]) {
     const zodSchemas = fs.readFileSync(zodPath, 'utf8');
     fs.writeFileSync(
       zodPath,
-      zodSchemas.replace(/import { z } from 'zod\/v4';/, "import { z } from '@kbn/zod/v4';"),
+      zodSchemas.replace(/import { z } from 'zod\/v4';/, "import { z } from '@kbn/zod';"),
       'utf8'
     );
     console.log(

@@ -6,8 +6,8 @@
  */
 
 import type { ActionsClientLlm } from '@kbn/langchain/server';
-import { z as z4 } from '@kbn/zod/v4';
-import type { ZodType } from '@kbn/zod/v4';
+import { z as z4 } from '@kbn/zod';
+import type { ZodType } from '@kbn/zod';
 import { ChatPromptTemplate } from '@langchain/core/prompts';
 import type { Runnable } from '@langchain/core/runnables';
 

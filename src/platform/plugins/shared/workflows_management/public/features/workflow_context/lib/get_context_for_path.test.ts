@@ -11,7 +11,7 @@ import type { Step, WorkflowYaml } from '@kbn/workflows';
 import { DynamicStepContextSchema, ForEachContextSchema, WhileContextSchema } from '@kbn/workflows';
 import { expectZodSchemaEqual } from '@kbn/workflows/common/utils/zod/test_utils/expect_zod_schema_equal';
 import { WorkflowGraph } from '@kbn/workflows/graph';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { getContextSchemaForPath, getContextSchemaForStep } from './get_context_for_path';
 
 jest.mock('./get_output_schema_for_step_type');

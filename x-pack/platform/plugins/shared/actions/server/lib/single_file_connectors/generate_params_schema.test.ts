@@ -7,7 +7,7 @@
 
 import type { ConnectorSpec } from '@kbn/connector-specs';
 import { generateParamsSchema } from './generate_params_schema';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 describe('generateParamsSchema', () => {
   const mockActions: ConnectorSpec['actions'] = {

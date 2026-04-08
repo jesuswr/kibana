@@ -8,9 +8,7 @@
  */
 
 /**
- * This folder contains a custom JSON Schema → Zod converter that serves as
- * a polyfill until Kibana fully migrates to Zod v4, which has native
- * fromJSONSchema support.
+ * @deprecated This module is deprecated. Use `z.fromJSONSchema()` from `zod/v4` instead.
  */
 import { z } from 'zod/v4';
 import type { JsonSchema } from './types';
@@ -40,7 +38,8 @@ export interface FromJSONSchemaOptions {
 /**
  * Converts a JSON Schema object to a native Zod v4 schema at runtime.
  *
- * This is a temporary polyfill for Zod v4's native fromJSONSchema function.
+ * @deprecated Use the native `z.fromJSONSchema()` from `zod/v4` instead.
+ * This polyfill will be removed in a future release.
  */
 export function fromJSONSchema(
   jsonSchema: Record<string, unknown>,

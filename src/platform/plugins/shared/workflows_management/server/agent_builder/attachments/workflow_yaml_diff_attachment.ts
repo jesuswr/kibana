@@ -8,7 +8,7 @@
  */
 
 import { diffLines } from 'diff';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { WORKFLOW_YAML_DIFF_ATTACHMENT_TYPE } from '../../../common/agent_builder/constants';
 import type { AgentBuilderPluginSetupContract } from '../../types';
 

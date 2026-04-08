@@ -8,7 +8,7 @@
  */
 
 import { type QuerySuggestion, QuerySuggestionTypes } from '@kbn/kql/public';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import {
   eventPayloadPathFromKqlField,
   mergeTriggerEventSchemaValueSuggestions,

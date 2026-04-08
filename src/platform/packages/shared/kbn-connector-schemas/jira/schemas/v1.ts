@@ -6,7 +6,7 @@
  * your election, the "Elastic License 2.0", the "GNU Affero General Public
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { Coerced, validateRecordKeysAllowed, validateRecordMaxKeys } from '../../common/utils';
 import { MAX_OTHER_FIELDS_LENGTH } from '../constants';
 

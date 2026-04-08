@@ -5,9 +5,9 @@
  * 2.0.
  */
 
-import type { TypeOf, ZodType } from '@kbn/zod/v4';
+import type { TypeOf, ZodType } from '@kbn/zod';
 import type { RouteValidationFunction, RouteValidationResultFactory } from '@kbn/core/server';
-import { stringifyZodError } from '@kbn/zod-helpers/v4';
+import { stringifyZodError } from '@kbn/zod-helpers';
 
 export const buildRouteValidationWithZod =
   <T extends ZodType>(schema: T): RouteValidationFunction<TypeOf<T>> =>

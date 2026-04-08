@@ -8,8 +8,8 @@
  */
 
 import type { JSONSchema7 } from 'json-schema';
-import { z } from '@kbn/zod/v4';
-import { fromJSONSchema } from '@kbn/zod/v4/from_json_schema';
+import { z } from '@kbn/zod';
+import { fromJSONSchema } from '@kbn/zod/from_json_schema';
 import { resolveRef } from './field_conversion';
 
 /**

@@ -8,7 +8,7 @@
  */
 
 import type { PublicStepDefinition } from '@kbn/workflows-extensions/public';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { getOutputSchemaForStepType } from './get_output_schema_for_step_type';
 import { stepSchemas } from '../../../../common/step_schemas';
 

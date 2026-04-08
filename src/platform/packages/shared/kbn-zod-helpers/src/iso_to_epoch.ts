@@ -7,8 +7,8 @@
  * License v3.0 only", or the "Server Side Public License, v 1".
  */
 
-import { NEVER } from '@kbn/zod/v4';
-import type { RefinementCtx } from '@kbn/zod/v4';
+import { NEVER } from '@kbn/zod';
+import type { RefinementCtx } from '@kbn/zod';
 
 export function isoToEpoch(input: string, ctx: RefinementCtx) {
   const epoch = new Date(input).getTime();

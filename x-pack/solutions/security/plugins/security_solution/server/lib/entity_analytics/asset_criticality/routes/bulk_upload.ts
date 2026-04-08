@@ -8,7 +8,7 @@ import type { IKibanaResponse } from '@kbn/core/server';
 import { buildSiemResponse } from '@kbn/lists-plugin/server/routes/utils';
 import { transformError } from '@kbn/securitysolution-es-utils';
 import { Readable } from 'node:stream';
-import { buildRouteValidationWithZod } from '@kbn/zod-helpers/v4';
+import { buildRouteValidationWithZod } from '@kbn/zod-helpers';
 import {
   BulkUpsertAssetCriticalityRecordsRequestBody,
   type BulkUpsertAssetCriticalityRecordsResponse,

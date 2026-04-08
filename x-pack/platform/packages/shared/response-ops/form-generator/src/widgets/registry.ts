@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type { BaseWidgetProps } from './types';
 import { WidgetType } from './types';
 import { getMeta as defaultGetMeta, setMeta as defaultSetMeta } from '../schema_connector_metadata';

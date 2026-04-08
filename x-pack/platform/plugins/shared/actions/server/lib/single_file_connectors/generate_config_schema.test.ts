@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 import { generateConfigSchema } from './generate_config_schema';
 import { actionsConfigMock } from '../../actions_config.mock';

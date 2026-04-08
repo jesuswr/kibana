@@ -6,7 +6,7 @@
  */
 
 import type { ConnectorFormSchema } from '@kbn/alerts-ui-shared';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 
 /**
  * Copy secrets.authType to config.authType when saving the connector.

@@ -16,7 +16,7 @@
  * For EUID translation helpers (DSL/ESQL/Painless, entity types), use common/euid_helpers.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 export const PLUGIN_ID = 'entityStore';
 export const PLUGIN_NAME = 'Entity Store';

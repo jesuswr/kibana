@@ -6,7 +6,7 @@
  */
 
 import type { ConnectorSpec } from '@kbn/connector-specs';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 
 export const TestSingleFileConnector: ConnectorSpec = {
   metadata: {

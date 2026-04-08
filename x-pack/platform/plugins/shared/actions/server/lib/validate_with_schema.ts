@@ -6,7 +6,7 @@
  */
 
 import Boom from '@hapi/boom';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import type {
   ActionType,
   ActionTypeConfig,

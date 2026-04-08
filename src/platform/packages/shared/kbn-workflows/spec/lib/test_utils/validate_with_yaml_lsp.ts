@@ -11,7 +11,7 @@ import { TextDocument } from 'vscode-languageserver-textdocument';
 import yaml from 'yaml';
 import { getLanguageService } from 'yaml-language-server';
 import type { Diagnostic } from 'yaml-language-server';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import { getPathAtOffset } from '../../../common/utils/yaml/get_path_at_offset';
 
 interface FormattedDiagnostic {

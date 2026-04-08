@@ -6,7 +6,7 @@
  */
 
 import type React from 'react';
-import type { z } from '@kbn/zod/v4';
+import type { z } from '@kbn/zod';
 import { type DiscriminatedUnionWidgetProps } from './discriminated_union_widget';
 import { getFieldsFromSchema, renderField } from '../../../field_builder';
 

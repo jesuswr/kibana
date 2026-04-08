@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import React, { useState } from 'react';
 import { FormattedMessage } from '@kbn/i18n-react';
 import { EuiCode, EuiDescribedFormGroup, EuiFormRow, EuiLink } from '@elastic/eui';

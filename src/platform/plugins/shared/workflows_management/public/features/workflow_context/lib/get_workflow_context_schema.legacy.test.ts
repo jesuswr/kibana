@@ -9,7 +9,7 @@
 
 import type { DynamicWorkflowContextSchema } from '@kbn/workflows';
 import { getSchemaAtPath } from '@kbn/workflows/common/utils/zod';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { getWorkflowContextSchema } from './get_workflow_context_schema';
 
 describe('getWorkflowContextSchema - Legacy Array Format', () => {

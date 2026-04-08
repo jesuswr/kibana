@@ -8,7 +8,7 @@
  */
 
 import { StepCategory } from '@kbn/workflows';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { ServerStepRegistry } from './step_registry';
 import type { ServerStepDefinition } from './types';
 

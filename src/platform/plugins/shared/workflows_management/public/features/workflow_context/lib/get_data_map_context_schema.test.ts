@@ -8,7 +8,7 @@
  */
 
 import { DynamicStepContextSchema } from '@kbn/workflows';
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { getDataMapContextSchema } from './get_data_map_context_schema';
 
 describe('getDataMapContextSchema', () => {

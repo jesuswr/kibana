@@ -5,7 +5,7 @@
  * 2.0.
  */
 
-import { z } from '@kbn/zod/v4';
+import { z } from '@kbn/zod';
 import { partitionStream } from '@kbn/streams-ai';
 import { Streams } from '@kbn/streams-schema';
 import { conditionSchema } from '@kbn/streamlang';

@@ -1,0 +1,10 @@
+{
+  "id": "zombieSessionTest",
+  "version": "kibana",
+  "server": true,
+  "ui": false,
+  "owner": {
+    "name": "@elastic/kibana-core",
+    "githubTeam": "kibana-core"
+  }
+}

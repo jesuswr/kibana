@@ -2654,6 +2654,8 @@
       "@kbn/zod/*": ["src/platform/packages/shared/kbn-zod/*"],
       "@kbn/zod-helpers": ["src/platform/packages/shared/kbn-zod-helpers"],
       "@kbn/zod-helpers/*": ["src/platform/packages/shared/kbn-zod-helpers/*"],
+      "@kbn/zombie-session-test-plugin": ["examples/zombie_session_test"],
+      "@kbn/zombie-session-test-plugin/*": ["examples/zombie_session_test/*"],
       // END AUTOMATED PACKAGE LISTING
       // Map @elastic/kibana-d3-color to @types/d3-color for TypeScript compatibility.
       // Can be removed once we're able to update d3-color to the v3.1.0 ESM-only package.

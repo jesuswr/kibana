@@ -1247,6 +1247,7 @@
     "@kbn/yaml-rule-editor": "link:x-pack/platform/packages/shared/response-ops/yaml-rule-editor",
     "@kbn/zod": "link:src/platform/packages/shared/kbn-zod",
     "@kbn/zod-helpers": "link:src/platform/packages/shared/kbn-zod-helpers",
+    "@kbn/zombie-session-test-plugin": "link:examples/zombie_session_test",
     "@langchain/aws": "1.3.1",
     "@langchain/classic": "1.0.22",
     "@langchain/core": "1.1.31",

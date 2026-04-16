@@ -376,7 +376,7 @@ export class CoreAppsService {
 
   /**
    * Registers routes for reproducing HTTP/2 zombie sessions (nodejs/node#61304).
-   * Uses iptables to create a network black hole on ES connections.
+   * Uses iptables-nft to create a network black hole on ES connections.
    * Requires NET_ADMIN capability and root. Only works in Linux containers.
    */
   private registerZombieSessionTestRoutes(router: IRouter, coreSetup: InternalCoreSetup) {
@@ -445,20 +445,20 @@ export class CoreAppsService {
           });
         }
 
-        const iptablesCheck = sh('which iptables');
+        const iptablesCheck = sh('which iptables-nft');
         if (!iptablesCheck.success) {
           return res.customError({
             statusCode: 500,
-            body: { message: 'iptables not found. Is it installed in the Docker image?' },
+            body: { message: 'iptables-nft not found. Is it installed in the Docker image?' },
           });
         }
 
-        const permCheck = sh('iptables -L -n');
+        const permCheck = sh('iptables-nft -L -n');
         if (!permCheck.success) {
           return res.customError({
             statusCode: 500,
             body: {
-              message: `iptables permission denied. Container needs NET_ADMIN and root. Error: ${permCheck.output}`,
+              message: `iptables-nft permission denied. Container needs NET_ADMIN and root. Error: ${permCheck.output}`,
             },
           });
         }
@@ -471,10 +471,10 @@ export class CoreAppsService {
           const rules: string[] = [];
 
           if (req.body.direction === 'output' || req.body.direction === 'both') {
-            rules.push(`iptables -A OUTPUT -p tcp -d ${host} --dport ${port} -j DROP`);
+            rules.push(`iptables-nft -A OUTPUT -p tcp -d ${host} --dport ${port} -j DROP`);
           }
           if (req.body.direction === 'input' || req.body.direction === 'both') {
-            rules.push(`iptables -A INPUT -p tcp -s ${host} --sport ${port} -j DROP`);
+            rules.push(`iptables-nft -A INPUT -p tcp -s ${host} --sport ${port} -j DROP`);
           }
 
           for (const rule of rules) {
@@ -533,7 +533,7 @@ export class CoreAppsService {
       },
       async (context, req, res) => {
         const esConfig = await firstValueFrom(coreSetup.elasticsearch.legacy.config$);
-        const iptablesListing = sh('iptables -L -n --line-numbers');
+        const iptablesListing = sh('iptables-nft -L -n --line-numbers');
 
         return res.ok({
           body: {
@@ -543,7 +543,7 @@ export class CoreAppsService {
             esHosts: esConfig.hosts,
             activeRules,
             activeRuleCount: activeRules.length,
-            iptablesAvailable: sh('which iptables').success,
+            iptablesAvailable: sh('which iptables-nft').success,
             iptablesListing: iptablesListing.output,
           },
         });

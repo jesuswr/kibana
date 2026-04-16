@@ -9851,10 +9851,6 @@
   version "0.0.0"
   uid ""
 
-"@kbn/zombie-session-test-plugin@link:examples/zombie_session_test":
-  version "0.0.0"
-  uid ""
-
 "@keyv/serialize@^1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@keyv/serialize/-/serialize-1.0.3.tgz#e0fe3710e2a379cb0490cd41e5a5ffa2bab58bf6"

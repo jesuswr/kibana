@@ -41,6 +41,7 @@ dependsOn:
   - '@kbn/es-query'
   - '@kbn/data-plugin'
   - '@kbn/as-code-filters-transforms'
+  - '@kbn/as-code-shared-transforms'
   - '@kbn/data-views-plugin'
 tags:
   - plugin

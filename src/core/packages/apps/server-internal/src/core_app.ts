@@ -440,11 +440,7 @@ export class CoreAppsService {
           const esConfig = await firstValueFrom(coreSetup.elasticsearch.legacy.config$);
           targets = esConfig.hosts.map((hostUrl: string) => {
             const url = new URL(hostUrl);
-            const port = url.port
-              ? parseInt(url.port, 10)
-              : url.protocol === 'https:'
-                ? 443
-                : 80;
+            const port = url.port ? parseInt(url.port, 10) : url.protocol === 'https:' ? 443 : 80;
             return { host: url.hostname, port };
           });
         }

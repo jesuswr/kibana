@@ -56,7 +56,7 @@ run(
     }
 
     if (typeof coverageReport === 'boolean') {
-      throw flagFailError(`--coverage-report require a value`);
+      throw flagFailError(`--coverage-report requires a value`);
     }
 
     if (Array.isArray(coverageReport)) {

@@ -8,7 +8,7 @@
  */
 
 import { PRESET_TIMER } from 'listr2';
-import { readFile as readFileAsync, writeFile as writeFileAsync } from 'fs/promises';
+import { writeFile as writeFileAsync } from 'fs/promises';
 import type { TaskSignature } from '../../types';
 import { ErrorReporter } from '../../utils/error_reporter';
 import { makeAbsolutePath } from '../../utils';
@@ -18,14 +18,14 @@ export interface TaskOptions {
   reportPath?: string;
 }
 
-export interface NamespaceCoverage {
+interface NamespaceCoverage {
   total: number;
   translated: number;
   missing: number;
   coverage: number;
 }
 
-export interface TranslationCoverageReport {
+interface TranslationCoverageReport {
   source: string;
   total: number;
   translated: number;
@@ -42,7 +42,7 @@ export const reportTranslationCoverage: TaskSignature<TaskOptions> = (
   task,
   { source, reportPath }
 ) => {
-  const { config, messages, taskReporter } = context;
+  const { config, messages, localizedMessages, taskReporter } = context;
   const errorReporter = new ErrorReporter({ name: 'Report Translation Coverage' });
 
   if (!config || !Object.keys(config.paths).length) {
@@ -56,9 +56,7 @@ export const reportTranslationCoverage: TaskSignature<TaskOptions> = (
       {
         title: `Reporting translation coverage for ${source}`,
         task: async () => {
-          const sourceFilePath = makeAbsolutePath(source);
-          const localizedMessages = JSON.parse((await readFileAsync(sourceFilePath)).toString());
-          const translatedIds = new Set<string>(Object.keys(localizedMessages.messages ?? {}));
+          const translatedIds = new Set<string>(Object.keys(localizedMessages?.messages ?? {}));
 
           const namespaces: Record<string, NamespaceCoverage> = {};
           const missingIds: string[] = [];
@@ -79,7 +77,7 @@ export const reportTranslationCoverage: TaskSignature<TaskOptions> = (
               total: nsTotal,
               translated: nsTranslated,
               missing: nsTotal - nsTranslated,
-              coverage: nsTotal > 0 ? nsTranslated / nsTotal : 1,
+              coverage: nsTotal > 0 ? nsTranslated / nsTotal : 0,
             };
             total += nsTotal;
             translated += nsTranslated;
@@ -112,6 +110,6 @@ export const reportTranslationCoverage: TaskSignature<TaskOptions> = (
         },
       },
     ],
-    { exitOnError: true, rendererOptions: { timer: PRESET_TIMER }, collectErrors: 'minimal' }
+    { exitOnError: false, rendererOptions: { timer: PRESET_TIMER }, collectErrors: 'minimal' }
   );
 };
